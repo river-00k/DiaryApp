@@ -15,13 +15,9 @@ return new class extends Migration
     {
         Schema::create('diaries', function (Blueprint $table) {
             $table->integer('user_id');
-            $table->integer('year');
-            $table->integer('month');
-            $table->integer('day');
+            $table->date('date')->format('Y-m-d');
             $table->integer('evaluation');
             $table->text('text');
-            $table->text('good');
-            $table->text('more');
             $table->timestamps();
         });
     }

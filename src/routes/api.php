@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'api'], function(){
+    Route::post('post/read', 'App\Http\Controllers\Api\DiaryController@read');
+    Route::post('post/create', 'App\Http\Controllers\Api\DiaryController@create');
+    Route::post('post/update', 'App\Http\Controllers\Api\DiaryController@update');
+    Route::post('post/delete', 'App\Http\Controllers\Api\DiaryController@delete');
+    Route::get('post/showTable', 'App\Http\Controllers\Api\DiaryController@showTable');
 });
+
