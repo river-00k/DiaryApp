@@ -23,10 +23,17 @@ class DiaryController extends Controller
         return response()->json($diary, 200);
     }
 
-    //Diaryの一覧表示
+    //Diaryの特定ユーザー一覧表示
     public function read(Request $request)
     {
-        $diary = Diary::where('user_id',$request->name)->get();
+        $diary = Diary::where('user_id',$request->user_id)->where('date', $request->date)->get();
+        return $diary;
+    }
+
+    //Diaryの特定ユーザー一覧表示
+    public function readAll(Request $request)
+    {
+        $diary = Diary::where('user_id',$request->user_id)->get();
         return $diary;
     }
 
