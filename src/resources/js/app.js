@@ -16,12 +16,13 @@
  import ReactDOM from 'react-dom';
  import { BrowserRouter, Route ,Routes} from "react-router-dom";
  import Example from "./pages/Example";
- 
+ import Home from './pages/Home';
  const App = () => {
      return (
          <BrowserRouter>
              <Routes>
                  <Route path="/example" element={<Example/>} />
+                 <Route path="/" element={<Home/>} />
              </Routes>
          </BrowserRouter>
      );
