@@ -18,6 +18,12 @@ services:
     build: ./infra/mysql
     volumes:
       - db-store:/var/lib/mysql
+  phpmyadmin:
+    build: ./infra/phpMyAdmin
+    ports:
+      - 8080:80
+    volumes:
+      - ./infra/phpMyAdmin/sessions:/sessions  
 
 volumes:
   db-store:
