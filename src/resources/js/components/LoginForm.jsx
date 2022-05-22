@@ -31,7 +31,7 @@ const LoginForm = () => {
             <h2>ログイン</h2>
             <TextField className={classes.textField} label="メールアドレス" variant="outlined"/>
             <TextField className={classes.textField} label="パスワード" variant="outlined"/>
-            <Button className={classes.button} variant="contained">ログイン</Button>
+            <Button className={classes.button} variant="contained" color="primary">ログイン</Button>
         </Card>
     );
 }
