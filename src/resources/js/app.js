@@ -15,17 +15,34 @@
  import React from 'react';
  import ReactDOM from 'react-dom';
  import { BrowserRouter, Route ,Routes} from "react-router-dom";
+ import ProvideAuth, { Private } from './contexts/AuthContexts';
  import Example from "./pages/Example";
  import Home from './pages/Home';
+ import Login from './pages/Login';
+
  const App = () => {
-     return (
-         <BrowserRouter>
-             <Routes>
-                 <Route path="/example" element={<Example/>} />
-                 <Route path="/" element={<Home/>} />
-             </Routes>
-         </BrowserRouter>
-     );
+
+    return(
+        <ProvideAuth>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/home" element={<Private Component={Home} />} />
+                    <Route path="/example" element={<Private Component={Example} />} />
+                </Routes>
+            </BrowserRouter>
+        </ProvideAuth>
+    );
+
+    //  return (
+    //     <BrowserRouter>
+    //         <Routes>
+    //             <Route path="/" element={<Home/>} />
+    //             <Route path="/example" element={<Example/>} />
+    //             <Route path="/login" element={<Login/>} />
+    //         </Routes>
+    //     </BrowserRouter>
+    //  );
    };
  
    if (document.getElementById("app")) {

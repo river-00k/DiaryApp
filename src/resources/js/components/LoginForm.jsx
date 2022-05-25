@@ -22,17 +22,21 @@ const useStyles = makeStyles((theme) => createStyles({
     }
 }));
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 
     const classes = useStyles();
+
+    const {data, errMsg, inputChange, btnFunc} = props;
 
     return(
         <Card className={classes.card}>
             <h2>ログイン</h2>
-            <TextField className={classes.textField} label="メールアドレス" variant="outlined"/>
-            <TextField className={classes.textField} label="パスワード" variant="outlined"/>
-            <Button className={classes.button} variant="contained" color="primary">ログイン</Button>
+            <TextField className={classes.textField} label="メールアドレス" variant="outlined" name="email" value={data.email} onChange={inputChange}/>
+            <TextField className={classes.textField} label="パスワード" type="password" variant="outlined" name="password" value={data.password} onChange={inputChange}/>
+            <p>{errMsg}</p>
+            <Button className={classes.button} variant="contained" color="primary" onClick={btnFunc}>ログイン</Button>
         </Card>
     );
 }
 export default LoginForm;
+

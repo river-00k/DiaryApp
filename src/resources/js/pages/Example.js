@@ -1,6 +1,9 @@
 import React from 'react';
+import {useAuth} from "../contexts/AuthContexts";
 
 function Example() {
+    const auth = useAuth();
+
     return (
         <div className="container">
             <div className="row justify-content-center">
