@@ -18,6 +18,7 @@ services:
     build: ./infra/mysql
     volumes:
       - db-store:/var/lib/mysql
+  
   phpmyadmin:
     build: ./infra/phpMyAdmin
     ports:
