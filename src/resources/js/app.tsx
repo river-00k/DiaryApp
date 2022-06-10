@@ -1,0 +1,28 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { AuthProvider } from './auth/AuthContext';
+import ProtectedRoute from './auth/ProtectedRoute';
+import Example from './pages/Example';
+import LoginPage from './pages/LoginPage';
+
+const App = () => {
+
+    return(
+        <BrowserRouter>
+            <AuthProvider>
+                <Routes>
+                    <Route path="/login" element ={< LoginPage/>} />
+                    <Route path="/mypage" element={<ProtectedRoute/>}>
+                        <Route path="example" element ={< Example/>} />
+                    </Route>
+                </Routes>
+            </AuthProvider>
+        </BrowserRouter>
+    )
+
+}
+
+if (document.getElementById("app")){
+    ReactDOM.render(<App />, document.getElementById("app"))
+}
