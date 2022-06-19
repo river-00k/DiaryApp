@@ -18,7 +18,9 @@ Route::group(['middleware' => 'api'], function(){
 
 
     Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
+    Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout');
     Route::get('loginCheck', 'App\Http\Controllers\Auth\LoginController@loginCheck');
+    Route::post('requestCheck', 'App\Http\Controllers\Auth\LoginController@requestCheck');
     
 
     //認証後でないと操作を許可しない

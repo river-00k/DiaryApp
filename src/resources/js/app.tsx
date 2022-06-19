@@ -5,6 +5,9 @@ import { AuthProvider } from './auth/AuthContext';
 import ProtectedRoute from './auth/ProtectedRoute';
 import Example from './pages/Example';
 import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import RegisterInputForm from './components/RegisterInputForm'
+import RegisterConfirmForm from './components/RegisterConfirmForm'
 
 const App = () => {
 
@@ -13,6 +16,10 @@ const App = () => {
             <AuthProvider>
                 <Routes>
                     <Route path="/login" element ={< LoginPage/>} />
+                    <Route path="/register" element ={< RegisterPage/>} >
+                        <Route path="input" element={<RegisterInputForm/>}/>
+                        <Route path="confirm" element={<RegisterConfirmForm/>}/>
+                    </Route>
                     <Route path="/mypage" element={<ProtectedRoute/>}>
                         <Route path="example" element ={< Example/>} />
                     </Route>

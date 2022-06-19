@@ -1,23 +1,34 @@
+import { Theme } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/styles';
 import React from 'react';
 import CountDownTimer from '../components/CountDownTimer';
+import LogoutButton from '../components/LogoutButton';
 
-const Example = () =>{
+const useStyles = makeStyles((theme: Theme) => createStyles({
+    container: {
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        width:"100%",
+        height:"100vh",
+    }
+
+
+}))
+
+const Example = () => {
+
+    const classes = useStyles()
 
     return(
-        <>
-            <CountDownTimer />
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card">
-                            <div className="card-header">Example</div>
+        <div className={classes.container}>
+            <div className="card">
+                <div className="card-header">Example</div>
 
-                            <div className="card-body">Hello World!</div>
-                        </div>
-                    </div>
-                </div>
+                <div className="card-body">Hello World!</div>
+                <LogoutButton/>
             </div>
-        </>
+        </div>
 
     )
 

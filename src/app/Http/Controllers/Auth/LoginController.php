@@ -15,6 +15,8 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+     //ログイン機能
      public function login(Request $request){
         
         $credentials = $request->validate([
@@ -32,12 +34,25 @@ class LoginController extends Controller
 
      }
 
+     //認証チェック
      public function loginCheck(){
          if(Auth::check()){
              return response()->json(Auth::user(),200);
-         }else{
-             return response()->json([],401);
          }
      }
+
+    //ログアウト
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return response()->json([],200);
+    } 
+
+    public function requestCheck(Request $request){
+        $mail = $request->input('email');
+        $password  = $request->input('password');
+        return response()->json($password, 200);
+    }
     
 }

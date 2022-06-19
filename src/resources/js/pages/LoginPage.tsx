@@ -1,9 +1,21 @@
-import { AccordionSummary } from '@material-ui/core';
+import { AccordionSummary, Theme } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/styles';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../auth/AuthContext';
+import Header from '../components/Header';
 import LoginForm from '../components/LoginForm';
 
+
+const useStyles = makeStyles((theme: Theme) => createStyles({
+    loginPageContainer:{
+        width:"100%",
+        height:"100vh",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center"
+    }
+}))
 
 
 const LoginPage = () => {
@@ -11,6 +23,8 @@ const LoginPage = () => {
     const [loginInfo, setLoginInfo] = useState<LoginData>({email:'', password:''})
 
     const [errMessage, setErrMessage] = useState<string> ('')
+
+    const classes = useStyles()
 
     const auth = useAuth()
 
@@ -68,8 +82,9 @@ const LoginPage = () => {
     }
 
     return (
-        <div>
-           <LoginForm data={loginInfo} errMsg={errMessage} inputChange={inputChange} btnFunc={onSubmit}/>
+        <div className={classes.loginPageContainer}>
+            <Header/>
+            <LoginForm data={loginInfo} errMsg={errMessage} inputChange={inputChange} btnFunc={onSubmit}/>
         </div>
     )
 }

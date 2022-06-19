@@ -3,6 +3,21 @@ type LoginData = {
     password: string
 }
 
+type RegisterData = {
+    name: string,
+    mail: string,
+    password: string
+
+}
+
+type RegisterInputData = {
+    firstName: string,
+    lastName: string, 
+    mail: string
+    password: string,
+    passConf: string
+} 
+
 type User = {
     id: number,
     name: string,
@@ -12,3 +27,10 @@ type User = {
     updated_at: string
 }
 
+type RegisterErrMsg = {
+    firstNameErr: string,
+    lastNameErr: string,
+    mailErr: string,
+    passwordErr:string,
+    passConfErr:string
+  } 
