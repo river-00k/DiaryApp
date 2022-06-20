@@ -1,5 +1,7 @@
 import { Button, Card, createStyles, makeStyles, TextField, Theme } from '@material-ui/core'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useRegister } from '../pages/RegisterPage'
 
 const useSytles = makeStyles((theme:Theme) => createStyles({
     registerContainer:{
@@ -51,92 +53,11 @@ const useSytles = makeStyles((theme:Theme) => createStyles({
     
 }))
 
-interface RegisterInputFomInterface{
-    registerInfo:RegisterData,
-
-}
-
 const RegisterForm= () => {
 
     const classes = useSytles()
 
-    const [registerInfo, setRegisterInfo] = useState<RegisterInputData>({firstName:"", lastName:"", mail:"", password:"", passConf:""})
-    const [errMsg, setErrMsg] = useState<RegisterErrMsg>({firstNameErr:"", lastNameErr:"", mailErr:"", passConfErr:"", passwordErr:""})
-
-    
-    const validate = (): boolean => {
-        
-        let errFlg:boolean = false
-        const regexp:RegExp = /^[a-zA-Z0-9_+-]+(\.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/
-
-        if(!registerInfo.firstName){
-            errMsg.firstNameErr = "名を入力してください"
-            errFlg = true
-        }else{
-            errMsg.firstNameErr = ""
-        }
-        if(!registerInfo.lastName){
-            errMsg.lastNameErr = "姓を入力してください"
-            errFlg = true
-        }else{
-            errMsg.lastNameErr = ""
-        }
-        if(!registerInfo.mail){
-            errMsg.mailErr = "メールアドレスを入力してください"
-            errFlg = true
-        }else if(!regexp.test(registerInfo.mail)){
-            errMsg.mailErr = "正しいメールアドレスを入力してください"
-            errFlg = true
-        }else{
-            errMsg.mailErr = ""
-        }
-        if(!registerInfo.password){
-            errMsg.passwordErr = "パスワードを入力してください"
-            errFlg = true
-        }else if(registerInfo.password.length < 8){
-            errMsg.passwordErr = "パスワードは8文字以上で設定してください"
-            errFlg = true
-        }else if((registerInfo.password && registerInfo.passConf) && (registerInfo.password != registerInfo.passConf)){
-            errMsg.passwordErr = "パスワードの入力値が異なります"
-            errFlg = true
-        }
-        else{
-            errMsg.passwordErr = ""
-        }
-        if(!registerInfo.passConf){
-            errMsg.passConfErr = "確認用パスワードを入力してください"
-            errFlg = true
-        }else if(registerInfo.passConf.length < 8){
-            errMsg.passConfErr = "パスワードは8文字以上で設定してください"
-            errFlg = true
-        }else if((registerInfo.password && registerInfo.passConf) && (registerInfo.password != registerInfo.passConf)){
-            errMsg.passConfErr = "パスワードの入力値が異なります"
-            errFlg = true
-        }else{
-            errMsg.passConfErr = ""
-        }
-        
-      
-        const data:RegisterErrMsg = Object.assign({}, errMsg)
-        setErrMsg(data)
-
-        return errFlg
-    }
-
-    const btnFunc = () => {
-
-        if(validate()) {return}
-        console.log("nextpage")
-
-    }
-
-    const inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const key = event.target.name
-        const value = event.target.value
-        registerInfo[key] = value
-        const data = Object.assign({}, registerInfo)
-        setRegisterInfo(data)
-    }
+    const {registerInfo, errMsg, inputChange, confirmBtnFunc} = useRegister()
 
     return (
         <div className={classes.registerContainer}>
@@ -181,7 +102,7 @@ const RegisterForm= () => {
                         <input type="password" placeholder='パスワード' name="passConf" value={registerInfo.passConf} onChange={inputChange}/>
                         <p>{errMsg.passConfErr}</p>
                     </div>
-                    <Button className={classes.button} variant="contained" color="primary" onClick={btnFunc}>確認</Button>
+                    <Button className={classes.button} variant="contained" color="primary" onClick={confirmBtnFunc}>確認</Button>
                 </div>
             </form>
         </div>

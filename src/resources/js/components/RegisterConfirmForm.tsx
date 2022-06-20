@@ -1,5 +1,6 @@
 import { Button, createStyles, makeStyles, Theme } from '@material-ui/core'
 import React from 'react'
+import { useRegister } from '../pages/RegisterPage'
 
 const useSytles = makeStyles((theme:Theme) => createStyles({
     registerContainer:{
@@ -52,9 +53,11 @@ const RegisterConfirm = () => {
 
     const classes = useSytles()
 
-    const userData:RegisterInputData = {firstName:"航平", lastName:"大川", mail:"ookawa2@sample.com", password:"password", passConf:"passConf"}
+    const {registerInfo, modifyBtnFunc} = useRegister()
 
-    const userName = userData.lastName+userData.firstName
+    //const userData:RegisterInputData = {firstName:"航平", lastName:"大川", mail:"ookawa2@sample.com", password:"password", passConf:"passConf"}
+
+    const userName = registerInfo.lastName+registerInfo.firstName
 
     return (
         <div className={classes.registerContainer}>
@@ -69,16 +72,16 @@ const RegisterConfirm = () => {
                         </tr>
                         <tr>
                             <th>メールアドレス</th>
-                            <td>{userData.mail}</td>
+                            <td>{registerInfo.mail}</td>
                         </tr>
                         <tr>
                             <th>パスワード</th>
-                            <td>{userData.password}</td>
+                            <td>{registerInfo.password}</td>
                         </tr>
                     </table>
                     <p>上記の内容でお間違いないかご確認ください</p>
                     <div className={classes.button}>
-                        <Button variant="contained" color="primary">修正する</Button>
+                        <Button variant="contained" color="primary" onClick={modifyBtnFunc}>修正する</Button>
                         <Button variant="contained" color="primary">登録する</Button>
                     </div>
                 </div>

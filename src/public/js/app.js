@@ -16217,14 +16217,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
 
 
-var useSytles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["default"])(function (theme) {
-  return (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["default"])({
+
+var useSytles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["default"])(function (theme) {
+  return (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["default"])({
     registerContainer: {
       backgroundColor: "white",
       padding: "30px",
@@ -16272,24 +16274,24 @@ var useSytles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["default"])(fu
 
 var RegisterConfirm = function RegisterConfirm() {
   var classes = useSytles();
-  var userData = {
-    firstName: "航平",
-    lastName: "大川",
-    mail: "ookawa2@sample.com",
-    password: "password",
-    passConf: "passConf"
-  };
-  var userName = userData.lastName + userData.firstName;
+
+  var _a = (0,_pages_RegisterPage__WEBPACK_IMPORTED_MODULE_1__.useRegister)(),
+      registerInfo = _a.registerInfo,
+      modifyBtnFunc = _a.modifyBtnFunc; //const userData:RegisterInputData = {firstName:"航平", lastName:"大川", mail:"ookawa2@sample.com", password:"password", passConf:"passConf"}
+
+
+  var userName = registerInfo.lastName + registerInfo.firstName;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: classes.registerContainer
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "\u65B0\u898F\u767B\u9332"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: classes.formContents
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "\u6C0F\u540D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, userName)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, userData.mail)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "\u30D1\u30B9\u30EF\u30FC\u30C9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, userData.password))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u4E0A\u8A18\u306E\u5185\u5BB9\u3067\u304A\u9593\u9055\u3044\u306A\u3044\u304B\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "\u6C0F\u540D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, userName)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, registerInfo.mail)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("th", null, "\u30D1\u30B9\u30EF\u30FC\u30C9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, registerInfo.password))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u4E0A\u8A18\u306E\u5185\u5BB9\u3067\u304A\u9593\u9055\u3044\u306A\u3044\u304B\u3054\u78BA\u8A8D\u304F\u3060\u3055\u3044"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: classes.button
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
-    color: "primary"
-  }, "\u4FEE\u6B63\u3059\u308B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    color: "primary",
+    onClick: modifyBtnFunc
+  }, "\u4FEE\u6B63\u3059\u308B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "primary"
   }, "\u767B\u9332\u3059\u308B")))));
@@ -16310,14 +16312,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
 
 
-var useSytles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["default"])(function (theme) {
-  return (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["default"])({
+
+var useSytles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["default"])(function (theme) {
+  return (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["default"])({
     registerContainer: {
       backgroundColor: "white",
       padding: "30px",
@@ -16370,100 +16374,11 @@ var useSytles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["default"])(fu
 var RegisterForm = function RegisterForm() {
   var classes = useSytles();
 
-  var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    firstName: "",
-    lastName: "",
-    mail: "",
-    password: "",
-    passConf: ""
-  }),
-      registerInfo = _a[0],
-      setRegisterInfo = _a[1];
-
-  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    firstNameErr: "",
-    lastNameErr: "",
-    mailErr: "",
-    passConfErr: "",
-    passwordErr: ""
-  }),
-      errMsg = _b[0],
-      setErrMsg = _b[1];
-
-  var validate = function validate() {
-    var errFlg = false;
-    var regexp = /^[a-zA-Z0-9_+-]+(\.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
-
-    if (!registerInfo.firstName) {
-      errMsg.firstNameErr = "名を入力してください";
-      errFlg = true;
-    } else {
-      errMsg.firstNameErr = "";
-    }
-
-    if (!registerInfo.lastName) {
-      errMsg.lastNameErr = "姓を入力してください";
-      errFlg = true;
-    } else {
-      errMsg.lastNameErr = "";
-    }
-
-    if (!registerInfo.mail) {
-      errMsg.mailErr = "メールアドレスを入力してください";
-      errFlg = true;
-    } else if (!regexp.test(registerInfo.mail)) {
-      errMsg.mailErr = "正しいメールアドレスを入力してください";
-      errFlg = true;
-    } else {
-      errMsg.mailErr = "";
-    }
-
-    if (!registerInfo.password) {
-      errMsg.passwordErr = "パスワードを入力してください";
-      errFlg = true;
-    } else if (registerInfo.password.length < 8) {
-      errMsg.passwordErr = "パスワードは8文字以上で設定してください";
-      errFlg = true;
-    } else if (registerInfo.password && registerInfo.passConf && registerInfo.password != registerInfo.passConf) {
-      errMsg.passwordErr = "パスワードの入力値が異なります";
-      errFlg = true;
-    } else {
-      errMsg.passwordErr = "";
-    }
-
-    if (!registerInfo.passConf) {
-      errMsg.passConfErr = "確認用パスワードを入力してください";
-      errFlg = true;
-    } else if (registerInfo.passConf.length < 8) {
-      errMsg.passConfErr = "パスワードは8文字以上で設定してください";
-      errFlg = true;
-    } else if (registerInfo.password && registerInfo.passConf && registerInfo.password != registerInfo.passConf) {
-      errMsg.passConfErr = "パスワードの入力値が異なります";
-      errFlg = true;
-    } else {
-      errMsg.passConfErr = "";
-    }
-
-    var data = Object.assign({}, errMsg);
-    setErrMsg(data);
-    return errFlg;
-  };
-
-  var btnFunc = function btnFunc() {
-    if (validate()) {
-      return;
-    }
-
-    console.log("nextpage");
-  };
-
-  var inputChange = function inputChange(event) {
-    var key = event.target.name;
-    var value = event.target.value;
-    registerInfo[key] = value;
-    var data = Object.assign({}, registerInfo);
-    setRegisterInfo(data);
-  };
+  var _a = (0,_pages_RegisterPage__WEBPACK_IMPORTED_MODULE_1__.useRegister)(),
+      registerInfo = _a.registerInfo,
+      errMsg = _a.errMsg,
+      inputChange = _a.inputChange,
+      confirmBtnFunc = _a.confirmBtnFunc;
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: classes.registerContainer
@@ -16521,11 +16436,11 @@ var RegisterForm = function RegisterForm() {
     name: "passConf",
     value: registerInfo.passConf,
     onChange: inputChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, errMsg.passConfErr)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, errMsg.passConfErr)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: classes.button,
     variant: "contained",
     color: "primary",
-    onClick: btnFunc
+    onClick: confirmBtnFunc
   }, "\u78BA\u8A8D"))));
 };
 
@@ -16705,7 +16620,7 @@ var LoginPage = function LoginPage() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "useRegisterInfo": () => (/* binding */ useRegisterInfo)
+/* harmony export */   "useRegister": () => (/* binding */ useRegister)
 /* harmony export */ });
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
@@ -16740,24 +16655,123 @@ var RegisterPage = function RegisterPage() {
     passConf: ""
   }),
       registerInfo = _a[0],
-      setRegisterInfo = _a[1]; // useEffect(()=>{
-  //   if((!registerInfo.firstName) || (!registerInfo.lastName) || (!registerInfo.mail) || (!registerInfo.password) || (!registerInfo.passConf)){
-  //     navigate("/register/input")
-  //   }
-  // },[] )
+      setRegisterInfo = _a[1];
 
+  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    firstNameErr: "",
+    lastNameErr: "",
+    mailErr: "",
+    passConfErr: "",
+    passwordErr: ""
+  }),
+      errMsg = _b[0],
+      setErrMsg = _b[1];
+
+  var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      inputChecker = _c[0],
+      setInputChecker = _c[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!inputChecker) {
+      navigate("/register/input");
+    }
+  }, []);
+
+  var validate = function validate() {
+    var errFlg = false;
+    var regexp = /^[a-zA-Z0-9_+-]+(\.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+
+    if (!registerInfo.firstName) {
+      errMsg.firstNameErr = "名を入力してください";
+      errFlg = true;
+    } else {
+      errMsg.firstNameErr = "";
+    }
+
+    if (!registerInfo.lastName) {
+      errMsg.lastNameErr = "姓を入力してください";
+      errFlg = true;
+    } else {
+      errMsg.lastNameErr = "";
+    }
+
+    if (!registerInfo.mail) {
+      errMsg.mailErr = "メールアドレスを入力してください";
+      errFlg = true;
+    } else if (!regexp.test(registerInfo.mail)) {
+      errMsg.mailErr = "正しいメールアドレスを入力してください";
+      errFlg = true;
+    } else {
+      errMsg.mailErr = "";
+    }
+
+    if (!registerInfo.password) {
+      errMsg.passwordErr = "パスワードを入力してください";
+      errFlg = true;
+    } else if (registerInfo.password.length < 8) {
+      errMsg.passwordErr = "パスワードは8文字以上で設定してください";
+      errFlg = true;
+    } else if (registerInfo.password && registerInfo.passConf && registerInfo.password != registerInfo.passConf) {
+      errMsg.passwordErr = "パスワードの入力値が異なります";
+      errFlg = true;
+    } else {
+      errMsg.passwordErr = "";
+    }
+
+    if (!registerInfo.passConf) {
+      errMsg.passConfErr = "確認用パスワードを入力してください";
+      errFlg = true;
+    } else if (registerInfo.passConf.length < 8) {
+      errMsg.passConfErr = "パスワードは8文字以上で設定してください";
+      errFlg = true;
+    } else if (registerInfo.password && registerInfo.passConf && registerInfo.password != registerInfo.passConf) {
+      errMsg.passConfErr = "パスワードの入力値が異なります";
+      errFlg = true;
+    } else {
+      errMsg.passConfErr = "";
+    }
+
+    var data = Object.assign({}, errMsg);
+    setErrMsg(data);
+    return errFlg;
+  };
+
+  var confirmBtnFunc = function confirmBtnFunc() {
+    if (validate()) {
+      return;
+    }
+
+    setInputChecker(1);
+    navigate("/register/confirm");
+  };
+
+  var modifyBtnFunc = function modifyBtnFunc() {
+    navigate(-1);
+  };
+
+  var inputChange = function inputChange(event) {
+    var key = event.target.name;
+    var value = event.target.value;
+    registerInfo[key] = value;
+    var data = Object.assign({}, registerInfo);
+    setRegisterInfo(data);
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: classes.registerPageContainer
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Outlet, {
     context: {
-      registerInfo: registerInfo
+      registerInfo: registerInfo,
+      errMsg: errMsg,
+      inputChange: inputChange,
+      modifyBtnFunc: modifyBtnFunc,
+      confirmBtnFunc: confirmBtnFunc
     }
   }));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RegisterPage);
-var useRegisterInfo = function useRegisterInfo() {
+var useRegister = function useRegister() {
   return (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useOutletContext)();
 };
 
