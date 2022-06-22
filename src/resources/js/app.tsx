@@ -15,12 +15,12 @@
  import React from 'react';
  import ReactDOM from 'react-dom';
  import { BrowserRouter, Route ,Routes} from "react-router-dom";
+ import { ThemeProvider } from 'styled-components'
  import AppRoutes from "./AppRoutes";
  import './app.css'
  import Content from "./components/Content"
  import Example from "./pages/Example"
  import Container from './styles/Container'
- import { ThemeProvider } from 'styled-components'
  import useDarkMode from './hooks/useDarkMode'
  import { lightTheme, darkTheme } from './styles/theme'
  import ThemeButton from './components/ThemeButton'
@@ -35,26 +35,14 @@
     // immediately switching, creating a flash, to another based on user
     // preference
     if (!isThemeSet) return <div />
-    
     return (
-    <ThemeProvider theme={themeMode}>
-     <GlobalStyle />
-     <FlashProvider>
-      <Background>
-        <Container>
-
-            <ThemeButton
-              theme={theme}
-              toggleTheme={toggleTheme}
-              className="mb-8"
-            />
-            <Content>
+        
+        <ThemeProvider theme={themeMode}>
+            <FlashProvider>
                 <AppRoutes />
-            </Content>
-        </Container>
-      </Background>
-     </FlashProvider>
-    </ThemeProvider>
+            </FlashProvider>
+        </ThemeProvider>
+       
      );
 };
  
