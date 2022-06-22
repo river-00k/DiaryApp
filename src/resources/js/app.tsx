@@ -15,7 +15,7 @@
  import React from 'react';
  import ReactDOM from 'react-dom';
  import { BrowserRouter, Route ,Routes} from "react-router-dom";
- import DiaryRoutes from "./DiaryRoutes";
+ import AppRoutes from "./AppRoutes";
  import './app.css'
  import Content from "./components/Content"
  import Example from "./pages/Example"
@@ -49,7 +49,7 @@
               className="mb-8"
             />
             <Content>
-                <DiaryRoutes />
+                <AppRoutes />
             </Content>
         </Container>
       </Background>
