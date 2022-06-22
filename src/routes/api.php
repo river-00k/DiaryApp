@@ -18,6 +18,7 @@ Route::group(['middleware' => 'api'], function(){
 
 
     Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
+    Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
     Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout');
     Route::get('loginCheck', 'App\Http\Controllers\Auth\LoginController@loginCheck');
     Route::post('requestCheck', 'App\Http\Controllers\Auth\LoginController@requestCheck');

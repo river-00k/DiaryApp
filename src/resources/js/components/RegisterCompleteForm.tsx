@@ -19,14 +19,14 @@ const useSytles = makeStyles((theme:Theme) => createStyles({
         display:"flex",
         flexDirection:"column",
         justifyContent:"space-evenly",
+        // height:"450px", 
         width: "400px",
         "& p":{
             marginTop:"25px",
             marginBottom:"15px",
             textAlign:"center",
             color:"red",
-            fontSize:"15px"
-            
+            fontSize:"15px"     
         },
         "& table":{
             margin:"20px",
@@ -49,19 +49,13 @@ const useSytles = makeStyles((theme:Theme) => createStyles({
     
 }))
 
-const RegisterConfirmForm = () => {
+const RegisterCompleteForm = () => {
 
     const classes = useSytles()
 
-    const {registerInfo, modifyBtnFunc, registerBtnFunc} = useRegister()
+    const {registerInfo, completeBtnFunc} = useRegister()
 
     const userName = registerInfo.lastName+registerInfo.firstName
-
-    const registerData: RegisterData = {
-        name: userName,
-        email: registerInfo.mail,
-        password: registerInfo.password
-    }
 
     return (
         <div className={classes.registerContainer}>
@@ -83,14 +77,12 @@ const RegisterConfirmForm = () => {
                             <td>{registerInfo.password}</td>
                         </tr>
                     </table>
-                    <p>上記の内容でお間違いないかご確認ください</p>
-                    <Button className={classes.button} variant="contained" color="secondary" onClick={modifyBtnFunc}>修正する</Button>
-                    <Button className={classes.button} variant="contained" color="primary" onClick={()=>registerBtnFunc(registerData)}>登録する</Button>
-
+                    <p>お客様情報の登録が完了しました</p>
+                    <Button className={classes.button}  variant="contained" color="primary" onClick={completeBtnFunc}>ログイン画面に戻る</Button>
                 </div>
             </form>
         </div>
     )
 }
 
-export default RegisterConfirmForm
+export default RegisterCompleteForm

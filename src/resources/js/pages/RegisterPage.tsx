@@ -1,6 +1,7 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { Navigate, Outlet, useNavigate, useOutletContext } from 'react-router-dom'
+import { useAuth } from '../auth/AuthContext'
 import Header from '../components/Header'
 import RegisterForm from '../components/RegisterInputForm'
 
@@ -20,11 +21,14 @@ type ContextType = {
     inputChange: (event: React.ChangeEvent<HTMLInputElement>) => {}
     confirmBtnFunc: () => {} 
     modifyBtnFunc: () => {}
+    registerBtnFunc: (registerData: RegisterData) => {}
+    completeBtnFunc: () => {}
 }
 
 const RegisterPage = () => {
   const classes = useStyles()
   const navigate = useNavigate()
+  const auth = useAuth()
 
   const [registerInfo, setRegisterInfo] = useState<RegisterInputData>({firstName:"", lastName:"", mail:"", password:"", passConf:""})
   
@@ -95,18 +99,37 @@ const RegisterPage = () => {
     setErrMsg(data)
 
     return errFlg
-}
+  }
 
-const confirmBtnFunc = () => {
-    if(validate()) {return}
-    setInputChecker(1)
-    navigate("/register/confirm") 
+  //入力画面で確認ボタン押下時の処理
+  const confirmBtnFunc = () => {
+      if(validate()) {return}
+      setInputChecker(1)
+      navigate("/register/confirm") 
 
-}
+  }
 
-const modifyBtnFunc = () => {
-   navigate(-1)
-}
+  //確認画面で修正ボタン押下時の処理
+  const modifyBtnFunc = () => {
+    navigate(-1)
+  }
+
+  //確認画面で登録ボタン押下時の処理
+  const registerBtnFunc = (registerData: RegisterData) => {
+    auth?.register(registerData)
+      .then(() => {
+        navigate('/register/complete')
+      })
+      .catch((err)=>{
+        console.log('ユーザー登録に失敗しました')
+      })
+
+  }
+
+  //完了画面でログイン画面へ戻るボタン押下時の処理
+  const completeBtnFunc = () => {
+    navigate("/login")
+  }
 
   const inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const key = event.target.name
@@ -114,12 +137,12 @@ const modifyBtnFunc = () => {
     registerInfo[key] = value
     const data = Object.assign({}, registerInfo)
     setRegisterInfo(data)
-}
+  }
 
   return (
     <div className={classes.registerPageContainer}>
         <Header/>
-        <Outlet context={{registerInfo, errMsg ,inputChange, modifyBtnFunc, confirmBtnFunc}}/>
+        <Outlet context={{registerInfo, errMsg ,inputChange, modifyBtnFunc, confirmBtnFunc, registerBtnFunc, completeBtnFunc}}/>
     </div>
   )
 }

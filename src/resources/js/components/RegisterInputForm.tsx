@@ -53,7 +53,7 @@ const useSytles = makeStyles((theme:Theme) => createStyles({
     
 }))
 
-const RegisterForm= () => {
+const RegisterInputForm= () => {
 
     const classes = useSytles()
 
@@ -109,4 +109,4 @@ const RegisterForm= () => {
     )
 }
 
-export default RegisterForm
+export default RegisterInputForm

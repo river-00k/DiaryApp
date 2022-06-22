@@ -2,7 +2,7 @@ import { Theme } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import React from 'react';
 import CountDownTimer from '../components/CountDownTimer';
-import LogoutButton from '../components/LogoutButton';
+
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     container: {
@@ -26,7 +26,6 @@ const Example = () => {
                 <div className="card-header">Example</div>
 
                 <div className="card-body">Hello World!</div>
-                <LogoutButton/>
             </div>
         </div>
 

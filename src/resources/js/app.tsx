@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import RegisterInputForm from './components/RegisterInputForm'
 import RegisterConfirmForm from './components/RegisterConfirmForm'
+import RegisterCompleteForm from './components/RegisterCompleteForm'
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
                     <Route path="/register" element ={< RegisterPage/>} >
                         <Route path="input" element={<RegisterInputForm/>}/>
                         <Route path="confirm" element={<RegisterConfirmForm/>}/>
+                        <Route path="complete" element={<RegisterCompleteForm/>}/>
                     </Route>
                     <Route path="/mypage" element={<ProtectedRoute/>}>
                         <Route path="example" element ={< Example/>} />

@@ -48,11 +48,5 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
         return response()->json([],200);
     } 
-
-    public function requestCheck(Request $request){
-        $mail = $request->input('email');
-        $password  = $request->input('password');
-        return response()->json($password, 200);
-    }
     
 }

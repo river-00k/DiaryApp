@@ -10,6 +10,7 @@ type Props = {
 type AuthProps = {
     user: User | null,
     login: (loginData: LoginData) => Promise<void>
+    register: (registerData: RegisterData) => Promise<void>
     logout: () => Promise<void>
 }
 
@@ -21,7 +22,7 @@ export const AuthProvider = ({children}:Props):ReactElement => {
     const [loading, setLoading] = useState<boolean>(true)
     const [user, setUser] = useState<User | null>(null)
 
-    //ログイン関数
+    //ログイン関数・Promise型で返却したいため、async, awaitを利用する
     const login = async(loginData:LoginData)=> {
         try{
             const res = await axios.post('/api/login', loginData)
@@ -32,6 +33,17 @@ export const AuthProvider = ({children}:Props):ReactElement => {
         }
     }
 
+    //ユーザー登録関数・Promise型で返却する
+    const register = async(registerData:RegisterData)=>{
+        try{
+            await axios.post('/api/register', registerData)
+        }catch(error){
+            throw error
+        }
+        
+    }
+    
+    //ログアウト関数
     const logout = async() => {
 
         try{
@@ -60,6 +72,7 @@ export const AuthProvider = ({children}:Props):ReactElement => {
     const value: AuthProps = {
         user,
         login,
+        register,
         logout
     }
 
