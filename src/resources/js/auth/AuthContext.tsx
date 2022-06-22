@@ -27,7 +27,7 @@ export const AuthProvider = ({children}:Props):ReactElement => {
         try{
             const res = await axios.post('/api/login', loginData)
             setUser(res.data)
-            navigate("/mypage/example")
+            navigate("/mypage/diary/home")
         }catch(error){
             throw error
         }

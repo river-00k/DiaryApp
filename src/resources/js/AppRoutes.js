@@ -4,6 +4,8 @@ import Products from './components/Products';
 import sampleData from './sample-data';
 import useHistory from './hooks/useHistory';
 import NotFound from './components/NotFound';
+
+import { ThemeProvider } from 'styled-components'
 import { AuthProvider } from './auth/AuthContext';
 import Form from './components/Form'
 import EditForm from './components/EditForm';
@@ -14,6 +16,7 @@ import RegisterPage from './pages/RegisterPage';
 import RegisterInputForm from './components/RegisterInputForm'
 import RegisterConfirmForm from './components/RegisterConfirmForm'
 import RegisterCompleteForm from './components/RegisterCompleteForm'
+import DiaryPage from './pages/DiaryPage'
 
 const ProductNav = () => {
     const { pathname } = useLocation();
@@ -62,6 +65,7 @@ const AppRoutes = () =>{
     },
     [getCurrentProducts, updateHistory]
   );
+    
 
     return (
     <BrowserRouter>
@@ -75,18 +79,14 @@ const AppRoutes = () =>{
               <Route path="complete" element={<RegisterCompleteForm/>}/>
           </Route>
           <Route path="/mypage" element={<ProtectedRoute/>}>
-            <Route index element={<Products products={getCurrentProducts([])} removeProduct={removeProduct} />} />
-            <Route path="product/new" element={<Form addProduct={addProduct} />} />
-            <Route path="product/edit/:id" element={<EditForm products={getCurrentProducts([])} editProduct={editProduct}/>} />
+            <Route path="diary" element={<DiaryPage/>}>
+              <Route path="home" element={<Products products={getCurrentProducts([])} removeProduct={removeProduct} />} />
+              <Route path="product/new" element={<Form addProduct={addProduct} />} />
+              <Route path="product/edit/:id" element={<EditForm products={getCurrentProducts([])} editProduct={editProduct}/>} />
+            </Route>
             <Route path="example" element ={< Example/>} />
           </Route>
       </Routes>
-    {/* <ProductNav />
-        <Routes>
-          <Route index element={<Products products={getCurrentProducts([])} removeProduct={removeProduct} />} />
-          <Route path="/product/new" element={<Form addProduct={addProduct} />} />
-          <Route path="/product/edit/:id" element={<EditForm products={getCurrentProducts([])} editProduct={editProduct}/>} />
-        </Routes> */}
       </AuthProvider>
     </BrowserRouter>
     );
