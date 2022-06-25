@@ -4,6 +4,7 @@ import { convertFromRaw } from 'draft-js';
 import { stateToHTML } from 'draft-js-export-html';
 import useCustomEditorStyles from '../hooks/useCustomEditorStyles';
 import Button from './Button';
+import { useDiary } from '../pages/DiaryPage';
 
 const parseRichText = (content, inlineStyles) => {
   const contentState = content.blocks ? convertFromRaw(content) : content;
@@ -117,8 +118,8 @@ const Item = styled.li`
   }
 `;
 
-const Products = props => {
-  const { products, removeProduct } = props;
+const Products = () => {
+  const { products, removeProduct } = useDiary();
   const { textColorStyles, getCustomSyleMapInstructions } = useCustomEditorStyles();
   const inlineStyles = getCustomSyleMapInstructions(cssProps => ({ style: cssProps }))(
     textColorStyles
