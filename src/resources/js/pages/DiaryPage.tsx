@@ -63,8 +63,7 @@
     
     return (
         <>
-        <ThemeProvider theme={themeMode}>
-            <FlashProvider>
+
                 <GlobalStyle />
                 <Background>
                     <Container>
@@ -78,8 +77,7 @@
                         </Content>
                     </Container>
                 </Background>
-            </FlashProvider>
-        </ThemeProvider>
+        
       </>
      );
 };
