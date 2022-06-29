@@ -7,6 +7,7 @@ import { EditorState, ContentState, convertFromRaw } from 'draft-js';
 import nprogress from 'nprogress';
 import Button from './Button';
 import RichTextArea from './RichTextArea';
+import { useDiary } from '../pages/DiaryPage';
 
 const NUMBER_OF_IMAGES = 4;
 const IMAGE_CONTAINER_CLASS = 'image-container';
@@ -159,8 +160,8 @@ const FocusOnError = props => {
 };
 
 // pass in id
-const Form = props => {
-  const { addProduct, product, editProduct } = props;
+const Form = () => {
+  const { addProduct, product, editProduct } = useDiary();
   const navigate = useNavigate();
   const [imageOptions, setImageOptions] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
