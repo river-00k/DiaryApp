@@ -16327,12 +16327,24 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _AppRoutes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppRoutes */ "./resources/js/AppRoutes.js");
-/* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.css */ "./resources/js/app.css");
-/* harmony import */ var _hooks_useDarkMode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./hooks/useDarkMode */ "./resources/js/hooks/useDarkMode.ts");
-/* harmony import */ var _styles_theme__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/theme */ "./resources/js/styles/theme.js");
-/* harmony import */ var _components_FlashContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/FlashContext */ "./resources/js/components/FlashContext.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.css */ "./resources/js/app.css");
+/* harmony import */ var _styles_theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/theme */ "./resources/js/styles/theme.js");
+/* harmony import */ var _components_FlashContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FlashContext */ "./resources/js/components/FlashContext.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth/AuthContext */ "./resources/js/auth/AuthContext.tsx");
+/* harmony import */ var _pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/LoginPage */ "./resources/js/pages/LoginPage.tsx");
+/* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
+/* harmony import */ var _components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/RegisterInputForm */ "./resources/js/components/RegisterInputForm.tsx");
+/* harmony import */ var _components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/RegisterConfirmForm */ "./resources/js/components/RegisterConfirmForm.tsx");
+/* harmony import */ var _components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/RegisterCompleteForm */ "./resources/js/components/RegisterCompleteForm.tsx");
+/* harmony import */ var _auth_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./auth/ProtectedRoute */ "./resources/js/auth/ProtectedRoute.tsx");
+/* harmony import */ var _pages_DiaryPage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/DiaryPage */ "./resources/js/pages/DiaryPage.tsx");
+/* harmony import */ var _components_Products__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Products */ "./resources/js/components/Products.js");
+/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
+/* harmony import */ var _components_EditForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/EditForm */ "./resources/js/components/EditForm.js");
+/* harmony import */ var _pages_Example__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/Example */ "./resources/js/pages/Example.tsx");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -16352,19 +16364,56 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- //import Home from './pages/Home';
+
+
+
+
+
+
+
+
+
+
+
+
 
 var App = function App() {
-  var _a = (0,_hooks_useDarkMode__WEBPACK_IMPORTED_MODULE_4__["default"])(),
-      theme = _a.theme,
-      toggleTheme = _a.toggleTheme,
-      isThemeSet = _a.isThemeSet;
-
-  var themeMode = theme === 'light' ? _styles_theme__WEBPACK_IMPORTED_MODULE_5__.lightTheme : _styles_theme__WEBPACK_IMPORTED_MODULE_5__.darkTheme;
-  if (!isThemeSet) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_7__.ThemeProvider, {
-    theme: themeMode
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_6__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AppRoutes__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_17__.ThemeProvider, {
+    theme: _styles_theme__WEBPACK_IMPORTED_MODULE_3__.lightTheme
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_4__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "/login",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "/register",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__["default"], null)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "input",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_8__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "confirm",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_9__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "complete",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_10__["default"], null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "/mypage",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_auth_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__["default"], null)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "diary",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_12__["default"], null)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "home",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Products__WEBPACK_IMPORTED_MODULE_13__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "product/new",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Form__WEBPACK_IMPORTED_MODULE_14__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "product/edit/:id",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EditForm__WEBPACK_IMPORTED_MODULE_15__["default"], null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    path: "example",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Example__WEBPACK_IMPORTED_MODULE_16__["default"], null)
+  })))))));
 };
 
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), document.getElementById("app"));
@@ -17296,72 +17345,6 @@ var RegisterInputForm = function RegisterInputForm() {
 
 /***/ }),
 
-/***/ "./resources/js/hooks/useDarkMode.ts":
-/*!*******************************************!*\
-  !*** ./resources/js/hooks/useDarkMode.ts ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var THEME = 'theme';
-
-var useDarkMode = function useDarkMode() {
-  var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('light'),
-      theme = _a[0],
-      setTheme = _a[1];
-
-  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      isThemeSet = _b[0],
-      setIsThemeSet = _b[1];
-
-  var setMode = function setMode(mode) {
-    localStorage.setItem(THEME, mode);
-    setTheme(mode);
-
-    if (mode === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
-
-  var toggleTheme = function toggleTheme() {
-    if (theme === 'light') {
-      setMode('dark');
-    } else {
-      setMode('light');
-    }
-  };
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var localTheme = localStorage.getItem(THEME);
-    var osPrefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (osPrefersDark && !localTheme || localTheme === 'dark') {
-      setMode('dark');
-    } else {
-      setMode('light');
-    }
-
-    setIsThemeSet(true);
-  }, []);
-  return {
-    theme: theme,
-    toggleTheme: toggleTheme,
-    isThemeSet: isThemeSet
-  };
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useDarkMode);
-
-/***/ }),
-
 /***/ "./resources/js/layout/Background.tsx":
 /*!********************************************!*\
   !*** ./resources/js/layout/Background.tsx ***!
@@ -17509,6 +17492,51 @@ var DiaryPage = function DiaryPage() {
 var useDiary = function useDiary() {
   return (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useOutletContext)();
 };
+
+/***/ }),
+
+/***/ "./resources/js/pages/Example.tsx":
+/*!****************************************!*\
+  !*** ./resources/js/pages/Example.tsx ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
+/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/createStyles/createStyles.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_1__["default"])(function (theme) {
+  return (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    container: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      height: "100vh"
+    }
+  });
+});
+
+var Example = function Example() {
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: classes.container
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "card-header"
+  }, "Example"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "card-body"
+  }, "Hello World!")));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Example);
 
 /***/ }),
 
@@ -17812,107 +17840,6 @@ var RegisterPage = function RegisterPage() {
 var useRegister = function useRegister() {
   return (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useOutletContext)();
 };
-
-/***/ }),
-
-/***/ "./resources/js/AppRoutes.js":
-/*!***********************************!*\
-  !*** ./resources/js/AppRoutes.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _components_Products__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Products */ "./resources/js/components/Products.js");
-/* harmony import */ var _sample_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sample-data */ "./resources/js/sample-data.js");
-/* harmony import */ var _hooks_useHistory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hooks/useHistory */ "./resources/js/hooks/useHistory.js");
-/* harmony import */ var _components_NotFound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/NotFound */ "./resources/js/components/NotFound.js");
-/* harmony import */ var _auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth/AuthContext */ "./resources/js/auth/AuthContext.tsx");
-/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
-/* harmony import */ var _components_EditForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/EditForm */ "./resources/js/components/EditForm.js");
-/* harmony import */ var _auth_ProtectedRoute__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./auth/ProtectedRoute */ "./resources/js/auth/ProtectedRoute.tsx");
-/* harmony import */ var _pages_Example__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/Example */ "./resources/js/pages/Example.js");
-/* harmony import */ var _pages_LoginPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/LoginPage */ "./resources/js/pages/LoginPage.tsx");
-/* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
-/* harmony import */ var _components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/RegisterInputForm */ "./resources/js/components/RegisterInputForm.tsx");
-/* harmony import */ var _components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/RegisterConfirmForm */ "./resources/js/components/RegisterConfirmForm.tsx");
-/* harmony import */ var _components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/RegisterCompleteForm */ "./resources/js/components/RegisterCompleteForm.tsx");
-/* harmony import */ var _pages_DiaryPage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/DiaryPage */ "./resources/js/pages/DiaryPage.tsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var AppRoutes = function AppRoutes() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Routes, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-          path: "/login",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_pages_LoginPage__WEBPACK_IMPORTED_MODULE_10__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-          path: "/register",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_pages_RegisterPage__WEBPACK_IMPORTED_MODULE_11__["default"], {}),
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-            path: "input",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-            path: "confirm",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_13__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-            path: "complete",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_14__["default"], {})
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-          path: "/mypage",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_auth_ProtectedRoute__WEBPACK_IMPORTED_MODULE_8__["default"], {}),
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-            path: "diary",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_15__["default"], {}),
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-              path: "home",
-              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Products__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-              path: "product/new",
-              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Form__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-              path: "product/edit/:id",
-              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_EditForm__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-            path: "example",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_pages_Example__WEBPACK_IMPORTED_MODULE_9__["default"], {})
-          })]
-        })]
-      })
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AppRoutes);
 
 /***/ }),
 
@@ -19288,49 +19215,6 @@ var useHistory = function useHistory(initialHistory) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useHistory);
-
-/***/ }),
-
-/***/ "./resources/js/pages/Example.js":
-/*!***************************************!*\
-  !*** ./resources/js/pages/Example.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-function Example() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "row justify-content-center",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "col-md-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "card",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "card-header",
-            children: "Example"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "card-body",
-            children: "Im an example component!"
-          })]
-        })
-      })
-    })
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Example);
 
 /***/ }),
 

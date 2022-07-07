@@ -5,9 +5,6 @@
  import Content from "../components/Content"
  import useHistory from '../hooks/useHistory';
  import Container from '../styles/Container'
- import useDarkMode from '../hooks/useDarkMode'
- import { lightTheme, darkTheme } from '../styles/theme'
- import ThemeButton from '../components/ThemeButton'
  import GlobalStyle from '../styles/GlobalStyle'
  import Background from '../layout/Background'
  //import Home from './pages/Home';

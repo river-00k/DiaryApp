@@ -12,31 +12,52 @@
   * or customize the JavaScript scaffolding to fit your unique needs.
   */
  
- import React from 'react';
- import ReactDOM from 'react-dom';
- import { BrowserRouter, Route ,Routes} from "react-router-dom";
- import { ThemeProvider } from 'styled-components'
- import AppRoutes from "./AppRoutes";
- import './app.css'
- import Content from "./components/Content"
- import Example from "./pages/Example"
- import Container from './styles/Container'
- import useDarkMode from './hooks/useDarkMode'
- import { lightTheme, darkTheme } from './styles/theme'
- import ThemeButton from './components/ThemeButton'
- import GlobalStyle from './styles/GlobalStyle'
- import Background from './layout/Background'
- import { FlashProvider } from "./components/FlashContext";
- //import Home from './pages/Home';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ThemeProvider } from 'styled-components'
+import './app.css'
+import { lightTheme } from './styles/theme'
+import { FlashProvider } from "./components/FlashContext";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './auth/AuthContext';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import RegisterInputForm from './components/RegisterInputForm';
+import RegisterConfirmForm from './components/RegisterConfirmForm';
+import RegisterCompleteForm from './components/RegisterCompleteForm';
+import ProtectedRoute from './auth/ProtectedRoute';
+import DiaryPage from './pages/DiaryPage';
+import Products from './components/Products';
+import Form from './components/Form'
+import EditForm from './components/EditForm';
+import Example from './pages/Example';
+
+
  const App = () => {
-    const { theme, toggleTheme, isThemeSet } = useDarkMode()
-    const themeMode = theme === 'light' ? lightTheme : darkTheme
-    if (!isThemeSet) return <div />
     return (
         
-        <ThemeProvider theme={themeMode}>
+        <ThemeProvider theme={lightTheme}>
             <FlashProvider>
-                <AppRoutes />
+            <   BrowserRouter>
+                    <AuthProvider>
+                        <Routes>
+                            <Route path="/login" element ={< LoginPage/>} />
+                            <Route path="/register" element ={< RegisterPage/>} >
+                                <Route path="input" element={<RegisterInputForm/>}/>
+                                <Route path="confirm" element={<RegisterConfirmForm/>}/>
+                                <Route path="complete" element={<RegisterCompleteForm/>}/>
+                            </Route>
+                            <Route path="/mypage" element={<ProtectedRoute/>}>
+                                <Route path="diary" element={<DiaryPage/>}>
+                                <Route path="home" element={<Products />} />
+                                <Route path="product/new" element={<Form />} />
+                                <Route path="product/edit/:id" element={<EditForm/>} />
+                                </Route>
+                                <Route path="example" element ={< Example/>} />
+                            </Route>
+                        </Routes>
+                    </AuthProvider>
+                </BrowserRouter>
             </FlashProvider>
         </ThemeProvider>
        
