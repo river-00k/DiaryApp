@@ -31,9 +31,6 @@
  const App = () => {
     const { theme, toggleTheme, isThemeSet } = useDarkMode()
     const themeMode = theme === 'light' ? lightTheme : darkTheme
-    // wait till theme has been set to prevent initializing with one theme and
-    // immediately switching, creating a flash, to another based on user
-    // preference
     if (!isThemeSet) return <div />
     return (
         

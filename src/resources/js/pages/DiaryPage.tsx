@@ -1,9 +1,5 @@
  import React, { useCallback } from 'react';
- import ReactDOM from 'react-dom';
- import { BrowserRouter, Outlet, Route ,Routes, useOutletContext} from "react-router-dom";
- import AppRoutes from "../AppRoutes";
- import { ThemeProvider } from 'styled-components'
- import { FlashProvider } from "../components/FlashContext";
+ import { Outlet,  useOutletContext} from "react-router-dom";
  import '../app.css'
  import sampleData from '../sample-data';
  import Content from "../components/Content"
@@ -17,12 +13,6 @@
  //import Home from './pages/Home';
 
  const DiaryPage = () => {
-    const { theme, toggleTheme, isThemeSet } = useDarkMode()
-    const themeMode = theme === 'light' ? lightTheme : darkTheme
-    // wait till theme has been set to prevent initializing with one theme and
-    // immediately switching, creating a flash, to another based on user
-    // preference
-    //if (!isThemeSet) return <div />
 
     const { getCurrentHistory: getCurrentProducts, updateHistory } = useHistory([[...sampleData]]);
 
@@ -63,21 +53,14 @@
     
     return (
         <>
-
-                <GlobalStyle />
-                <Background>
-                    <Container>
-                        <ThemeButton
-                        theme={theme}
-                        toggleTheme={toggleTheme}
-                        className="mb-8"
-                        />
-                        <Content>
-                            <Outlet context = {{products, removeProduct, addProduct, editProduct}}/>
-                        </Content>
-                    </Container>
-                </Background>
-        
+            <GlobalStyle />
+            <Background>
+                <Container>
+                    <Content>
+                        <Outlet context = {{products, removeProduct, addProduct, editProduct}}/>
+                    </Content>
+                </Container>
+            </Background>
       </>
      );
 };

@@ -16360,10 +16360,7 @@ var App = function App() {
       toggleTheme = _a.toggleTheme,
       isThemeSet = _a.isThemeSet;
 
-  var themeMode = theme === 'light' ? _styles_theme__WEBPACK_IMPORTED_MODULE_5__.lightTheme : _styles_theme__WEBPACK_IMPORTED_MODULE_5__.darkTheme; // wait till theme has been set to prevent initializing with one theme and
-  // immediately switching, creating a flash, to another based on user
-  // preference
-
+  var themeMode = theme === 'light' ? _styles_theme__WEBPACK_IMPORTED_MODULE_5__.lightTheme : _styles_theme__WEBPACK_IMPORTED_MODULE_5__.darkTheme;
   if (!isThemeSet) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_7__.ThemeProvider, {
     theme: themeMode
@@ -16958,150 +16955,6 @@ var MyPageHeader = function MyPageHeader() {
 
 /***/ }),
 
-/***/ "./resources/js/components/NewButton.tsx":
-/*!***********************************************!*\
-  !*** ./resources/js/components/NewButton.tsx ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PrimaryButton": () => (/* binding */ PrimaryButton),
-/* harmony export */   "SecondaryButton": () => (/* binding */ SecondaryButton),
-/* harmony export */   "TertiaryButton": () => (/* binding */ TertiaryButton),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _lib_classes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/classes */ "./resources/js/lib/classes.ts");
-var __assign = undefined && undefined.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-
-    return t;
-  };
-
-  return __assign.apply(this, arguments);
-};
-
-var __rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
-
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-
-
-
-var ButtonStyleAttributes = {
-  primary: {
-    text: {
-      light: 'white',
-      dark: 'black'
-    },
-    bg: {
-      light: 'blue-500',
-      dark: 'white'
-    },
-    'hover:bg': {
-      light: 'blue-700',
-      dark: 'blue-700'
-    },
-    'focus:ring': {
-      light: 'blue-400',
-      dark: 'blue-400'
-    }
-  },
-  secondary: {
-    bg: {
-      light: 'gray-100',
-      dark: 'gray-100'
-    },
-    'hover:bg': {
-      light: 'gray-100',
-      dark: 'gray-100'
-    },
-    'focus:ring': {
-      light: 'gray-400',
-      dark: 'gray-400'
-    }
-  },
-  inverse: {
-    text: {
-      light: 'white',
-      dark: 'gray-900'
-    },
-    bg: {
-      light: 'gray-900',
-      dark: 'white'
-    }
-  }
-};
-
-function BaseButton(_a) {
-  var children = _a.children,
-      className = _a.className,
-      rounded = _a.rounded,
-      rest = __rest(_a, ["children", "className", "rounded"]);
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", __assign({
-    type: "button",
-    className: (0,_lib_classes__WEBPACK_IMPORTED_MODULE_1__.classes)('px-4', 'py-2', 'font-semibold', rounded ? 'rounded-full' : 'rounded-md', 'focus:outline-none', 'focus:ring-2', 'focus:ring-blue-400', 'focus:ring-opacity-50', 'transition-color', className)
-  }, rest), children);
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BaseButton);
-function PrimaryButton(_a) {
-  var className = _a.className,
-      props = __rest(_a, ["className"]);
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(BaseButton, __assign({
-    className: (0,_lib_classes__WEBPACK_IMPORTED_MODULE_1__.classes)(getTailwindClasses('primary'), className)
-  }, props));
-}
-var SecondaryButton = function SecondaryButton(_a) {
-  var className = _a.className,
-      props = __rest(_a, ["className"]);
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(BaseButton, __assign({
-    className: (0,_lib_classes__WEBPACK_IMPORTED_MODULE_1__.classes)(getTailwindClasses('secondary'), className)
-  }, props));
-};
-var TertiaryButton = function TertiaryButton(_a) {
-  var className = _a.className,
-      props = __rest(_a, ["className"]);
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(BaseButton, __assign({
-    className: (0,_lib_classes__WEBPACK_IMPORTED_MODULE_1__.classes)(getTailwindClasses('inverse'), className)
-  }, props));
-};
-
-function getTailwindClasses(buttonStyle) {
-  var styles = ButtonStyleAttributes[buttonStyle];
-  var classList = Object.entries(styles).map(function (_a) {
-    var prefix = _a[0],
-        _b = _a[1],
-        light = _b.light,
-        dark = _b.dark;
-    return ["".concat(prefix, "-").concat(light), dark && "dark:".concat(prefix, "-").concat(dark)].filter(Boolean).join(' ');
-  });
-  return classList.join(' ');
-}
-
-/***/ }),
-
 /***/ "./resources/js/components/RegisterCompleteForm.tsx":
 /*!**********************************************************!*\
   !*** ./resources/js/components/RegisterCompleteForm.tsx ***!
@@ -17443,37 +17296,6 @@ var RegisterInputForm = function RegisterInputForm() {
 
 /***/ }),
 
-/***/ "./resources/js/components/ThemeButton.tsx":
-/*!*************************************************!*\
-  !*** ./resources/js/components/ThemeButton.tsx ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _NewButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NewButton */ "./resources/js/components/NewButton.tsx");
-
-
-
-function ThemeButton(_a) {
-  var theme = _a.theme,
-      className = _a.className,
-      toggleTheme = _a.toggleTheme;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NewButton__WEBPACK_IMPORTED_MODULE_1__.TertiaryButton, {
-    rounded: true,
-    onClick: toggleTheme,
-    className: className
-  }, theme === 'dark' ? 'Light' : 'Dark', " Mode");
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeButton);
-
-/***/ }),
-
 /***/ "./resources/js/hooks/useDarkMode.ts":
 /*!*******************************************!*\
   !*** ./resources/js/hooks/useDarkMode.ts ***!
@@ -17603,17 +17425,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "useDiary": () => (/* binding */ useDiary)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app.css */ "./resources/js/app.css");
 /* harmony import */ var _sample_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sample-data */ "./resources/js/sample-data.js");
 /* harmony import */ var _components_Content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Content */ "./resources/js/components/Content.js");
 /* harmony import */ var _hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hooks/useHistory */ "./resources/js/hooks/useHistory.js");
 /* harmony import */ var _styles_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/Container */ "./resources/js/styles/Container.js");
-/* harmony import */ var _hooks_useDarkMode__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hooks/useDarkMode */ "./resources/js/hooks/useDarkMode.ts");
-/* harmony import */ var _styles_theme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/theme */ "./resources/js/styles/theme.js");
-/* harmony import */ var _components_ThemeButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/ThemeButton */ "./resources/js/components/ThemeButton.tsx");
-/* harmony import */ var _styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../styles/GlobalStyle */ "./resources/js/styles/GlobalStyle.js");
-/* harmony import */ var _layout_Background__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../layout/Background */ "./resources/js/layout/Background.tsx");
+/* harmony import */ var _styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/GlobalStyle */ "./resources/js/styles/GlobalStyle.js");
+/* harmony import */ var _layout_Background__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../layout/Background */ "./resources/js/layout/Background.tsx");
 var __spreadArray = undefined && undefined.__spreadArray || function (to, from, pack) {
   if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
     if (ar || !(i in from)) {
@@ -17632,25 +17451,12 @@ var __spreadArray = undefined && undefined.__spreadArray || function (to, from, 
 
 
 
-
-
-
  //import Home from './pages/Home';
 
 var DiaryPage = function DiaryPage() {
-  var _a = (0,_hooks_useDarkMode__WEBPACK_IMPORTED_MODULE_6__["default"])(),
-      theme = _a.theme,
-      toggleTheme = _a.toggleTheme,
-      isThemeSet = _a.isThemeSet;
-
-  var themeMode = theme === 'light' ? _styles_theme__WEBPACK_IMPORTED_MODULE_7__.lightTheme : _styles_theme__WEBPACK_IMPORTED_MODULE_7__.darkTheme; // wait till theme has been set to prevent initializing with one theme and
-  // immediately switching, creating a flash, to another based on user
-  // preference
-  //if (!isThemeSet) return <div />
-
-  var _b = (0,_hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__["default"])([__spreadArray([], _sample_data__WEBPACK_IMPORTED_MODULE_2__["default"], true)]),
-      getCurrentProducts = _b.getCurrentHistory,
-      updateHistory = _b.updateHistory;
+  var _a = (0,_hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__["default"])([__spreadArray([], _sample_data__WEBPACK_IMPORTED_MODULE_2__["default"], true)]),
+      getCurrentProducts = _a.getCurrentHistory,
+      updateHistory = _a.updateHistory;
 
   var addProduct = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (product) {
     var title = product.title;
@@ -17689,11 +17495,7 @@ var DiaryPage = function DiaryPage() {
     });
   }, [getCurrentProducts, updateHistory]);
   var products = getCurrentProducts([]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_Background__WEBPACK_IMPORTED_MODULE_10__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_Container__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ThemeButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    theme: theme,
-    toggleTheme: toggleTheme,
-    className: "mb-8"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Content__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Outlet, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_Background__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_Container__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Content__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Outlet, {
     context: {
       products: products,
       removeProduct: removeProduct,
@@ -17705,7 +17507,7 @@ var DiaryPage = function DiaryPage() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DiaryPage);
 var useDiary = function useDiary() {
-  return (0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.useOutletContext)();
+  return (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useOutletContext)();
 };
 
 /***/ }),
