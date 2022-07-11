@@ -17408,7 +17408,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "useDiary": () => (/* binding */ useDiary)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app.css */ "./resources/js/app.css");
 /* harmony import */ var _sample_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sample-data */ "./resources/js/sample-data.js");
 /* harmony import */ var _components_Content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Content */ "./resources/js/components/Content.js");
@@ -17416,6 +17416,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/Container */ "./resources/js/styles/Container.js");
 /* harmony import */ var _styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/GlobalStyle */ "./resources/js/styles/GlobalStyle.js");
 /* harmony import */ var _layout_Background__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../layout/Background */ "./resources/js/layout/Background.tsx");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
 var __spreadArray = undefined && undefined.__spreadArray || function (to, from, pack) {
   if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
     if (ar || !(i in from)) {
@@ -17434,12 +17436,18 @@ var __spreadArray = undefined && undefined.__spreadArray || function (to, from, 
 
 
 
+
  //import Home from './pages/Home';
 
 var DiaryPage = function DiaryPage() {
-  var _a = (0,_hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__["default"])([__spreadArray([], _sample_data__WEBPACK_IMPORTED_MODULE_2__["default"], true)]),
-      getCurrentProducts = _a.getCurrentHistory,
-      updateHistory = _a.updateHistory;
+  var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      diaryData = _a[0],
+      setDiaryData = _a[1]; //const [products, setProducts] = useState([])
+
+
+  var _b = (0,_hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__["default"])([__spreadArray([], _sample_data__WEBPACK_IMPORTED_MODULE_2__["default"], true)]),
+      getCurrentProducts = _b.getCurrentHistory,
+      updateHistory = _b.updateHistory;
 
   var addProduct = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (product) {
     var title = product.title;
@@ -17468,6 +17476,7 @@ var DiaryPage = function DiaryPage() {
     var id = product.id,
         title = product.title;
     var currentListOfProducts = getCurrentProducts();
+    console.log("editProduct");
     var updatedProducts = currentListOfProducts.map(function (item) {
       if (item.id === id) return product;
       return item;
@@ -17478,7 +17487,14 @@ var DiaryPage = function DiaryPage() {
     });
   }, [getCurrentProducts, updateHistory]);
   var products = getCurrentProducts([]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_Background__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_Container__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Content__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Outlet, {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_8___default().get('/api/showDiaryTable').then(function (res) {
+      setDiaryData(res.data); //setProducts([...products,res.data])
+    })["catch"](function () {
+      console.log("faild to get diary table");
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_Background__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_Container__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Content__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Outlet, {
     context: {
       products: products,
       removeProduct: removeProduct,
@@ -17490,7 +17506,7 @@ var DiaryPage = function DiaryPage() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DiaryPage);
 var useDiary = function useDiary() {
-  return (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useOutletContext)();
+  return (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useOutletContext)();
 };
 
 /***/ }),
@@ -18486,7 +18502,7 @@ var Form = function Form() {
           addProduct(allValues);
         }
 
-        navigate("/");
+        navigate("/mypage/diary/home");
       },
       children: function children(props) {
         var _props$values = props.values,
@@ -18716,7 +18732,7 @@ var Products = function Products() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "controls",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          to: "/product/new",
+          to: "/mypage/diary/product/new",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
             children: "+"
           }), " \u65B0\u3057\u3044\u65E5\u8A18"]
@@ -18754,7 +18770,7 @@ var Products = function Products() {
             className: "controls",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
               className: "control",
-              to: "/product/edit/".concat(id),
+              to: "/mypage/diary/product/edit/".concat(id),
               buttonStyle: "muted",
               children: "Edit"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {

@@ -49,9 +49,9 @@ import Example from './pages/Example';
                             </Route>
                             <Route path="/mypage" element={<ProtectedRoute/>}>
                                 <Route path="diary" element={<DiaryPage/>}>
-                                <Route path="home" element={<Products />} />
-                                <Route path="product/new" element={<Form />} />
-                                <Route path="product/edit/:id" element={<EditForm/>} />
+                                    <Route path="home" element={<Products />} />
+                                    <Route path="product/new" element={<Form />} />
+                                    <Route path="product/edit/:id" element={<EditForm/>} />
                                 </Route>
                                 <Route path="example" element ={< Example/>} />
                             </Route>

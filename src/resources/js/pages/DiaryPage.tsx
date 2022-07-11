@@ -1,4 +1,4 @@
- import React, { useCallback } from 'react';
+ import React, { useCallback, useEffect, useState } from 'react';
  import { Outlet,  useOutletContext} from "react-router-dom";
  import '../app.css'
  import sampleData from '../sample-data';
@@ -7,9 +7,12 @@
  import Container from '../styles/Container'
  import GlobalStyle from '../styles/GlobalStyle'
  import Background from '../layout/Background'
+import axios from 'axios';
  //import Home from './pages/Home';
 
  const DiaryPage = () => {
+    const [diaryData, setDiaryData] = useState([])
+    //const [products, setProducts] = useState([])
 
     const { getCurrentHistory: getCurrentProducts, updateHistory } = useHistory([[...sampleData]]);
 
@@ -36,6 +39,7 @@
         product => {
         const { id, title } = product;
         const currentListOfProducts = getCurrentProducts();
+        console.log("editProduct")
         const updatedProducts = currentListOfProducts.map(item => {
             if (item.id === id) return product;
             return item;
@@ -47,7 +51,19 @@
     );
 
     const products = getCurrentProducts([])
+
+    useEffect(()=>{
+        axios.get('/api/showDiaryTable')
+            .then((res)=>{
+                setDiaryData(res.data)
+                //setProducts([...products,res.data])
+            }).catch(()=>{
+                console.log("faild to get diary table")
+            
+            })
+    },[])
     
+
     return (
         <>
             <GlobalStyle />

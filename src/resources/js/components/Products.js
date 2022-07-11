@@ -132,7 +132,7 @@ const Products = () => {
       <header className="section-header">
         <h2 className="heading">All Products</h2>
         <div className="controls">
-          <Button to="/product/new">
+          <Button to="/mypage/diary/product/new">
             <b>+</b> 新しい日記
           </Button>
         </div>
@@ -166,7 +166,7 @@ const Products = () => {
                   />
                 )}
                 <div className="controls">
-                  <Button className="control" to={`/product/edit/${id}`} buttonStyle="muted">
+                  <Button className="control" to={`/mypage/diary/product/edit/${id}`} buttonStyle="muted">
                     Edit
                   </Button>
                   <Button

@@ -204,6 +204,7 @@ const Form = () => {
       });
   }, [imageOptions, initialImageUrl]);
 
+
   return (
     <>
       <Formik
@@ -232,7 +233,7 @@ const Form = () => {
             addProduct(allValues);
           }
 
-          navigate("/");
+          navigate("/mypage/diary/home");
         }}
       >
         {props => {

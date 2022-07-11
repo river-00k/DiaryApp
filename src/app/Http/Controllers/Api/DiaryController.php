@@ -60,6 +60,20 @@ class DiaryController extends Controller
     public function showTable()
     {
         $diaries = Diary::all();
+        return response()->json($diaries[0], 200);
+    }
+    
+
+    //テーブルの全てのデータを表示する(開発確認用)
+    public function showTable2()
+    {
+        $res = Diary::all();
+        $diaries["description"] = $res[0]['description'];
+        var_dump(json_decode($res[0]['description']));
+        //echo json_decode($res[0]['description']);
+        
+        //echo $diaries["description"]."\n\n\n";
+
         return response()->json($diaries, 200);
     }
 
