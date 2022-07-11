@@ -44,6 +44,48 @@ class DiariesTableSeeder extends Seeder
             ]),
             'image_url'=>'https://source.unsplash.com/IuLgi9PWETU/150x150'           
         ]);
+        Diary::create([
+            'id'=>'1583209740643',
+            'user_id'=>'1',
+            'date'=>'2022-07-09',
+            'title'=>'Sweet Kicks',
+            'description'=>json_encode([
+                'blocks'=>[
+                    [
+                        'key'=> '6eojn',
+                        'text'=>
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+                        'type'=> 'unstyled',
+                        'depth'=> 0,
+                        'inlineStyleRanges'=> [],
+                        'entityRanges'=> [],
+                        'data'=> [],
+                    ],
+                    [
+                        'key'=> 'f29s7',
+                        'text'=>
+                            'Nam semper lacus non consequat consequat.',
+                        'type'=> 'unordered-list-item',
+                        'depth'=> 0,
+                        'inlineStyleRanges'=> [],
+                        'entityRanges'=> [],
+                        'data'=> [],
+                    ],
+                    [
+                        'key'=> 'amtsm',
+                        'text'=>
+                            'Proin augue urna, tristique dictum molestie ac, pellentesque ut augue.',
+                        'type'=> 'unordered-list-item',
+                        'depth'=> 0,
+                        'inlineStyleRanges'=> [],
+                        'entityRanges'=> [],
+                        'data'=> [],
+                    ],
+                ],
+                'entityMap'=>[],
+            ]),
+            'image_url'=>'https://source.unsplash.com/-z-X3MJ1VOI/150x150'           
+        ]);
         
         
     }
