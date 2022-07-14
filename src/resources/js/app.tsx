@@ -31,7 +31,6 @@ import Products from './components/Products';
 import Form from './components/Form'
 import EditForm from './components/EditForm';
 import Example from './pages/Example';
-import { DiaryProvider } from './contexts/DiaryContext';
 
 
  const App = () => {
@@ -41,24 +40,22 @@ import { DiaryProvider } from './contexts/DiaryContext';
             <FlashProvider>
             <   BrowserRouter>
                     <AuthProvider>
-                        <DiaryProvider>
-                            <Routes>
-                                <Route path="/login" element ={< LoginPage/>} />
-                                <Route path="/register" element ={< RegisterPage/>} >
-                                    <Route path="input" element={<RegisterInputForm/>}/>
-                                    <Route path="confirm" element={<RegisterConfirmForm/>}/>
-                                    <Route path="complete" element={<RegisterCompleteForm/>}/>
+                        <Routes>
+                            <Route path="/login" element ={< LoginPage/>} />
+                            <Route path="/register" element ={< RegisterPage/>} >
+                                <Route path="input" element={<RegisterInputForm/>}/>
+                                <Route path="confirm" element={<RegisterConfirmForm/>}/>
+                                <Route path="complete" element={<RegisterCompleteForm/>}/>
+                            </Route>
+                            <Route path="/mypage" element={<ProtectedRoute/>}>
+                                <Route path="diary" element={<DiaryPage/>}>
+                                    <Route path="home" element={<Products />} />
+                                    <Route path="product/new" element={<Form />} />
+                                    <Route path="product/edit/:id" element={<EditForm/>} />
                                 </Route>
-                                <Route path="/mypage" element={<ProtectedRoute/>}>
-                                    <Route path="diary" element={<DiaryPage/>}>
-                                        <Route path="home" element={<Products />} />
-                                        <Route path="product/new" element={<Form />} />
-                                        <Route path="product/edit/:id" element={<EditForm/>} />
-                                    </Route>
-                                    <Route path="example" element ={< Example/>} />
-                                </Route>
-                            </Routes>
-                        </DiaryProvider>
+                                <Route path="example" element ={< Example/>} />
+                            </Route>
+                        </Routes>
                     </AuthProvider>
                 </BrowserRouter>
             </FlashProvider>

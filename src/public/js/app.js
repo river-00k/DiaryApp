@@ -16327,12 +16327,12 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.css */ "./resources/js/app.css");
 /* harmony import */ var _styles_theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/theme */ "./resources/js/styles/theme.js");
 /* harmony import */ var _components_FlashContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FlashContext */ "./resources/js/components/FlashContext.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
 /* harmony import */ var _pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/LoginPage */ "./resources/js/pages/LoginPage.tsx");
 /* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
@@ -16345,7 +16345,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
 /* harmony import */ var _components_EditForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/EditForm */ "./resources/js/components/EditForm.js");
 /* harmony import */ var _pages_Example__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/Example */ "./resources/js/pages/Example.tsx");
-/* harmony import */ var _contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./contexts/DiaryContext */ "./resources/js/contexts/DiaryContext.tsx");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -16378,44 +16377,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_18__.ThemeProvider, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_17__.ThemeProvider, {
     theme: _styles_theme__WEBPACK_IMPORTED_MODULE_3__.lightTheme
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_4__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_17__.DiaryProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_4__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "/login",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "/register",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "input",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_8__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "confirm",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_9__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "complete",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_10__["default"], null)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "/mypage",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "diary",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_12__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "home",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Products__WEBPACK_IMPORTED_MODULE_13__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "product/new",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Form__WEBPACK_IMPORTED_MODULE_14__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "product/edit/:id",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EditForm__WEBPACK_IMPORTED_MODULE_15__["default"], null)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "example",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Example__WEBPACK_IMPORTED_MODULE_16__["default"], null)
-  }))))))));
+  })))))));
 };
 
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), document.getElementById("app"));
@@ -17323,15 +17321,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DiaryProvider": () => (/* binding */ DiaryProvider),
 /* harmony export */   "useDiary": () => (/* binding */ useDiary)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-var DiaryContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+
+var DiaryContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)(null);
 var DiaryProvider = function DiaryProvider(_a) {
   var children = _a.children;
 
-  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+  var _b = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       products = _b[0],
       setProducts = _b[1];
+
+  var _c = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+      loading = _c[0],
+      setLoading = _c[1];
 
   var addProduct = function addProduct() {};
 
@@ -17345,12 +17350,21 @@ var DiaryProvider = function DiaryProvider(_a) {
     removeProduct: removeProduct,
     editProduct: editProduct
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(DiaryContext.Provider, {
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/showDiaryTable').then(function (res) {
+      setProducts(res.data);
+      setLoading(false);
+    })["catch"](function () {
+      console.log("faild to get diary table");
+      setLoading(false);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(DiaryContext.Provider, {
     value: value
-  }, children);
+  }, !loading && children);
 };
 var useDiary = function useDiary() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DiaryContext);
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(DiaryContext);
 };
 
 /***/ }),
@@ -17414,32 +17428,16 @@ var classes = function classes() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "useDiary": () => (/* binding */ useDiary)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app.css */ "./resources/js/app.css");
-/* harmony import */ var _sample_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sample-data */ "./resources/js/sample-data.js");
-/* harmony import */ var _components_Content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Content */ "./resources/js/components/Content.js");
-/* harmony import */ var _hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hooks/useHistory */ "./resources/js/hooks/useHistory.js");
-/* harmony import */ var _styles_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/Container */ "./resources/js/styles/Container.js");
-/* harmony import */ var _styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/GlobalStyle */ "./resources/js/styles/GlobalStyle.js");
-/* harmony import */ var _layout_Background__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../layout/Background */ "./resources/js/layout/Background.tsx");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
-var __spreadArray = undefined && undefined.__spreadArray || function (to, from, pack) {
-  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-    if (ar || !(i in from)) {
-      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-      ar[i] = from[i];
-    }
-  }
-  return to.concat(ar || Array.prototype.slice.call(from));
-};
-
-
-
+/* harmony import */ var _components_Content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Content */ "./resources/js/components/Content.js");
+/* harmony import */ var _styles_Container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/Container */ "./resources/js/styles/Container.js");
+/* harmony import */ var _styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/GlobalStyle */ "./resources/js/styles/GlobalStyle.js");
+/* harmony import */ var _layout_Background__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../layout/Background */ "./resources/js/layout/Background.tsx");
+/* harmony import */ var _contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../contexts/DiaryContext */ "./resources/js/contexts/DiaryContext.tsx");
 
 
 
@@ -17450,78 +17448,10 @@ var __spreadArray = undefined && undefined.__spreadArray || function (to, from, 
 
 
 var DiaryPage = function DiaryPage() {
-  var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      products = _a[0],
-      setProducts = _a[1];
-
-  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
-      loading = _b[0],
-      setLoading = _b[1];
-
-  var _c = (0,_hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__["default"])([__spreadArray([], _sample_data__WEBPACK_IMPORTED_MODULE_2__["default"], true)]),
-      getCurrentProducts = _c.getCurrentHistory,
-      updateHistory = _c.updateHistory;
-
-  var addProduct = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (product) {
-    var title = product.title;
-    var currentProducts = getCurrentProducts([]);
-
-    var updatedProducts = __spreadArray([product], currentProducts, true);
-
-    updateHistory({
-      updatedProducts: updatedProducts,
-      flashMessage: "".concat(title, " Added!")
-    });
-  }, [getCurrentProducts, updateHistory]);
-  var removeProduct = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (product) {
-    var id = product.id,
-        title = product.title;
-    var currentListOfProducts = getCurrentProducts();
-    var updatedProducts = currentListOfProducts.filter(function (item) {
-      return item.id !== id;
-    });
-    updateHistory({
-      updatedProducts: updatedProducts,
-      flashMessage: "".concat(title, " Deleted!")
-    });
-  }, [getCurrentProducts, updateHistory]);
-  var editProduct = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (product) {
-    var id = product.id,
-        title = product.title;
-    var currentListOfProducts = getCurrentProducts();
-    console.log("editProduct");
-    var updatedProducts = currentListOfProducts.map(function (item) {
-      if (item.id === id) return product;
-      return item;
-    });
-    updateHistory({
-      updatedProducts: updatedProducts,
-      flashMessage: "".concat(title, " Updated!")
-    });
-  }, [getCurrentProducts, updateHistory]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_8___default().get('/api/showDiaryTable').then(function (res) {
-      setProducts(res.data);
-      setLoading(false);
-    })["catch"](function () {
-      console.log("faild to get diary table");
-      setLoading(false);
-    });
-  }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_Background__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_Container__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Content__WEBPACK_IMPORTED_MODULE_3__["default"], null, !loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Outlet, {
-    context: {
-      products: products,
-      removeProduct: removeProduct,
-      addProduct: addProduct,
-      editProduct: editProduct
-    }
-  })))));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_Background__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_Container__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Content__WEBPACK_IMPORTED_MODULE_2__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_6__.DiaryProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Outlet, null))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DiaryPage);
-var useDiary = function useDiary() {
-  return (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useOutletContext)();
-};
 
 /***/ }),
 
@@ -17714,7 +17644,7 @@ var ProtectedRoute = function ProtectedRoute() {
     });
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MyPageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Outlet, null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MyPageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Outlet, null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProtectedRoute);
@@ -18123,7 +18053,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _pages_DiaryPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/DiaryPage */ "./resources/js/pages/DiaryPage.tsx");
+/* harmony import */ var _contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../contexts/DiaryContext */ "./resources/js/contexts/DiaryContext.tsx");
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Form */ "./resources/js/components/Form.js");
 /* harmony import */ var _NotFound__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NotFound */ "./resources/js/components/NotFound.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -18139,7 +18069,7 @@ var EdifForm = function EdifForm() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
       id = _useParams.id;
 
-  var _useDiary = (0,_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_1__.useDiary)(),
+  var _useDiary = (0,_contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_1__.useDiary)(),
       products = _useDiary.products,
       editProduct = _useDiary.editProduct;
 
@@ -18148,8 +18078,7 @@ var EdifForm = function EdifForm() {
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: product ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      product: product,
-      editProduct: editProduct
+      product: product
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NotFound__WEBPACK_IMPORTED_MODULE_3__["default"], {})
   });
 };
@@ -18314,7 +18243,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Button */ "./resources/js/components/Button.js");
 /* harmony import */ var _RichTextArea__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./RichTextArea */ "./resources/js/components/RichTextArea.js");
-/* harmony import */ var _pages_DiaryPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/DiaryPage */ "./resources/js/pages/DiaryPage.tsx");
+/* harmony import */ var _contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../contexts/DiaryContext */ "./resources/js/contexts/DiaryContext.tsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject, _templateObject2;
 
@@ -18456,10 +18385,11 @@ var FocusOnError = function FocusOnError(props) {
 }; // pass in id
 
 
-var Form = function Form() {
-  var _useDiary = (0,_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_7__.useDiary)(),
+var Form = function Form(props) {
+  var product = props.product;
+
+  var _useDiary = (0,_contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_7__.useDiary)(),
       addProduct = _useDiary.addProduct,
-      product = _useDiary.product,
       editProduct = _useDiary.editProduct;
 
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useNavigate)();
@@ -18705,7 +18635,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var draft_js_export_html__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! draft-js-export-html */ "./node_modules/draft-js-export-html/esm/main.js");
 /* harmony import */ var _hooks_useCustomEditorStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useCustomEditorStyles */ "./resources/js/hooks/useCustomEditorStyles.js");
 /* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Button */ "./resources/js/components/Button.js");
-/* harmony import */ var _pages_DiaryPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/DiaryPage */ "./resources/js/pages/DiaryPage.tsx");
+/* harmony import */ var _contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../contexts/DiaryContext */ "./resources/js/contexts/DiaryContext.tsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject, _templateObject2, _templateObject3;
 
@@ -18758,7 +18688,7 @@ var Item = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].li(_templat
 });
 
 var Products = function Products() {
-  var _useDiary = (0,_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_5__.useDiary)(),
+  var _useDiary = (0,_contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_5__.useDiary)(),
       products = _useDiary.products,
       removeProduct = _useDiary.removeProduct;
 
@@ -19191,179 +19121,6 @@ var useCustomEditorStyles = function useCustomEditorStyles() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useCustomEditorStyles);
-
-/***/ }),
-
-/***/ "./resources/js/hooks/useHistory.js":
-/*!******************************************!*\
-  !*** ./resources/js/hooks/useHistory.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_FlashContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/FlashContext */ "./resources/js/components/FlashContext.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-var useHistory = function useHistory(initialHistory) {
-  var initialHistoryState = initialHistory || [];
-  var initialHistoryPosition = initialHistoryState.length ? initialHistoryState.length - 1 : 0;
-
-  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_components_FlashContext__WEBPACK_IMPORTED_MODULE_1__["default"]),
-      setFlash = _useContext.setFlash;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialHistoryState || []),
-      _useState2 = _slicedToArray(_useState, 2),
-      history = _useState2[0],
-      setHistory = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialHistoryPosition),
-      _useState4 = _slicedToArray(_useState3, 2),
-      historyPosition = _useState4[0],
-      setHistoryProsition = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState6 = _slicedToArray(_useState5, 2),
-      canUndo = _useState6[0],
-      setCanUndo = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      _useState8 = _slicedToArray(_useState7, 2),
-      message = _useState8[0],
-      setMessage = _useState8[1];
-
-  var getCurrentHistory = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (currentHistoryDefault) {
-    return history[historyPosition] || currentHistoryDefault;
-  }, [history, historyPosition]);
-  var undo = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    if (!history.length || !canUndo) return;
-    setHistoryProsition(historyPosition - 1);
-    setCanUndo(false);
-  }, [canUndo, history.length, historyPosition]);
-  var updateHistory = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_ref) {
-    var updatedProducts = _ref.updatedProducts,
-        _ref$enableUndo = _ref.enableUndo,
-        enableUndo = _ref$enableUndo === void 0 ? true : _ref$enableUndo,
-        flashMessage = _ref.flashMessage;
-    var newHistory = history.slice(0, historyPosition + 1);
-    newHistory.push(updatedProducts);
-    setHistory(newHistory);
-    setHistoryProsition(newHistory.length - 1);
-    if (enableUndo) setCanUndo(true);
-    setMessage(flashMessage || 'Success');
-  }, [history, historyPosition]);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (!message) return;
-    setFlash(message, canUndo ? undo : null);
-    setMessage(null);
-  }, [canUndo, message, setFlash, undo]);
-  return {
-    getCurrentHistory: getCurrentHistory,
-    updateHistory: updateHistory
-  };
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useHistory);
-
-/***/ }),
-
-/***/ "./resources/js/sample-data.js":
-/*!*************************************!*\
-  !*** ./resources/js/sample-data.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
-  id: '1583181042969',
-  title: 'Begin Mug',
-  description: {
-    blocks: [{
-      key: '2fit1',
-      text: 'Proin nec est aliquet, malesuada tellus id, ultrices metus. Nam tincidunt odio vitae erat volutpat faucibus. Sed finibus, ex at condimentum laoreet, justo dolor euismod mi, sit amet consectetur ante leo eget metus.',
-      type: 'unstyled',
-      depth: 0,
-      inlineStyleRanges: [{
-        offset: 23,
-        length: 9,
-        style: 'ITALIC'
-      }, {
-        offset: 59,
-        length: 40,
-        style: 'muted'
-      }, {
-        offset: 60,
-        length: 47,
-        style: 'BOLD'
-      }, {
-        offset: 99,
-        length: 8,
-        style: 'danger'
-      }, {
-        offset: 99,
-        length: 8,
-        style: 'UNDERLINE'
-      }],
-      entityRanges: [],
-      data: {}
-    }],
-    entityMap: {}
-  },
-  image_url: 'https://source.unsplash.com/IuLgi9PWETU/150x150'
-}, {
-  id: '1583209740643',
-  title: 'Sweet Kicks',
-  description: {
-    blocks: [{
-      key: '6eojn',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
-      type: 'unstyled',
-      depth: 0,
-      inlineStyleRanges: [],
-      entityRanges: [],
-      data: {}
-    }, {
-      key: 'f29s7',
-      text: 'Nam semper lacus non consequat consequat.',
-      type: 'unordered-list-item',
-      depth: 0,
-      inlineStyleRanges: [],
-      entityRanges: [],
-      data: {}
-    }, {
-      key: 'amtsm',
-      text: 'Proin augue urna, tristique dictum molestie ac, pellentesque ut augue.',
-      type: 'unordered-list-item',
-      depth: 0,
-      inlineStyleRanges: [],
-      entityRanges: [],
-      data: {}
-    }],
-    entityMap: {}
-  },
-  image_url: 'https://source.unsplash.com/-z-X3MJ1VOI/150x150'
-}]);
 
 /***/ }),
 

@@ -11,10 +11,10 @@ const ProtectedRoute = ()=> {
         return <Navigate to="/login" />
     }
     return(
-        <div>
+        <>
             <MyPageHeader/>
             <Outlet />
-        </div>
+        </>
     )
 }
 

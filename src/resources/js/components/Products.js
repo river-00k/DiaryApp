@@ -4,7 +4,7 @@ import { convertFromRaw } from 'draft-js';
 import { stateToHTML } from 'draft-js-export-html';
 import useCustomEditorStyles from '../hooks/useCustomEditorStyles';
 import Button from './Button';
-import { useDiary } from '../pages/DiaryPage';
+import {useDiary} from '../contexts/DiaryContext'
 
 const parseRichText = (content, inlineStyles) => {
   const contentState = content.blocks ? convertFromRaw(content) : content;
