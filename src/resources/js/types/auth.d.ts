@@ -35,3 +35,9 @@ type RegisterErrMsg = {
     passConfErr:string
   } 
 
+  type AuthProps = {
+    user: User | null,
+    login: (loginData: LoginData) => Promise<void>
+    register: (registerData: RegisterData) => Promise<void>
+    logout: () => Promise<void>
+}

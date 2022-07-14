@@ -16327,12 +16327,12 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.css */ "./resources/js/app.css");
 /* harmony import */ var _styles_theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/theme */ "./resources/js/styles/theme.js");
 /* harmony import */ var _components_FlashContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FlashContext */ "./resources/js/components/FlashContext.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
 /* harmony import */ var _pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/LoginPage */ "./resources/js/pages/LoginPage.tsx");
 /* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
@@ -16345,6 +16345,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
 /* harmony import */ var _components_EditForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/EditForm */ "./resources/js/components/EditForm.js");
 /* harmony import */ var _pages_Example__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/Example */ "./resources/js/pages/Example.tsx");
+/* harmony import */ var _contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./contexts/DiaryContext */ "./resources/js/contexts/DiaryContext.tsx");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -16377,43 +16378,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_17__.ThemeProvider, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_18__.ThemeProvider, {
     theme: _styles_theme__WEBPACK_IMPORTED_MODULE_3__.lightTheme
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_4__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_4__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_17__.DiaryProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "/login",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "/register",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "input",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_8__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "confirm",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_9__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "complete",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_10__["default"], null)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "/mypage",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "diary",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_12__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "home",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Products__WEBPACK_IMPORTED_MODULE_13__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "product/new",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Form__WEBPACK_IMPORTED_MODULE_14__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "product/edit/:id",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EditForm__WEBPACK_IMPORTED_MODULE_15__["default"], null)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
     path: "example",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Example__WEBPACK_IMPORTED_MODULE_16__["default"], null)
-  })))))));
+  }))))))));
 };
 
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), document.getElementById("app"));
@@ -17305,6 +17307,50 @@ var AuthProvider = function AuthProvider(_a) {
 };
 var useAuth = function useAuth() {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(AuthContext);
+};
+
+/***/ }),
+
+/***/ "./resources/js/contexts/DiaryContext.tsx":
+/*!************************************************!*\
+  !*** ./resources/js/contexts/DiaryContext.tsx ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DiaryProvider": () => (/* binding */ DiaryProvider),
+/* harmony export */   "useDiary": () => (/* binding */ useDiary)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var DiaryContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+var DiaryProvider = function DiaryProvider(_a) {
+  var children = _a.children;
+
+  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      products = _b[0],
+      setProducts = _b[1];
+
+  var addProduct = function addProduct() {};
+
+  var removeProduct = function removeProduct() {};
+
+  var editProduct = function editProduct() {};
+
+  var value = {
+    products: products,
+    addProduct: addProduct,
+    removeProduct: removeProduct,
+    editProduct: editProduct
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(DiaryContext.Provider, {
+    value: value
+  }, children);
+};
+var useDiary = function useDiary() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DiaryContext);
 };
 
 /***/ }),

@@ -7,14 +7,6 @@ type Props = {
     children: ReactNode
 }
 
-type AuthProps = {
-    user: User | null,
-    login: (loginData: LoginData) => Promise<void>
-    register: (registerData: RegisterData) => Promise<void>
-    logout: () => Promise<void>
-}
-
-
 
 const AuthContext = createContext <AuthProps | null>(null)
 
