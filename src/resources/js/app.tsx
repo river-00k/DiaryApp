@@ -19,13 +19,13 @@ import './app.css'
 import { lightTheme } from './styles/theme'
 import { FlashProvider } from "./components/FlashContext";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { AuthProvider } from './auth/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import RegisterInputForm from './components/RegisterInputForm';
 import RegisterConfirmForm from './components/RegisterConfirmForm';
 import RegisterCompleteForm from './components/RegisterCompleteForm';
-import ProtectedRoute from './auth/ProtectedRoute';
+import ProtectedRoute from './pages/ProtectedRoute';
 import DiaryPage from './pages/DiaryPage';
 import Products from './components/Products';
 import Form from './components/Form'

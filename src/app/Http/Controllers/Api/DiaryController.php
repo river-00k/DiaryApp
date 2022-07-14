@@ -60,7 +60,7 @@ class DiaryController extends Controller
     public function showTable()
     {
         $diaries = Diary::all();
-        return response()->json($diaries[0], 200);
+        return response()->json($diaries, 200);
     }
     
 
@@ -68,8 +68,8 @@ class DiaryController extends Controller
     public function showTable2()
     {
         $res = Diary::all();
-        $diaries["description"] = $res[0]['description'];
-        var_dump(json_decode($res[0]['description']));
+        // $diaries["description"] = $res[0]['description'];
+        // var_dump(json_decode($res[0]['description']));
         //echo json_decode($res[0]['description']);
         
         //echo $diaries["description"]."\n\n\n";

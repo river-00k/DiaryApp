@@ -7,12 +7,12 @@
  import Container from '../styles/Container'
  import GlobalStyle from '../styles/GlobalStyle'
  import Background from '../layout/Background'
-import axios from 'axios';
- //import Home from './pages/Home';
+ import axios from 'axios';
+
 
  const DiaryPage = () => {
-    const [diaryData, setDiaryData] = useState([])
-    //const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState<boolean>(true)
 
     const { getCurrentHistory: getCurrentProducts, updateHistory } = useHistory([[...sampleData]]);
 
@@ -50,16 +50,14 @@ import axios from 'axios';
         [getCurrentProducts, updateHistory]
     );
 
-    const products = getCurrentProducts([])
-
     useEffect(()=>{
         axios.get('/api/showDiaryTable')
             .then((res)=>{
-                setDiaryData(res.data)
-                //setProducts([...products,res.data])
+                setProducts(res.data)
+                setLoading(false)
             }).catch(()=>{
                 console.log("faild to get diary table")
-            
+                setLoading(false)
             })
     },[])
     
@@ -70,7 +68,7 @@ import axios from 'axios';
             <Background>
                 <Container>
                     <Content>
-                        <Outlet context = {{products, removeProduct, addProduct, editProduct}}/>
+                        {!loading && <Outlet context = {{products, removeProduct, addProduct, editProduct}}/> }
                     </Content>
                 </Container>
             </Background>

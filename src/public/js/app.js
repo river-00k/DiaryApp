@@ -16333,13 +16333,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_FlashContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FlashContext */ "./resources/js/components/FlashContext.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth/AuthContext */ "./resources/js/auth/AuthContext.tsx");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
 /* harmony import */ var _pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/LoginPage */ "./resources/js/pages/LoginPage.tsx");
 /* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
 /* harmony import */ var _components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/RegisterInputForm */ "./resources/js/components/RegisterInputForm.tsx");
 /* harmony import */ var _components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/RegisterConfirmForm */ "./resources/js/components/RegisterConfirmForm.tsx");
 /* harmony import */ var _components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/RegisterCompleteForm */ "./resources/js/components/RegisterCompleteForm.tsx");
-/* harmony import */ var _auth_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./auth/ProtectedRoute */ "./resources/js/auth/ProtectedRoute.tsx");
+/* harmony import */ var _pages_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/ProtectedRoute */ "./resources/js/pages/ProtectedRoute.tsx");
 /* harmony import */ var _pages_DiaryPage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/DiaryPage */ "./resources/js/pages/DiaryPage.tsx");
 /* harmony import */ var _components_Products__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Products */ "./resources/js/components/Products.js");
 /* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
@@ -16380,7 +16380,7 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_17__.ThemeProvider, {
     theme: _styles_theme__WEBPACK_IMPORTED_MODULE_3__.lightTheme
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_4__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_4__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "/login",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
@@ -16397,7 +16397,7 @@ var App = function App() {
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_10__["default"], null)
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "/mypage",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_auth_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__["default"], null)
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__["default"], null)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
     path: "diary",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_12__["default"], null)
@@ -16417,346 +16417,6 @@ var App = function App() {
 };
 
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), document.getElementById("app"));
-
-/***/ }),
-
-/***/ "./resources/js/auth/AuthContext.tsx":
-/*!*******************************************!*\
-  !*** ./resources/js/auth/AuthContext.tsx ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AuthProvider": () => (/* binding */ AuthProvider),
-/* harmony export */   "useAuth": () => (/* binding */ useAuth)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
-  function adopt(value) {
-    return value instanceof P ? value : new P(function (resolve) {
-      resolve(value);
-    });
-  }
-
-  return new (P || (P = Promise))(function (resolve, reject) {
-    function fulfilled(value) {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-
-    function rejected(value) {
-      try {
-        step(generator["throw"](value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-
-    function step(result) {
-      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-    }
-
-    step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-};
-
-var __generator = undefined && undefined.__generator || function (thisArg, body) {
-  var _ = {
-    label: 0,
-    sent: function sent() {
-      if (t[0] & 1) throw t[1];
-      return t[1];
-    },
-    trys: [],
-    ops: []
-  },
-      f,
-      y,
-      t,
-      g;
-  return g = {
-    next: verb(0),
-    "throw": verb(1),
-    "return": verb(2)
-  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
-    return this;
-  }), g;
-
-  function verb(n) {
-    return function (v) {
-      return step([n, v]);
-    };
-  }
-
-  function step(op) {
-    if (f) throw new TypeError("Generator is already executing.");
-
-    while (_) {
-      try {
-        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-        if (y = 0, t) op = [op[0] & 2, t.value];
-
-        switch (op[0]) {
-          case 0:
-          case 1:
-            t = op;
-            break;
-
-          case 4:
-            _.label++;
-            return {
-              value: op[1],
-              done: false
-            };
-
-          case 5:
-            _.label++;
-            y = op[1];
-            op = [0];
-            continue;
-
-          case 7:
-            op = _.ops.pop();
-
-            _.trys.pop();
-
-            continue;
-
-          default:
-            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-              _ = 0;
-              continue;
-            }
-
-            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-              _.label = op[1];
-              break;
-            }
-
-            if (op[0] === 6 && _.label < t[1]) {
-              _.label = t[1];
-              t = op;
-              break;
-            }
-
-            if (t && _.label < t[2]) {
-              _.label = t[2];
-
-              _.ops.push(op);
-
-              break;
-            }
-
-            if (t[2]) _.ops.pop();
-
-            _.trys.pop();
-
-            continue;
-        }
-
-        op = body.call(thisArg, _);
-      } catch (e) {
-        op = [6, e];
-        y = 0;
-      } finally {
-        f = t = 0;
-      }
-    }
-
-    if (op[0] & 5) throw op[1];
-    return {
-      value: op[0] ? op[1] : void 0,
-      done: true
-    };
-  }
-};
-
-
-
-
-var AuthContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-var AuthProvider = function AuthProvider(_a) {
-  var children = _a.children;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
-
-  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
-      loading = _b[0],
-      setLoading = _b[1];
-
-  var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-      user = _c[0],
-      setUser = _c[1]; //ログイン関数・Promise型で返却したいため、async, awaitを利用する
-
-
-  var login = function login(loginData) {
-    return __awaiter(void 0, void 0, void 0, function () {
-      var res, error_1;
-      return __generator(this, function (_a) {
-        switch (_a.label) {
-          case 0:
-            _a.trys.push([0, 2,, 3]);
-
-            return [4
-            /*yield*/
-            , axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/login', loginData)];
-
-          case 1:
-            res = _a.sent();
-            setUser(res.data);
-            navigate("/mypage/diary/home");
-            return [3
-            /*break*/
-            , 3];
-
-          case 2:
-            error_1 = _a.sent();
-            throw error_1;
-
-          case 3:
-            return [2
-            /*return*/
-            ];
-        }
-      });
-    });
-  }; //ユーザー登録関数・Promise型で返却する
-
-
-  var register = function register(registerData) {
-    return __awaiter(void 0, void 0, void 0, function () {
-      var error_2;
-      return __generator(this, function (_a) {
-        switch (_a.label) {
-          case 0:
-            _a.trys.push([0, 2,, 3]);
-
-            return [4
-            /*yield*/
-            , axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/register', registerData)];
-
-          case 1:
-            _a.sent();
-
-            return [3
-            /*break*/
-            , 3];
-
-          case 2:
-            error_2 = _a.sent();
-            throw error_2;
-
-          case 3:
-            return [2
-            /*return*/
-            ];
-        }
-      });
-    });
-  }; //ログアウト関数
-
-
-  var logout = function logout() {
-    return __awaiter(void 0, void 0, void 0, function () {
-      var error_3;
-      return __generator(this, function (_a) {
-        switch (_a.label) {
-          case 0:
-            _a.trys.push([0, 2,, 3]);
-
-            return [4
-            /*yield*/
-            , axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/logout', {})];
-
-          case 1:
-            _a.sent();
-
-            setUser(null);
-            console.log("logout success");
-            navigate("/login");
-            return [3
-            /*break*/
-            , 3];
-
-          case 2:
-            error_3 = _a.sent();
-            console.log("logout failed");
-            throw error_3;
-
-          case 3:
-            return [2
-            /*return*/
-            ];
-        }
-      });
-    });
-  };
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/loginCheck').then(function (res) {
-      setUser(res.data);
-      setLoading(false);
-    })["catch"](function () {
-      setUser(null);
-      setLoading(false);
-    });
-  }, []);
-  var value = {
-    user: user,
-    login: login,
-    register: register,
-    logout: logout
-  };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(AuthContext.Provider, {
-    value: value
-  }, !loading && children);
-};
-var useAuth = function useAuth() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(AuthContext);
-};
-
-/***/ }),
-
-/***/ "./resources/js/auth/ProtectedRoute.tsx":
-/*!**********************************************!*\
-  !*** ./resources/js/auth/ProtectedRoute.tsx ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _components_MyPageHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyPageHeader */ "./resources/js/components/MyPageHeader.tsx");
-/* harmony import */ var _AuthContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AuthContext */ "./resources/js/auth/AuthContext.tsx");
-
-
-
-
-
-var ProtectedRoute = function ProtectedRoute() {
-  var auth = (0,_AuthContext__WEBPACK_IMPORTED_MODULE_2__.useAuth)();
-
-  if (!(auth === null || auth === void 0 ? void 0 : auth.user)) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Navigate, {
-      to: "/login"
-    });
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MyPageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Outlet, null));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProtectedRoute);
 
 /***/ }),
 
@@ -16942,7 +16602,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _auth_AuthContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../auth/AuthContext */ "./resources/js/auth/AuthContext.tsx");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
 
 
 
@@ -16989,7 +16649,7 @@ var useStyles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["default"])(fu
 
 var MyPageHeader = function MyPageHeader() {
   var classes = useStyles();
-  var auth = (0,_auth_AuthContext__WEBPACK_IMPORTED_MODULE_1__.useAuth)();
+  var auth = (0,_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_1__.useAuth)();
   var btnFunc = auth === null || auth === void 0 ? void 0 : auth.logout;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: classes.header
@@ -17345,6 +17005,310 @@ var RegisterInputForm = function RegisterInputForm() {
 
 /***/ }),
 
+/***/ "./resources/js/contexts/AuthContext.tsx":
+/*!***********************************************!*\
+  !*** ./resources/js/contexts/AuthContext.tsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AuthProvider": () => (/* binding */ AuthProvider),
+/* harmony export */   "useAuth": () => (/* binding */ useAuth)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+    label: 0,
+    sent: function sent() {
+      if (t[0] & 1) throw t[1];
+      return t[1];
+    },
+    trys: [],
+    ops: []
+  },
+      f,
+      y,
+      t,
+      g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+
+    while (_) {
+      try {
+        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+        if (y = 0, t) op = [op[0] & 2, t.value];
+
+        switch (op[0]) {
+          case 0:
+          case 1:
+            t = op;
+            break;
+
+          case 4:
+            _.label++;
+            return {
+              value: op[1],
+              done: false
+            };
+
+          case 5:
+            _.label++;
+            y = op[1];
+            op = [0];
+            continue;
+
+          case 7:
+            op = _.ops.pop();
+
+            _.trys.pop();
+
+            continue;
+
+          default:
+            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+              _ = 0;
+              continue;
+            }
+
+            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+              _.label = op[1];
+              break;
+            }
+
+            if (op[0] === 6 && _.label < t[1]) {
+              _.label = t[1];
+              t = op;
+              break;
+            }
+
+            if (t && _.label < t[2]) {
+              _.label = t[2];
+
+              _.ops.push(op);
+
+              break;
+            }
+
+            if (t[2]) _.ops.pop();
+
+            _.trys.pop();
+
+            continue;
+        }
+
+        op = body.call(thisArg, _);
+      } catch (e) {
+        op = [6, e];
+        y = 0;
+      } finally {
+        f = t = 0;
+      }
+    }
+
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+
+
+
+
+var AuthContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+var AuthProvider = function AuthProvider(_a) {
+  var children = _a.children;
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
+
+  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      loading = _b[0],
+      setLoading = _b[1];
+
+  var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      user = _c[0],
+      setUser = _c[1]; //ログイン関数・Promise型で返却したいため、async, awaitを利用する
+
+
+  var login = function login(loginData) {
+    return __awaiter(void 0, void 0, void 0, function () {
+      var res, error_1;
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            _a.trys.push([0, 2,, 3]);
+
+            return [4
+            /*yield*/
+            , axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/login', loginData)];
+
+          case 1:
+            res = _a.sent();
+            setUser(res.data);
+            navigate("/mypage/diary/home");
+            return [3
+            /*break*/
+            , 3];
+
+          case 2:
+            error_1 = _a.sent();
+            throw error_1;
+
+          case 3:
+            return [2
+            /*return*/
+            ];
+        }
+      });
+    });
+  }; //ユーザー登録関数・Promise型で返却する
+
+
+  var register = function register(registerData) {
+    return __awaiter(void 0, void 0, void 0, function () {
+      var error_2;
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            _a.trys.push([0, 2,, 3]);
+
+            return [4
+            /*yield*/
+            , axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/register', registerData)];
+
+          case 1:
+            _a.sent();
+
+            return [3
+            /*break*/
+            , 3];
+
+          case 2:
+            error_2 = _a.sent();
+            throw error_2;
+
+          case 3:
+            return [2
+            /*return*/
+            ];
+        }
+      });
+    });
+  }; //ログアウト関数
+
+
+  var logout = function logout() {
+    return __awaiter(void 0, void 0, void 0, function () {
+      var error_3;
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            _a.trys.push([0, 2,, 3]);
+
+            return [4
+            /*yield*/
+            , axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/logout', {})];
+
+          case 1:
+            _a.sent();
+
+            setUser(null);
+            console.log("logout success");
+            navigate("/login");
+            return [3
+            /*break*/
+            , 3];
+
+          case 2:
+            error_3 = _a.sent();
+            console.log("logout failed");
+            throw error_3;
+
+          case 3:
+            return [2
+            /*return*/
+            ];
+        }
+      });
+    });
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/loginCheck').then(function (res) {
+      setUser(res.data);
+      setLoading(false);
+    })["catch"](function () {
+      setUser(null);
+      setLoading(false);
+    });
+  }, []);
+  var value = {
+    user: user,
+    login: login,
+    register: register,
+    logout: logout
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(AuthContext.Provider, {
+    value: value
+  }, !loading && children);
+};
+var useAuth = function useAuth() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(AuthContext);
+};
+
+/***/ }),
+
 /***/ "./resources/js/layout/Background.tsx":
 /*!********************************************!*\
   !*** ./resources/js/layout/Background.tsx ***!
@@ -17437,17 +17401,20 @@ var __spreadArray = undefined && undefined.__spreadArray || function (to, from, 
 
 
 
- //import Home from './pages/Home';
+
 
 var DiaryPage = function DiaryPage() {
   var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      diaryData = _a[0],
-      setDiaryData = _a[1]; //const [products, setProducts] = useState([])
+      products = _a[0],
+      setProducts = _a[1];
 
+  var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      loading = _b[0],
+      setLoading = _b[1];
 
-  var _b = (0,_hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__["default"])([__spreadArray([], _sample_data__WEBPACK_IMPORTED_MODULE_2__["default"], true)]),
-      getCurrentProducts = _b.getCurrentHistory,
-      updateHistory = _b.updateHistory;
+  var _c = (0,_hooks_useHistory__WEBPACK_IMPORTED_MODULE_4__["default"])([__spreadArray([], _sample_data__WEBPACK_IMPORTED_MODULE_2__["default"], true)]),
+      getCurrentProducts = _c.getCurrentHistory,
+      updateHistory = _c.updateHistory;
 
   var addProduct = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (product) {
     var title = product.title;
@@ -17486,15 +17453,16 @@ var DiaryPage = function DiaryPage() {
       flashMessage: "".concat(title, " Updated!")
     });
   }, [getCurrentProducts, updateHistory]);
-  var products = getCurrentProducts([]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     axios__WEBPACK_IMPORTED_MODULE_8___default().get('/api/showDiaryTable').then(function (res) {
-      setDiaryData(res.data); //setProducts([...products,res.data])
+      setProducts(res.data);
+      setLoading(false);
     })["catch"](function () {
       console.log("faild to get diary table");
+      setLoading(false);
     });
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_Background__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_Container__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Content__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Outlet, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_GlobalStyle__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_Background__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_styles_Container__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Content__WEBPACK_IMPORTED_MODULE_3__["default"], null, !loading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Outlet, {
     context: {
       products: products,
       removeProduct: removeProduct,
@@ -17572,7 +17540,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _auth_AuthContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../auth/AuthContext */ "./resources/js/auth/AuthContext.tsx");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.tsx");
 /* harmony import */ var _components_LoginForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/LoginForm */ "./resources/js/components/LoginForm.tsx");
 
@@ -17606,7 +17574,7 @@ var LoginPage = function LoginPage() {
       setErrMessage = _b[1];
 
   var classes = useStyles();
-  var auth = (0,_auth_AuthContext__WEBPACK_IMPORTED_MODULE_2__.useAuth)();
+  var auth = (0,_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_2__.useAuth)();
 
   var refreshForm = function refreshForm(message) {
     setLoginInfo({
@@ -17671,6 +17639,42 @@ var LoginPage = function LoginPage() {
 
 /***/ }),
 
+/***/ "./resources/js/pages/ProtectedRoute.tsx":
+/*!***********************************************!*\
+  !*** ./resources/js/pages/ProtectedRoute.tsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_MyPageHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyPageHeader */ "./resources/js/components/MyPageHeader.tsx");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
+
+
+
+
+
+var ProtectedRoute = function ProtectedRoute() {
+  var auth = (0,_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_2__.useAuth)();
+
+  if (!(auth === null || auth === void 0 ? void 0 : auth.user)) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Navigate, {
+      to: "/login"
+    });
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MyPageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Outlet, null));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProtectedRoute);
+
+/***/ }),
+
 /***/ "./resources/js/pages/RegisterPage.tsx":
 /*!*********************************************!*\
   !*** ./resources/js/pages/RegisterPage.tsx ***!
@@ -17687,7 +17691,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/createStyles.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _auth_AuthContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../auth/AuthContext */ "./resources/js/auth/AuthContext.tsx");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.tsx");
 
 
@@ -17709,7 +17713,7 @@ var useStyles = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["default"])(fu
 var RegisterPage = function RegisterPage() {
   var classes = useStyles();
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
-  var auth = (0,_auth_AuthContext__WEBPACK_IMPORTED_MODULE_1__.useAuth)();
+  var auth = (0,_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_1__.useAuth)();
 
   var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     firstName: "",
@@ -18093,9 +18097,8 @@ var EdifForm = function EdifForm() {
       products = _useDiary.products,
       editProduct = _useDiary.editProduct;
 
-  var product = products.find(function (_ref) {
-    var productID = _ref.id;
-    return productID === id;
+  var product = products.find(function (obj) {
+    return obj.id === Number(id);
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: product ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -18742,8 +18745,9 @@ var Products = function Products() {
       children: products.map(function (product) {
         var id = product.id,
             title = product.title,
-            description = product.description,
             image_url = product.image_url;
+        var description = product.description;
+        description = JSON.parse(description);
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(Item, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "image-container",

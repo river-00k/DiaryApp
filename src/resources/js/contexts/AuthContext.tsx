@@ -15,6 +15,7 @@ type AuthProps = {
 }
 
 
+
 const AuthContext = createContext <AuthProps | null>(null)
 
 export const AuthProvider = ({children}:Props):ReactElement => {

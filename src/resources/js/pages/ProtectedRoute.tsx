@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { Navigate, Outlet } from 'react-router-dom';
 import MyPageHeader from '../components/MyPageHeader';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const ProtectedRoute = ()=> {
     

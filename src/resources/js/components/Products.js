@@ -141,7 +141,11 @@ const Products = () => {
       {hasProducts ? (
         <List>
           {products.map(product => {
-            const { id, title, description, image_url } = product;
+            const { id, title, image_url } = product;
+            let  { description }  = product;
+      
+            description = JSON.parse(description)
+            
             return (
               <Item key={id}>
                 <div className="image-container">
@@ -166,7 +170,7 @@ const Products = () => {
                   />
                 )}
                 <div className="controls">
-                  <Button className="control" to={`/mypage/diary/product/edit/${id}`} buttonStyle="muted">
+                  <Button className="control" to={`/mypage/diary/product/edit/${id}`} buttonStyle="muted" >
                     Edit
                   </Button>
                   <Button

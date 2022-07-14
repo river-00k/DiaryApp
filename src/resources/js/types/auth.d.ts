@@ -34,3 +34,4 @@ type RegisterErrMsg = {
     passwordErr:string,
     passConfErr:string
   } 
+
