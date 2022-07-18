@@ -7,6 +7,7 @@ import Button from './Button';
 import {useDiary} from '../contexts/DiaryContext'
 
 const parseRichText = (content, inlineStyles) => {
+  
   const contentState = content.blocks ? convertFromRaw(content) : content;
 
   const options = {
@@ -143,6 +144,8 @@ const Products = () => {
           {products.map(product => {
             const { id, title, image_url } = product;
             let  { description }  = product;
+
+            console.log(description)
       
             description = JSON.parse(description)
             

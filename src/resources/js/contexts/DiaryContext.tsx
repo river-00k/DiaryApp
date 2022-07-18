@@ -18,8 +18,6 @@ export const DiaryProvider = ({children}:Props) => {
     const user = auth?.user
 
     const addProduct = (inputDiaryData: InputDiaryData) => {
-        console.log("input data")
-        console.log(inputDiaryData.description)
         axios.post('/api/diary/create', inputDiaryData)
             .then((res) => {
                 console.log("insert success")

@@ -17344,8 +17344,6 @@ var DiaryProvider = function DiaryProvider(_a) {
   var user = auth === null || auth === void 0 ? void 0 : auth.user;
 
   var addProduct = function addProduct(inputDiaryData) {
-    console.log("input data");
-    console.log(inputDiaryData.description);
     axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/diary/create', inputDiaryData).then(function (res) {
       console.log("insert success");
       console.log(res);
@@ -18524,9 +18522,10 @@ var Form = function Form(props) {
         var allValues = {
           user_id: user_id,
           title: title,
-          description: description.getCurrentContent(),
+          description: (0,draft_js__WEBPACK_IMPORTED_MODULE_3__.convertToRaw)(description.getCurrentContent()),
           image_url: image_url
         };
+        console.log(allValues.description);
 
         if (product) {
           editProduct(allValues);
@@ -18777,6 +18776,7 @@ var Products = function Products() {
             title = product.title,
             image_url = product.image_url;
         var description = product.description;
+        console.log(description);
         description = JSON.parse(description);
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(Item, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {

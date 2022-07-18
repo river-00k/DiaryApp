@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useNavigate} from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { EditorState, ContentState, convertFromRaw } from 'draft-js';
+import { EditorState, ContentState, convertFromRaw, convertToRaw } from 'draft-js';
 import nprogress from 'nprogress';
 import Button from './Button';
 import RichTextArea from './RichTextArea';
@@ -231,7 +231,9 @@ const Form = (props) => {
           const { title, description, image_url } = values;
           //const id = product ? product.id : (+new Date()).toString();
           //const allValues = { id, title, description: description.getCurrentContent(), image_url };
-          const allValues = { user_id, title, description: description.getCurrentContent(), image_url };
+          const allValues = { user_id, title, description: convertToRaw(description.getCurrentContent()), image_url };
+          
+          console.log(allValues.description)
 
           if (product) {
             editProduct(allValues);
