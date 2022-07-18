@@ -169,7 +169,7 @@ const Form = (props) => {
   const user_id = auth?.user.id
   const navigate = useNavigate();
   const [imageOptions, setImageOptions] = useState(null);
-  const [isFetching, setIsFetching] = useState(false);
+  const [isFetching, setIsFetching] = useState(false); //画像の読み込み関連
   const [fetchingErrorMessage, setFetchingErrorMessage] = useState(null);
   const fieldElements = { title: useRef(), description: useRef() };
   const setFieldEl = name => el => {
@@ -229,11 +229,13 @@ const Form = (props) => {
           }
 
           const { title, description, image_url } = values;
-          //const id = product ? product.id : (+new Date()).toString();
-          //const allValues = { id, title, description: description.getCurrentContent(), image_url };
-          const allValues = { user_id, title, description: convertToRaw(description.getCurrentContent()), image_url };
           
-          console.log(allValues.description)
+          //DBに格納するためにdescriptionデータを整理
+          let dbDescription = description.getCurrentContent()
+          dbDescription = convertToRaw(dbDescription)
+          dbDescription = JSON.stringify(dbDescription)
+          
+          const allValues = { user_id, title, description: dbDescription, image_url };
 
           if (product) {
             editProduct(allValues);
@@ -263,6 +265,7 @@ const Form = (props) => {
           const descriptionInvalid = errors.description && touched.description;
           
           //表示部分
+          
           return (
             <FormContainer onSubmit={handleSubmit}>
               <FocusOnError

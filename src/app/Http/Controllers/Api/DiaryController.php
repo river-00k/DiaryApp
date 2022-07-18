@@ -16,8 +16,7 @@ class DiaryController extends Controller
         $diary->user_id = $request->user_id;
         $diary->date = date("Y-m-d");
         $diary->title = $request->title;
-        $diary->description = json_encode($request->description);
-        //$diary->description = json_encode(["a"=>"cx"]);
+        $diary->description = $request->description;
         $diary->image_url = $request->image_url;
         
         $diary->save();

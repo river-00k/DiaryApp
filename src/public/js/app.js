@@ -18516,16 +18516,17 @@ var Form = function Form(props) {
 
         var title = values.title,
             description = values.description,
-            image_url = values.image_url; //const id = product ? product.id : (+new Date()).toString();
-        //const allValues = { id, title, description: description.getCurrentContent(), image_url };
+            image_url = values.image_url; //DBに格納するためにdescriptionデータを整理
 
+        var dbDescription = description.getCurrentContent();
+        dbDescription = (0,draft_js__WEBPACK_IMPORTED_MODULE_3__.convertToRaw)(dbDescription);
+        dbDescription = JSON.stringify(dbDescription);
         var allValues = {
           user_id: user_id,
           title: title,
-          description: (0,draft_js__WEBPACK_IMPORTED_MODULE_3__.convertToRaw)(description.getCurrentContent()),
+          description: dbDescription,
           image_url: image_url
         };
-        console.log(allValues.description);
 
         if (product) {
           editProduct(allValues);
@@ -18551,7 +18552,7 @@ var Form = function Form(props) {
             isSubmitting = props.isSubmitting,
             isValid = props.isValid;
         var titleInvalid = errors.title && touched.title;
-        var descriptionInvalid = errors.description && touched.description; //表示部分
+        var descriptionInvalid = errors.description && touched.description; //表示部分a
 
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(FormContainer, {
           onSubmit: handleSubmit,
