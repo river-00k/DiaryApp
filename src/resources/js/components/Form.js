@@ -8,6 +8,7 @@ import nprogress from 'nprogress';
 import Button from './Button';
 import RichTextArea from './RichTextArea';
 import { useDiary } from '../contexts/DiaryContext';
+import { useAuth } from '../contexts/AuthContext';
 
 
 const NUMBER_OF_IMAGES = 4;
@@ -164,6 +165,8 @@ const FocusOnError = props => {
 const Form = (props) => {
   const {product} = props
   const { addProduct, editProduct } = useDiary();
+  const auth = useAuth()
+  const user_id = auth?.user.id
   const navigate = useNavigate();
   const [imageOptions, setImageOptions] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
@@ -178,6 +181,7 @@ const Form = (props) => {
   nprogress.configure({ parent: `.progress-bar` });
 
   useEffect(() => {
+    //画像関連
     if (imageOptions) return;
     setIsFetching(true);
     nprogress.start();
@@ -206,7 +210,6 @@ const Form = (props) => {
       });
   }, [imageOptions, initialImageUrl]);
 
-
   return (
     <>
       <Formik
@@ -226,8 +229,9 @@ const Form = (props) => {
           }
 
           const { title, description, image_url } = values;
-          const id = product ? product.id : (+new Date()).toString();
-          const allValues = { id, title, description: description.getCurrentContent(), image_url };
+          //const id = product ? product.id : (+new Date()).toString();
+          //const allValues = { id, title, description: description.getCurrentContent(), image_url };
+          const allValues = { user_id, title, description: description.getCurrentContent(), image_url };
 
           if (product) {
             editProduct(allValues);
@@ -255,7 +259,8 @@ const Form = (props) => {
 
           const titleInvalid = errors.title && touched.title;
           const descriptionInvalid = errors.description && touched.description;
-
+          
+          //表示部分
           return (
             <FormContainer onSubmit={handleSubmit}>
               <FocusOnError

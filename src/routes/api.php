@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'api'], function(){
 
     //テスト用
-    Route::get('showDiaryTable', 'App\Http\Controllers\Api\DiaryController@showTable');
+    Route::post('createDiaryTable', 'App\Http\Controllers\Api\DiaryController@create');
 
 
     Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
@@ -29,7 +29,6 @@ Route::group(['middleware' => 'api'], function(){
 
     //認証後でないと操作を許可しない
     Route::group(["middleware" => ["auth:sanctum"]], function(){
-        Route::get('/diary/showDiaryTable', 'App\Http\Controllers\Api\DiaryController@showTable');
         Route::post('diary/create', 'App\Http\Controllers\Api\DiaryController@create');
         Route::post('diary/read', 'App\Http\Controllers\Api\DiaryController@read');
         Route::post('diary/readAll', 'App\Http\Controllers\Api\DiaryController@readAll');

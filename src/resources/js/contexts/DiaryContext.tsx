@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+import { useAuth } from './AuthContext';
 
 type Props = {
     children: ReactNode
@@ -10,10 +11,23 @@ const DiaryContext = createContext<DiaryProps | null>(null)
 
 export const DiaryProvider = ({children}:Props) => {
 
-    const [products, setProducts] = useState< Array<DiaryProduct> >([]);
+    const [products, setProducts] = useState< Array<DisplayDiaryData> >([]);
     const [loading, setLoading] = useState<boolean>(true)
 
-    const addProduct = () => {}
+    const auth = useAuth()
+    const user = auth?.user
+
+    const addProduct = (inputDiaryData: InputDiaryData) => {
+        console.log("input data")
+        console.log(inputDiaryData.description)
+        axios.post('/api/diary/create', inputDiaryData)
+            .then((res) => {
+                console.log("insert success")
+                console.log(res)
+            }).catch((res) =>{
+                console.log("input failed")
+            })
+    }
     const removeProduct = () => {}
     const editProduct = () => {}
 
@@ -24,15 +38,18 @@ export const DiaryProvider = ({children}:Props) => {
         editProduct
     }
 
+    //日記データを取得する処理
     useEffect(()=>{
-        axios.get('/api/showDiaryTable')
-            .then((res)=>{
-                setProducts(res.data)
-                setLoading(false)
-            }).catch(()=>{
-                console.log("faild to get diary table")
-                setLoading(false)
-            })
+        if(user){
+            axios.post('/api/diary/read', user)
+                .then((res)=>{
+                    setProducts(res.data)
+                    setLoading(false)
+                }).catch(()=>{
+                    console.log("faild to get diary table")
+                    setLoading(false)
+                })
+        }
     },[])
 
     return( 

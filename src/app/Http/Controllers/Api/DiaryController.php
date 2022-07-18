@@ -14,9 +14,12 @@ class DiaryController extends Controller
     {
         $diary = new Diary;
         $diary->user_id = $request->user_id;
-        $diary->date = $request->date;
-        $diary->evaluation = $request->evaluation;
-        $diary->text = $request->text;
+        $diary->date = date("Y-m-d");
+        $diary->title = $request->title;
+        $diary->description = json_encode($request->description);
+        //$diary->description = json_encode(["a"=>"cx"]);
+        $diary->image_url = $request->image_url;
+        
         $diary->save();
 
         //成功したらHTTPステータス200(成功)を返却する
@@ -26,8 +29,8 @@ class DiaryController extends Controller
     //Diaryの特定ユーザー一覧表示
     public function read(Request $request)
     {
-        $diary = Diary::where('user_id',$request->user_id)->where('date', $request->date)->get();
-        return $diary;
+        $diaries = Diary::where('user_id',$request->id)->get();
+        return response()->json($diaries, 200);
     }
 
     //Diaryの特定ユーザー一覧表示
@@ -63,19 +66,6 @@ class DiaryController extends Controller
         return response()->json($diaries, 200);
     }
     
-
-    //テーブルの全てのデータを表示する(開発確認用)
-    public function showTable2()
-    {
-        $res = Diary::all();
-        // $diaries["description"] = $res[0]['description'];
-        // var_dump(json_decode($res[0]['description']));
-        //echo json_decode($res[0]['description']);
-        
-        //echo $diaries["description"]."\n\n\n";
-
-        return response()->json($diaries, 200);
-    }
 
 
 }
