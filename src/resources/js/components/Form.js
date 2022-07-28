@@ -15,6 +15,7 @@ const NUMBER_OF_IMAGES = 4;
 const IMAGE_CONTAINER_CLASS = 'image-container';
 
 const createEditorStateFromContent = content => {
+
   let contentState;
   if (typeof content === 'string') {
     contentState = ContentState.createFromText(content);
@@ -216,7 +217,7 @@ const Form = (props) => {
         initialValues={{
           title: product ? product.title : '',
           description: product
-            ? createEditorStateFromContent(product.description)
+            ? createEditorStateFromContent(JSON.parse(product.description))
             : EditorState.createEmpty(),
           image_url: initialImageUrl || '',
         }}
@@ -243,7 +244,7 @@ const Form = (props) => {
             addProduct(allValues);
           }
 
-          navigate("/mypage/diary/home");
+          //navigate("/mypage/diary/home");
         }}
       >
         {props => {

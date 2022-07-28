@@ -128,6 +128,8 @@ const Products = () => {
 
   const hasProducts = products && products.length > 0;
 
+  const sampleFunc = () => console.log("test")
+
   return (
     <ProductsSection>
       <header className="section-header">
@@ -144,8 +146,6 @@ const Products = () => {
           {products.map(product => {
             const { id, title, image_url } = product;
             let  { description }  = product;
-
-            console.log(description)
       
             description = JSON.parse(description)
             
@@ -179,7 +179,7 @@ const Products = () => {
                   <Button
                     className="control"
                     buttonStyle="danger"
-                    onClick={() => removeProduct(product)}
+                    onClick={()=>removeProduct(product)}
                   >
                     Delete
                   </Button>

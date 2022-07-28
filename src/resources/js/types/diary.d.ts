@@ -12,7 +12,7 @@ type DisplayDiaryData = InputDiaryData &{
 
 type DiaryProps = {
     products: Array<DisplayDiaryData>,
-    addProduct: (inputDiaryData: InputDiaryData)=>void,
-    removeProduct: ()=>void,
+    addProduct: (inputDiaryData: InputDiaryData)=>Promise<void>,
+    removeProduct: ( displayDiaryData: DisplayDiaryData )=>Promise<void>,
     editProduct: ()=>void
 }

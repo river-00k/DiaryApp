@@ -9,6 +9,8 @@ const EdifForm = () => {
   const { products, editProduct } = useDiary();
   const product = products.find(obj => {return obj.id === Number(id)});
   
+  console.log(product)
+
   return <>{product ? <Form product={product}/> : <NotFound />}</>;
 };
 
