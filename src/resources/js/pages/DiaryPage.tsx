@@ -46,7 +46,7 @@ import { DiaryProvider } from '../contexts/DiaryContext';
     return (
         <>
             <GlobalStyle />
-            <Background>
+            {/* <Background> */}
                 <Container>
                     <Content>
                         <DiaryProvider>
@@ -54,7 +54,7 @@ import { DiaryProvider } from '../contexts/DiaryContext';
                         </DiaryProvider>
                     </Content>
                 </Container>
-            </Background>
+            {/* </Background> */}
       </>
      );
 };

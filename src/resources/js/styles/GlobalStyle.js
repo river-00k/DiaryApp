@@ -25,9 +25,10 @@ export const baseInputInvalid = css`
 const GlobalStyle = createGlobalStyle`
   html {
     color: ${(props) => props.theme.text.primary};
-    background-color: ${(props) => props.theme.html};
+    background-color: #F8FAFC;
     box-sizing: border-box;
     font-size: 10px;
+    min-height: 100%;
     font-family: ${(props) => props.theme.fontFamily.sans};
     box-shadow: ${(props) => props.theme.boxShadow.default};
   }
@@ -37,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
+    min-height: 100%;
     font-size: ${(props) => props.theme.fontSize.base};
     line-height: ${(props) => props.theme.lineHeight.relaxed};
   }
