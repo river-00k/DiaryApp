@@ -12,7 +12,7 @@ const DiaryContext = createContext<DiaryProps | null>(null)
 
 export const DiaryProvider = ({children}:Props) => {
 
-    const [products, setProducts] = useState< Array<DisplayDiaryData> >([]);
+    const [products, setProducts] = useState< Array<DiaryData> >([]);
     const [loading, setLoading] = useState<boolean>(true)
 
     const auth = useAuth()
@@ -20,10 +20,10 @@ export const DiaryProvider = ({children}:Props) => {
 
     const navigate = useNavigate()
 
-    const addProduct = async(inputDiaryData: InputDiaryData) => {
+    const addProduct = async(diaryData: DiaryData) => {
         
         try{
-            await axios.post('/api/diary/create', inputDiaryData)
+            await axios.post('/api/diary/create', diaryData)
                         .then((res) => {
                             setProducts(res.data)
                         }).catch(()=>{
@@ -37,10 +37,10 @@ export const DiaryProvider = ({children}:Props) => {
         }
 
     }
-    const removeProduct = async(displayDiaryData: DisplayDiaryData) => {
+    const removeProduct = async(diaryData: DiaryData) => {
         const props = {
-            id: displayDiaryData.id,
-            user_id: displayDiaryData.user_id
+            id: diaryData.id,
+            user_id: diaryData.user_id
         }
         try{
             await axios.post('/api/diary/delete', props)
@@ -54,7 +54,16 @@ export const DiaryProvider = ({children}:Props) => {
             throw error
         }
     }
-    const editProduct = () => {}
+    const editProduct = async(diaryData: DiaryData) => {
+
+        await axios.post('/api/diary/update', diaryData)
+                .then((res) => {
+                    setProducts(res.data)
+                }).catch(() => {
+                    console.log("Failed to update!")
+                })
+        navigate("/mypage/diary/home")
+    }
 
     const value: DiaryProps = {
         products,
@@ -65,7 +74,6 @@ export const DiaryProvider = ({children}:Props) => {
 
     //日記データを取得する処理
     useEffect(()=>{
-        console.log("get data")
         if(user){
             axios.post('/api/diary/read', user)
                 .then((res)=>{

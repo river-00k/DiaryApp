@@ -1,18 +1,16 @@
-type InputDiaryData = {
+type DiaryData = {
+    id: number,
+    date: Date,
     user_id: number,
     title: string,
     description: JSON,
     image_url: string
 }
 
-type DisplayDiaryData = InputDiaryData &{
-    id: number,
-    date: Date,
-}
 
 type DiaryProps = {
-    products: Array<DisplayDiaryData>,
-    addProduct: (inputDiaryData: InputDiaryData)=>Promise<void>,
-    removeProduct: ( displayDiaryData: DisplayDiaryData )=>Promise<void>,
-    editProduct: ()=>void
+    products: Array<DiaryData>,
+    addProduct: (displayDiaryData: DiaryData)=>Promise<void>,
+    removeProduct: ( displayDiaryData: DiaryData )=>Promise<void>,
+    editProduct: (displayDiaryData: DiaryData)=>Promise<void>
 }

@@ -16327,24 +16327,23 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.css */ "./resources/js/app.css");
 /* harmony import */ var _styles_theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/theme */ "./resources/js/styles/theme.js");
-/* harmony import */ var _components_FlashContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FlashContext */ "./resources/js/components/FlashContext.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
-/* harmony import */ var _pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/LoginPage */ "./resources/js/pages/LoginPage.tsx");
-/* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
-/* harmony import */ var _components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/RegisterInputForm */ "./resources/js/components/RegisterInputForm.tsx");
-/* harmony import */ var _components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/RegisterConfirmForm */ "./resources/js/components/RegisterConfirmForm.tsx");
-/* harmony import */ var _components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/RegisterCompleteForm */ "./resources/js/components/RegisterCompleteForm.tsx");
-/* harmony import */ var _pages_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/ProtectedRoute */ "./resources/js/pages/ProtectedRoute.tsx");
-/* harmony import */ var _pages_DiaryPage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/DiaryPage */ "./resources/js/pages/DiaryPage.tsx");
-/* harmony import */ var _components_Products__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Products */ "./resources/js/components/Products.js");
-/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
-/* harmony import */ var _components_EditForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/EditForm */ "./resources/js/components/EditForm.js");
-/* harmony import */ var _pages_Example__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/Example */ "./resources/js/pages/Example.tsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contexts/AuthContext */ "./resources/js/contexts/AuthContext.tsx");
+/* harmony import */ var _pages_LoginPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/LoginPage */ "./resources/js/pages/LoginPage.tsx");
+/* harmony import */ var _pages_RegisterPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/RegisterPage */ "./resources/js/pages/RegisterPage.tsx");
+/* harmony import */ var _components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/RegisterInputForm */ "./resources/js/components/RegisterInputForm.tsx");
+/* harmony import */ var _components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/RegisterConfirmForm */ "./resources/js/components/RegisterConfirmForm.tsx");
+/* harmony import */ var _components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/RegisterCompleteForm */ "./resources/js/components/RegisterCompleteForm.tsx");
+/* harmony import */ var _pages_ProtectedRoute__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/ProtectedRoute */ "./resources/js/pages/ProtectedRoute.tsx");
+/* harmony import */ var _pages_DiaryPage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/DiaryPage */ "./resources/js/pages/DiaryPage.tsx");
+/* harmony import */ var _components_Products__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/Products */ "./resources/js/components/Products.js");
+/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
+/* harmony import */ var _components_EditForm__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/EditForm */ "./resources/js/components/EditForm.js");
+/* harmony import */ var _pages_Example__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/Example */ "./resources/js/pages/Example.tsx");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -16376,44 +16375,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_17__.ThemeProvider, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(styled_components__WEBPACK_IMPORTED_MODULE_16__.ThemeProvider, {
     theme: _styles_theme__WEBPACK_IMPORTED_MODULE_3__.lightTheme
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FlashContext__WEBPACK_IMPORTED_MODULE_4__.FlashProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_5__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.BrowserRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_4__.AuthProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "/login",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_LoginPage__WEBPACK_IMPORTED_MODULE_6__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_LoginPage__WEBPACK_IMPORTED_MODULE_5__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "/register",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_RegisterPage__WEBPACK_IMPORTED_MODULE_7__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_RegisterPage__WEBPACK_IMPORTED_MODULE_6__["default"], null)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "input",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_8__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterInputForm__WEBPACK_IMPORTED_MODULE_7__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "confirm",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_9__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterConfirmForm__WEBPACK_IMPORTED_MODULE_8__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "complete",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_10__["default"], null)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_RegisterCompleteForm__WEBPACK_IMPORTED_MODULE_9__["default"], null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "/mypage",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_ProtectedRoute__WEBPACK_IMPORTED_MODULE_11__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_ProtectedRoute__WEBPACK_IMPORTED_MODULE_10__["default"], null)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "diary",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_12__["default"], null)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_DiaryPage__WEBPACK_IMPORTED_MODULE_11__["default"], null)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "home",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Products__WEBPACK_IMPORTED_MODULE_13__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Products__WEBPACK_IMPORTED_MODULE_12__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "product/new",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Form__WEBPACK_IMPORTED_MODULE_14__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Form__WEBPACK_IMPORTED_MODULE_13__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "product/edit/:id",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EditForm__WEBPACK_IMPORTED_MODULE_15__["default"], null)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EditForm__WEBPACK_IMPORTED_MODULE_14__["default"], null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "example",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Example__WEBPACK_IMPORTED_MODULE_16__["default"], null)
-  })))))));
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Example__WEBPACK_IMPORTED_MODULE_15__["default"], null)
+  }))))));
 };
 
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), document.getElementById("app"));
@@ -17489,7 +17487,7 @@ var DiaryProvider = function DiaryProvider(_a) {
   var user = auth === null || auth === void 0 ? void 0 : auth.user;
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
 
-  var addProduct = function addProduct(inputDiaryData) {
+  var addProduct = function addProduct(diaryData) {
     return __awaiter(void 0, void 0, void 0, function () {
       var error_1;
       return __generator(this, function (_a) {
@@ -17499,7 +17497,7 @@ var DiaryProvider = function DiaryProvider(_a) {
 
             return [4
             /*yield*/
-            , axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/diary/create', inputDiaryData).then(function (res) {
+            , axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/diary/create', diaryData).then(function (res) {
               setProducts(res.data);
             })["catch"](function () {
               console.log('Faild to adding data');
@@ -17527,15 +17525,15 @@ var DiaryProvider = function DiaryProvider(_a) {
     });
   };
 
-  var removeProduct = function removeProduct(displayDiaryData) {
+  var removeProduct = function removeProduct(diaryData) {
     return __awaiter(void 0, void 0, void 0, function () {
       var props, error_2;
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
             props = {
-              id: displayDiaryData.id,
-              user_id: displayDiaryData.user_id
+              id: diaryData.id,
+              user_id: diaryData.user_id
             };
             _a.label = 1;
 
@@ -17571,7 +17569,30 @@ var DiaryProvider = function DiaryProvider(_a) {
     });
   };
 
-  var editProduct = function editProduct() {};
+  var editProduct = function editProduct(diaryData) {
+    return __awaiter(void 0, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            return [4
+            /*yield*/
+            , axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/diary/update', diaryData).then(function (res) {
+              setProducts(res.data);
+            })["catch"](function () {
+              console.log("Failed to update!");
+            })];
+
+          case 1:
+            _a.sent();
+
+            navigate("/mypage/diary/home");
+            return [2
+            /*return*/
+            ];
+        }
+      });
+    });
+  };
 
   var value = {
     products: products,
@@ -17581,8 +17602,6 @@ var DiaryProvider = function DiaryProvider(_a) {
   }; //日記データを取得する処理
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    console.log("get data");
-
     if (user) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/diary/read', user).then(function (res) {
         setProducts(res.data);
@@ -18282,13 +18301,11 @@ var EdifForm = function EdifForm() {
       id = _useParams.id;
 
   var _useDiary = (0,_contexts_DiaryContext__WEBPACK_IMPORTED_MODULE_1__.useDiary)(),
-      products = _useDiary.products,
-      editProduct = _useDiary.editProduct;
+      products = _useDiary.products;
 
   var product = products.find(function (obj) {
     return obj.id === Number(id);
   });
-  console.log(product);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: product ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
       product: product
@@ -18297,140 +18314,6 @@ var EdifForm = function EdifForm() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EdifForm);
-
-/***/ }),
-
-/***/ "./resources/js/components/FlashContext.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/FlashContext.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "FlashProvider": () => (/* binding */ FlashProvider),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_transition_group__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/CSSTransition.js");
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Button */ "./resources/js/components/Button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _templateObject, _templateObject2;
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-
-
-var TRANSITION_DURATION_MS = 500;
-var FlashContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext();
-var FlashGroup = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  position: fixed;\n  bottom: ", ";\n  right: ", ";\n  max-width: 300px;\n  pointer-events: none;\n\n  .flash-enter {\n    transform: translateX(150%);\n    opacity: 0;\n  }\n  .flash-enter-active {\n    opacity: 1;\n    transform: translateX(0);\n    transition: transform ", "ms ease-in, opacity 300ms ease-in;\n  }\n  .flash-exit {\n    opacity: 1;\n    transform: translateX(0);\n  }\n  .flash-exit-active {\n    opacity: 0;\n    transform: translateX(150%);\n    transition: transform ", "ms ease-in, opacity 300ms ease-in;\n  }\n"])), function (props) {
-  return props.theme.spacing['3'];
-}, function (props) {
-  return props.theme.spacing['3'];
-}, TRANSITION_DURATION_MS, TRANSITION_DURATION_MS);
-var Flash = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n\n  .flash-container {\n    pointer-events: auto;\n    display: inline-block;\n    background: ", ";\n    border: 1px solid ", ";\n    border-radius: 5px;\n    padding: ", ";\n    margin: ", " 0;\n  }\n\n  .flash-button {\n    padding: ", " ", ";\n    font-size: ", ";\n    border-radius: ", ";\n    margin-left: ", ";\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n"])), function (props) {
-  return props.theme.contentBg;
-}, function (props) {
-  return props.theme.border["default"];
-}, function (props) {
-  return props.theme.spacing['2'];
-}, function (props) {
-  return props.theme.spacing['1'];
-}, function (props) {
-  return props.theme.spacing['1'];
-}, function (props) {
-  return props.theme.spacing['2'];
-}, function (props) {
-  return props.theme.fontSize.sm;
-}, function (props) {
-  return props.theme.radius.full;
-}, function (props) {
-  return props.theme.spacing['3'];
-});
-var FlashProvider = function FlashProvider(props) {
-  var children = props.children;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
-      _useState2 = _slicedToArray(_useState, 2),
-      flash = _useState2[0],
-      setFlashObj = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      showFlash = _useState4[0],
-      setShowFlash = _useState4[1];
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (!showFlash) return undefined;
-    var timer = setTimeout(function () {
-      setShowFlash(false);
-    }, 3000);
-    return function () {
-      clearTimeout(timer);
-    };
-  });
-  var setFlash = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (message, undo) {
-    if (!message || !message.trim().length) return;
-    var newFlash = {
-      message: message.trim(),
-      undo: undo
-    };
-    setFlashObj(newFlash);
-    setShowFlash(true);
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(FlashContext.Provider, {
-    value: {
-      setFlash: setFlash
-    },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(FlashGroup, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_transition_group__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        "in": showFlash,
-        timeout: TRANSITION_DURATION_MS,
-        classNames: "flash",
-        unmountOnExit: true,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Flash, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-            className: "flash-container",
-            children: [flash.message, flash.undo ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-              className: "flash-button",
-              onClick: function onClick() {
-                flash.undo();
-                setShowFlash(false);
-              },
-              children: "Undo"
-            }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-              className: "flash-button",
-              buttonStyle: "muted",
-              onClick: function onClick() {
-                setShowFlash(false);
-              },
-              children: "close"
-            })]
-          })
-        })
-      })
-    }), children]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FlashContext);
 
 /***/ }),
 
@@ -18669,6 +18552,8 @@ var Form = function Form(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Formik, {
       initialValues: {
+        id: product ? product.id : -1,
+        date: product ? product.date : '',
         title: product ? product.title : '',
         description: product ? createEditorStateFromContent(JSON.parse(product.description)) : draft_js__WEBPACK_IMPORTED_MODULE_3__.EditorState.createEmpty(),
         image_url: initialImageUrl || ''
@@ -18683,7 +18568,9 @@ var Form = function Form(props) {
           return;
         }
 
-        var title = values.title,
+        var id = values.id,
+            date = values.date,
+            title = values.title,
             description = values.description,
             image_url = values.image_url; //DBに格納するためにdescriptionデータを整理
 
@@ -18691,6 +18578,8 @@ var Form = function Form(props) {
         dbDescription = (0,draft_js__WEBPACK_IMPORTED_MODULE_3__.convertToRaw)(dbDescription);
         dbDescription = JSON.stringify(dbDescription);
         var allValues = {
+          id: id,
+          date: date,
           user_id: user_id,
           title: title,
           description: dbDescription,
@@ -18794,7 +18683,7 @@ var Form = function Form(props) {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form); //<Prompt when={dirty && !isSubmitting} message="Are you sure you want to leave?" />
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form);
 
 /***/ }),
 
@@ -18924,11 +18813,6 @@ var Products = function Products() {
     };
   })(textColorStyles);
   var hasProducts = products && products.length > 0;
-
-  var sampleFunc = function sampleFunc() {
-    return console.log("test");
-  };
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(ProductsSection, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("header", {
       className: "section-header",
@@ -18966,10 +18850,7 @@ var Products = function Products() {
             className: "description",
             children: description
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "description" // if we didn't trust the html string then we would sanitize
-            //   here or before saving the data.
-            //   eslint-disable-next-line react/no-danger
-            ,
+            className: "description",
             dangerouslySetInnerHTML: {
               __html: parseRichText(description, inlineStyles)
             }
@@ -20639,90 +20520,6 @@ var deepmerge_1 = deepmerge;
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (deepmerge_1);
 
-
-/***/ }),
-
-/***/ "./node_modules/dom-helpers/esm/addClass.js":
-/*!**************************************************!*\
-  !*** ./node_modules/dom-helpers/esm/addClass.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ addClass)
-/* harmony export */ });
-/* harmony import */ var _hasClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hasClass */ "./node_modules/dom-helpers/esm/hasClass.js");
-
-/**
- * Adds a CSS class to a given element.
- * 
- * @param element the element
- * @param className the CSS class name
- */
-
-function addClass(element, className) {
-  if (element.classList) element.classList.add(className);else if (!(0,_hasClass__WEBPACK_IMPORTED_MODULE_0__["default"])(element, className)) if (typeof element.className === 'string') element.className = element.className + " " + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + " " + className);
-}
-
-/***/ }),
-
-/***/ "./node_modules/dom-helpers/esm/hasClass.js":
-/*!**************************************************!*\
-  !*** ./node_modules/dom-helpers/esm/hasClass.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ hasClass)
-/* harmony export */ });
-/**
- * Checks if a given element has a CSS class.
- * 
- * @param element the element
- * @param className the CSS class name
- */
-function hasClass(element, className) {
-  if (element.classList) return !!className && element.classList.contains(className);
-  return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
-}
-
-/***/ }),
-
-/***/ "./node_modules/dom-helpers/esm/removeClass.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/dom-helpers/esm/removeClass.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ removeClass)
-/* harmony export */ });
-function replaceClassName(origClass, classToRemove) {
-  return origClass.replace(new RegExp("(^|\\s)" + classToRemove + "(?:\\s|$)", 'g'), '$1').replace(/\s+/g, ' ').replace(/^\s*|\s*$/g, '');
-}
-/**
- * Removes a CSS class from a given element.
- * 
- * @param element the element
- * @param className the CSS class name
- */
-
-
-function removeClass(element, className) {
-  if (element.classList) {
-    element.classList.remove(className);
-  } else if (typeof element.className === 'string') {
-    element.className = replaceClassName(element.className, className);
-  } else {
-    element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
-  }
-}
 
 /***/ }),
 
@@ -91108,442 +90905,6 @@ function renderMatches(matches) {
 
 //# sourceMappingURL=index.js.map
 
-
-/***/ }),
-
-/***/ "./node_modules/react-transition-group/esm/CSSTransition.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/react-transition-group/esm/CSSTransition.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var dom_helpers_addClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dom-helpers/addClass */ "./node_modules/dom-helpers/esm/addClass.js");
-/* harmony import */ var dom_helpers_removeClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dom-helpers/removeClass */ "./node_modules/dom-helpers/esm/removeClass.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Transition__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Transition */ "./node_modules/react-transition-group/esm/Transition.js");
-/* harmony import */ var _utils_PropTypes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/PropTypes */ "./node_modules/react-transition-group/esm/utils/PropTypes.js");
-
-
-
-
-
-
-
-
-
-
-var _addClass = function addClass(node, classes) {
-  return node && classes && classes.split(' ').forEach(function (c) {
-    return (0,dom_helpers_addClass__WEBPACK_IMPORTED_MODULE_3__["default"])(node, c);
-  });
-};
-
-var removeClass = function removeClass(node, classes) {
-  return node && classes && classes.split(' ').forEach(function (c) {
-    return (0,dom_helpers_removeClass__WEBPACK_IMPORTED_MODULE_4__["default"])(node, c);
-  });
-};
-/**
- * A transition component inspired by the excellent
- * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
- * use it if you're using CSS transitions or animations. It's built upon the
- * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
- * component, so it inherits all of its props.
- *
- * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
- * and `exit` states of the transition. The first class is applied and then a
- * second `*-active` class in order to activate the CSS transition. After the
- * transition, matching `*-done` class names are applied to persist the
- * transition state.
- *
- * ```jsx
- * function App() {
- *   const [inProp, setInProp] = useState(false);
- *   return (
- *     <div>
- *       <CSSTransition in={inProp} timeout={200} classNames="my-node">
- *         <div>
- *           {"I'll receive my-node-* classes"}
- *         </div>
- *       </CSSTransition>
- *       <button type="button" onClick={() => setInProp(true)}>
- *         Click to Enter
- *       </button>
- *     </div>
- *   );
- * }
- * ```
- *
- * When the `in` prop is set to `true`, the child component will first receive
- * the class `example-enter`, then the `example-enter-active` will be added in
- * the next tick. `CSSTransition` [forces a
- * reflow](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
- * between before adding the `example-enter-active`. This is an important trick
- * because it allows us to transition between `example-enter` and
- * `example-enter-active` even though they were added immediately one after
- * another. Most notably, this is what makes it possible for us to animate
- * _appearance_.
- *
- * ```css
- * .my-node-enter {
- *   opacity: 0;
- * }
- * .my-node-enter-active {
- *   opacity: 1;
- *   transition: opacity 200ms;
- * }
- * .my-node-exit {
- *   opacity: 1;
- * }
- * .my-node-exit-active {
- *   opacity: 0;
- *   transition: opacity 200ms;
- * }
- * ```
- *
- * `*-active` classes represent which styles you want to animate **to**, so it's
- * important to add `transition` declaration only to them, otherwise transitions
- * might not behave as intended! This might not be obvious when the transitions
- * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
- * the example above (minus `transition`), but it becomes apparent in more
- * complex transitions.
- *
- * **Note**: If you're using the
- * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
- * prop, make sure to define styles for `.appear-*` classes as well.
- */
-
-
-var CSSTransition = /*#__PURE__*/function (_React$Component) {
-  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__["default"])(CSSTransition, _React$Component);
-
-  function CSSTransition() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-    _this.appliedClasses = {
-      appear: {},
-      enter: {},
-      exit: {}
-    };
-
-    _this.onEnter = function (maybeNode, maybeAppearing) {
-      var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing),
-          node = _this$resolveArgument[0],
-          appearing = _this$resolveArgument[1];
-
-      _this.removeClasses(node, 'exit');
-
-      _this.addClass(node, appearing ? 'appear' : 'enter', 'base');
-
-      if (_this.props.onEnter) {
-        _this.props.onEnter(maybeNode, maybeAppearing);
-      }
-    };
-
-    _this.onEntering = function (maybeNode, maybeAppearing) {
-      var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing),
-          node = _this$resolveArgument2[0],
-          appearing = _this$resolveArgument2[1];
-
-      var type = appearing ? 'appear' : 'enter';
-
-      _this.addClass(node, type, 'active');
-
-      if (_this.props.onEntering) {
-        _this.props.onEntering(maybeNode, maybeAppearing);
-      }
-    };
-
-    _this.onEntered = function (maybeNode, maybeAppearing) {
-      var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing),
-          node = _this$resolveArgument3[0],
-          appearing = _this$resolveArgument3[1];
-
-      var type = appearing ? 'appear' : 'enter';
-
-      _this.removeClasses(node, type);
-
-      _this.addClass(node, type, 'done');
-
-      if (_this.props.onEntered) {
-        _this.props.onEntered(maybeNode, maybeAppearing);
-      }
-    };
-
-    _this.onExit = function (maybeNode) {
-      var _this$resolveArgument4 = _this.resolveArguments(maybeNode),
-          node = _this$resolveArgument4[0];
-
-      _this.removeClasses(node, 'appear');
-
-      _this.removeClasses(node, 'enter');
-
-      _this.addClass(node, 'exit', 'base');
-
-      if (_this.props.onExit) {
-        _this.props.onExit(maybeNode);
-      }
-    };
-
-    _this.onExiting = function (maybeNode) {
-      var _this$resolveArgument5 = _this.resolveArguments(maybeNode),
-          node = _this$resolveArgument5[0];
-
-      _this.addClass(node, 'exit', 'active');
-
-      if (_this.props.onExiting) {
-        _this.props.onExiting(maybeNode);
-      }
-    };
-
-    _this.onExited = function (maybeNode) {
-      var _this$resolveArgument6 = _this.resolveArguments(maybeNode),
-          node = _this$resolveArgument6[0];
-
-      _this.removeClasses(node, 'exit');
-
-      _this.addClass(node, 'exit', 'done');
-
-      if (_this.props.onExited) {
-        _this.props.onExited(maybeNode);
-      }
-    };
-
-    _this.resolveArguments = function (maybeNode, maybeAppearing) {
-      return _this.props.nodeRef ? [_this.props.nodeRef.current, maybeNode] // here `maybeNode` is actually `appearing`
-      : [maybeNode, maybeAppearing];
-    };
-
-    _this.getClassNames = function (type) {
-      var classNames = _this.props.classNames;
-      var isStringClassNames = typeof classNames === 'string';
-      var prefix = isStringClassNames && classNames ? classNames + "-" : '';
-      var baseClassName = isStringClassNames ? "" + prefix + type : classNames[type];
-      var activeClassName = isStringClassNames ? baseClassName + "-active" : classNames[type + "Active"];
-      var doneClassName = isStringClassNames ? baseClassName + "-done" : classNames[type + "Done"];
-      return {
-        baseClassName: baseClassName,
-        activeClassName: activeClassName,
-        doneClassName: doneClassName
-      };
-    };
-
-    return _this;
-  }
-
-  var _proto = CSSTransition.prototype;
-
-  _proto.addClass = function addClass(node, type, phase) {
-    var className = this.getClassNames(type)[phase + "ClassName"];
-
-    var _this$getClassNames = this.getClassNames('enter'),
-        doneClassName = _this$getClassNames.doneClassName;
-
-    if (type === 'appear' && phase === 'done' && doneClassName) {
-      className += " " + doneClassName;
-    } // This is to force a repaint,
-    // which is necessary in order to transition styles when adding a class name.
-
-
-    if (phase === 'active') {
-      /* eslint-disable no-unused-expressions */
-      node && node.scrollTop;
-    }
-
-    if (className) {
-      this.appliedClasses[type][phase] = className;
-
-      _addClass(node, className);
-    }
-  };
-
-  _proto.removeClasses = function removeClasses(node, type) {
-    var _this$appliedClasses$ = this.appliedClasses[type],
-        baseClassName = _this$appliedClasses$.base,
-        activeClassName = _this$appliedClasses$.active,
-        doneClassName = _this$appliedClasses$.done;
-    this.appliedClasses[type] = {};
-
-    if (baseClassName) {
-      removeClass(node, baseClassName);
-    }
-
-    if (activeClassName) {
-      removeClass(node, activeClassName);
-    }
-
-    if (doneClassName) {
-      removeClass(node, doneClassName);
-    }
-  };
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        _ = _this$props.classNames,
-        props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$props, ["classNames"]);
-
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_Transition__WEBPACK_IMPORTED_MODULE_6__["default"], (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-      onEnter: this.onEnter,
-      onEntered: this.onEntered,
-      onEntering: this.onEntering,
-      onExit: this.onExit,
-      onExiting: this.onExiting,
-      onExited: this.onExited
-    }));
-  };
-
-  return CSSTransition;
-}(react__WEBPACK_IMPORTED_MODULE_5__.Component);
-
-CSSTransition.defaultProps = {
-  classNames: ''
-};
-CSSTransition.propTypes =  true ? (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _Transition__WEBPACK_IMPORTED_MODULE_6__["default"].propTypes, {
-  /**
-   * The animation classNames applied to the component as it appears, enters,
-   * exits or has finished the transition. A single name can be provided, which
-   * will be suffixed for each stage, e.g. `classNames="fade"` applies:
-   *
-   * - `fade-appear`, `fade-appear-active`, `fade-appear-done`
-   * - `fade-enter`, `fade-enter-active`, `fade-enter-done`
-   * - `fade-exit`, `fade-exit-active`, `fade-exit-done`
-   *
-   * A few details to note about how these classes are applied:
-   *
-   * 1. They are _joined_ with the ones that are already defined on the child
-   *    component, so if you want to add some base styles, you can use
-   *    `className` without worrying that it will be overridden.
-   *
-   * 2. If the transition component mounts with `in={false}`, no classes are
-   *    applied yet. You might be expecting `*-exit-done`, but if you think
-   *    about it, a component cannot finish exiting if it hasn't entered yet.
-   *
-   * 2. `fade-appear-done` and `fade-enter-done` will _both_ be applied. This
-   *    allows you to define different behavior for when appearing is done and
-   *    when regular entering is done, using selectors like
-   *    `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply
-   *    an epic entrance animation when element first appears in the DOM using
-   *    [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
-   *    simply use `fade-enter-done` for defining both cases.
-   *
-   * Each individual classNames can also be specified independently like:
-   *
-   * ```js
-   * classNames={{
-   *  appear: 'my-appear',
-   *  appearActive: 'my-active-appear',
-   *  appearDone: 'my-done-appear',
-   *  enter: 'my-enter',
-   *  enterActive: 'my-active-enter',
-   *  enterDone: 'my-done-enter',
-   *  exit: 'my-exit',
-   *  exitActive: 'my-active-exit',
-   *  exitDone: 'my-done-exit',
-   * }}
-   * ```
-   *
-   * If you want to set these classes using CSS Modules:
-   *
-   * ```js
-   * import styles from './styles.css';
-   * ```
-   *
-   * you might want to use camelCase in your CSS file, that way could simply
-   * spread them instead of listing them one by one:
-   *
-   * ```js
-   * classNames={{ ...styles }}
-   * ```
-   *
-   * @type {string | {
-   *  appear?: string,
-   *  appearActive?: string,
-   *  appearDone?: string,
-   *  enter?: string,
-   *  enterActive?: string,
-   *  enterDone?: string,
-   *  exit?: string,
-   *  exitActive?: string,
-   *  exitDone?: string,
-   * }}
-   */
-  classNames: _utils_PropTypes__WEBPACK_IMPORTED_MODULE_7__.classNamesShape,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
-   * applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEnter: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().func),
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter-active' or
-   * 'appear-active' class is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEntering: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().func),
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter' or
-   * 'appear' classes are **removed** and the `done` class is added to the DOM node.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEntered: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().func),
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit' class is
-   * applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */
-  onExit: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().func),
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */
-  onExiting: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().func),
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit' classes
-   * are **removed** and the `exit-done` class is added to the DOM node.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */
-  onExited: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().func)
-}) : 0;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CSSTransition);
 
 /***/ }),
 

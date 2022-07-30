@@ -215,6 +215,8 @@ const Form = (props) => {
     <>
       <Formik
         initialValues={{
+          id: product ? product.id : -1,
+          date: product ? product.date : '',
           title: product ? product.title : '',
           description: product
             ? createEditorStateFromContent(JSON.parse(product.description))
@@ -229,14 +231,14 @@ const Form = (props) => {
             return;
           }
 
-          const { title, description, image_url } = values;
+          const { id, date, title, description, image_url } = values;
           
           //DBに格納するためにdescriptionデータを整理
           let dbDescription = description.getCurrentContent()
           dbDescription = convertToRaw(dbDescription)
           dbDescription = JSON.stringify(dbDescription)
           
-          const allValues = { user_id, title, description: dbDescription, image_url };
+          const allValues = { id, date, user_id, title, description: dbDescription, image_url };
 
           if (product) {
             editProduct(allValues);
@@ -333,5 +335,3 @@ const Form = (props) => {
 };
 
 export default Form;
-
-//<Prompt when={dirty && !isSubmitting} message="Are you sure you want to leave?" />

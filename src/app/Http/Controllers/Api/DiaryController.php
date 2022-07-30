@@ -41,18 +41,25 @@ class DiaryController extends Controller
     //     return $diary;
     // }
 
-    //日記を追加する
-    // public function update(Request $request)
-    // {
-    //     //日記を追加する
-    //     $diary = Diary::where('user_id', $request->user_id)
-    //                     ->where('date', $request->date)
-    //                     ->update(['text'=>$request->text]);
+    //日記を編集する
+    public function update(Request $request)
+    {
+        $diary = Diary::where('id', $request->id)
+                        ->where('user_id', $request->user_id)
+                        ->update([
+                            'title'=>$request->title,
+                            'description'=>$request->description
+                        ]);
 
-    //     $diaries = Diary::where('user_id',$request->user_id)->get();
+        //更新に失敗した場合の処理
+        if($diary != 1){
+            return response()->json("Parameter Error", 400);
+        }
+
+        $diaries = Diary::where('user_id',$request->user_id)->get();
    
-    //     return response()->json($diaries, 200);
-    // }
+        return response()->json($diaries, 200);
+    }
 
     //日記を削除する
     public function delete(Request $request)

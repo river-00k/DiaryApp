@@ -17,7 +17,6 @@ import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components'
 import './app.css'
 import { lightTheme } from './styles/theme'
-import { FlashProvider } from "./components/FlashContext";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import LoginPage from './pages/LoginPage';
@@ -35,30 +34,27 @@ import Example from './pages/Example';
 
  const App = () => {
     return (
-        
         <ThemeProvider theme={lightTheme}>
-            <FlashProvider>
-            <   BrowserRouter>
-                    <AuthProvider>
-                        <Routes>
-                            <Route path="/login" element ={< LoginPage/>} />
-                            <Route path="/register" element ={< RegisterPage/>} >
-                                <Route path="input" element={<RegisterInputForm/>}/>
-                                <Route path="confirm" element={<RegisterConfirmForm/>}/>
-                                <Route path="complete" element={<RegisterCompleteForm/>}/>
+            <BrowserRouter>
+                <AuthProvider>
+                    <Routes>
+                        <Route path="/login" element ={< LoginPage/>} />
+                        <Route path="/register" element ={< RegisterPage/>} >
+                            <Route path="input" element={<RegisterInputForm/>}/>
+                            <Route path="confirm" element={<RegisterConfirmForm/>}/>
+                            <Route path="complete" element={<RegisterCompleteForm/>}/>
+                        </Route>
+                        <Route path="/mypage" element={<ProtectedRoute/>}>
+                            <Route path="diary" element={<DiaryPage/>}>
+                                <Route path="home" element={<Products />} />
+                                <Route path="product/new" element={<Form />} />
+                                <Route path="product/edit/:id" element={<EditForm/>} />
                             </Route>
-                            <Route path="/mypage" element={<ProtectedRoute/>}>
-                                <Route path="diary" element={<DiaryPage/>}>
-                                    <Route path="home" element={<Products />} />
-                                    <Route path="product/new" element={<Form />} />
-                                    <Route path="product/edit/:id" element={<EditForm/>} />
-                                </Route>
-                                <Route path="example" element ={< Example/>} />
-                            </Route>
-                        </Routes>
-                    </AuthProvider>
-                </BrowserRouter>
-            </FlashProvider>
+                            <Route path="example" element ={< Example/>} />
+                        </Route>
+                    </Routes>
+                </AuthProvider>
+            </BrowserRouter>
         </ThemeProvider>
        
      );

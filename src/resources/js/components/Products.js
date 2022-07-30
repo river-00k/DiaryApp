@@ -128,8 +128,6 @@ const Products = () => {
 
   const hasProducts = products && products.length > 0;
 
-  const sampleFunc = () => console.log("test")
-
   return (
     <ProductsSection>
       <header className="section-header">
@@ -164,9 +162,6 @@ const Products = () => {
                 ) : (
                   <div
                     className="description"
-                    // if we didn't trust the html string then we would sanitize
-                    //   here or before saving the data.
-                    //   eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{
                       __html: parseRichText(description, inlineStyles),
                     }}

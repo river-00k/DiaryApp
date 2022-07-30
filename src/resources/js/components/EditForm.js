@@ -6,10 +6,8 @@ import NotFound from './NotFound';
 
 const EdifForm = () => {
   const { id } = useParams();
-  const { products, editProduct } = useDiary();
+  const { products } = useDiary();
   const product = products.find(obj => {return obj.id === Number(id)});
-  
-  console.log(product)
 
   return <>{product ? <Form product={product}/> : <NotFound />}</>;
 };
