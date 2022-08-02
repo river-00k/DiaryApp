@@ -21,7 +21,6 @@ export const DiaryProvider = ({children}:Props) => {
     const navigate = useNavigate()
 
     const addProduct = async(diaryData: DiaryData) => {
-        
         try{
             await axios.post('/api/diary/create', diaryData)
                         .then((res) => {
@@ -78,6 +77,7 @@ export const DiaryProvider = ({children}:Props) => {
             axios.post('/api/diary/read', user)
                 .then((res)=>{
                     setProducts(res.data)
+                    console.log(new Date(res.data[0].date))
                     setLoading(false)
                 }).catch(()=>{
                     console.log("faild to get diary table")

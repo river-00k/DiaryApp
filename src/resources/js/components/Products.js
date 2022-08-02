@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { convertFromRaw } from 'draft-js';
 import { stateToHTML } from 'draft-js-export-html';
 import useCustomEditorStyles from '../hooks/useCustomEditorStyles';
 import Button from './Button';
 import {useDiary} from '../contexts/DiaryContext'
+import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core'
+
 
 const parseRichText = (content, inlineStyles) => {
   
@@ -121,17 +123,51 @@ const Item = styled.li`
 
 const Products = () => {
   const { products, removeProduct } = useDiary();
+  const [age, setAge] = useState("")
   const { textColorStyles, getCustomSyleMapInstructions } = useCustomEditorStyles();
   const inlineStyles = getCustomSyleMapInstructions(cssProps => ({ style: cssProps }))(
     textColorStyles
   );
 
-  const hasProducts = products && products.length > 0;
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  const selectMonthly = (products, month, year) =>{
+    return(
+      products.filter(obj => {
+        let objDate = new Date(obj.date)
+        return objDate.getMonth() + 1 == month && objDate.getFullYear() == year
+      })
+    )
+  }
+
+  const monthlyProducts = selectMonthly(products, 7, 2022)
+
+  //const hasProducts = products && products.length > 0;
+  const hasProducts = monthlyProducts && monthlyProducts.length > 0;
 
   return (
+    
     <ProductsSection>
       <header className="section-header">
-        <h2 className="heading">All Products</h2>
+        <FormControl variant="standard" sx={{ m: 10, minWidth: 1200 }}>
+          <InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
+          <Select
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard"
+            value={age}
+            onChange={handleChange}
+            label="Age"
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
+        </FormControl>
         <div className="controls">
           <Button to="/mypage/diary/product/new">
             <b>+</b> 新しい日記
@@ -141,21 +177,24 @@ const Products = () => {
 
       {hasProducts ? (
         <List>
-          {products.map(product => {
-            const { id, title, image_url } = product;
+          {monthlyProducts.map(product => {
+            const { id, title, date, image_url } = product;
             let  { description }  = product;
       
             description = JSON.parse(description)
             
             return (
               <Item key={id}>
-                <div className="image-container">
+                <div>
+                  <h3>{date}</h3>
+                </div>
+                {/* <div className="image-container">
                   <img
                     className="image"
                     src={image_url || 'https://source.unsplash.com/gJylsVMSf-k/150x150'}
                     alt=""
                   />
-                </div>
+                </div> */}
                 <h3 className="title">{title}</h3>
                 {typeof description === 'string' ? (
                   <p className="description">{description}</p>

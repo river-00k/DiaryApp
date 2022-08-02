@@ -17,11 +17,13 @@ class DiaryController extends Controller
         $diary->date = date("Y-m-d");
         $diary->title = $request->title;
         $diary->description = $request->description;
-        $diary->image_url = $request->image_url;
+        $diary->image_url = "";
         
         $diary->save();
 
-        $diaries = Diary::where('user_id',$request->user_id)->get();
+        $diaries = Diary::where('user_id',$request->user_id)
+                        ->orderBy('date', 'desc')
+                        ->get();
 
         //成功したらHTTPステータス200(成功)を返却する
         return response()->json($diaries, 200);
@@ -30,16 +32,12 @@ class DiaryController extends Controller
     //Diaryの特定ユーザー一覧表示
     public function read(Request $request)
     {
-        $diaries = Diary::where('user_id',$request->id)->get();
+        $diaries = Diary::where('user_id',$request->id)
+                        ->orderBy('date', 'desc')
+                        ->get();
         return response()->json($diaries, 200);
     }
 
-    //Diaryの特定ユーザー一覧表示
-    // public function readAll(Request $request)
-    // {
-    //     $diary = Diary::where('user_id',$request->user_id)->get();
-    //     return $diary;
-    // }
 
     //日記を編集する
     public function update(Request $request)
@@ -56,8 +54,10 @@ class DiaryController extends Controller
             return response()->json("Parameter Error", 400);
         }
 
-        $diaries = Diary::where('user_id',$request->user_id)->get();
-   
+        //成功したら一覧を返却する
+        $diaries = Diary::where('user_id',$request->user_id)
+                        ->orderBy('date', 'desc')
+                        ->get();
         return response()->json($diaries, 200);
     }
 
@@ -68,7 +68,15 @@ class DiaryController extends Controller
         $diary = Diary::where('id',$request->id)
                         ->where('user_id', $request->user_id)
                         ->delete();
-        $diaries = Diary::where('user_id',$request->user_id)->get();
+
+        if($diary != 1){
+            return response()->json("Parameter Error", 400);
+        }
+
+        //削除成功した時に結果を返却
+        $diaries = Diary::where('user_id',$request->user_id)
+                        ->orderBy('date', 'desc')            
+                        ->get();
         return response()->json($diaries, 200);
     }
 

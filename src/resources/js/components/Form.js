@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { useNavigate} from 'react-router-dom';
+//import { useNavigate} from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { EditorState, ContentState, convertFromRaw, convertToRaw } from 'draft-js';
-import nprogress from 'nprogress';
+//mport nprogress from 'nprogress';
 import Button from './Button';
 import RichTextArea from './RichTextArea';
 import { useDiary } from '../contexts/DiaryContext';
 import { useAuth } from '../contexts/AuthContext';
 
 
-const NUMBER_OF_IMAGES = 4;
+//const NUMBER_OF_IMAGES = 4;
 const IMAGE_CONTAINER_CLASS = 'image-container';
 
 const createEditorStateFromContent = content => {
@@ -118,35 +118,35 @@ const ProductSchema = Yup.object().shape({
   ),
 });
 
-const ImageRadioInputs = props => {
-  const { name, urls, value, onChange, onBlur, setFieldValue } = props;
+// const ImageRadioInputs = props => {
+//   const { name, urls, value, onChange, onBlur, setFieldValue } = props;
 
-  useEffect(() => {
-    if (value.length || !urls.length) return;
-    setFieldValue(name, urls[0]);
-  }, [name, setFieldValue, urls, value.length]);
+//   useEffect(() => {
+//     if (value.length || !urls.length) return;
+//     setFieldValue(name, urls[0]);
+//   }, [name, setFieldValue, urls, value.length]);
 
-  return urls.map((url, i) => {
-    const key = `${url}${i}`;
-    const checked = url === value;
-    return (
-      <div key={key} className={`image-radio${checked ? ' is-selected' : ''}`}>
-        <label htmlFor={key}>
-          <input
-            id={key}
-            type="radio"
-            name={name}
-            value={url}
-            checked={url === value}
-            onChange={onChange}
-            onBlur={onBlur}
-          />
-          <img src={url} alt="" />
-        </label>
-      </div>
-    );
-  });
-};
+//   return urls.map((url, i) => {
+//     const key = `${url}${i}`;
+//     const checked = url === value;
+//     return (
+//       <div key={key} className={`image-radio${checked ? ' is-selected' : ''}`}>
+//         <label htmlFor={key}>
+//           <input
+//             id={key}
+//             type="radio"
+//             name={name}
+//             value={url}
+//             checked={url === value}
+//             onChange={onChange}
+//             onBlur={onBlur}
+//           />
+//           <img src={url} alt="" />
+//         </label>
+//       </div>
+//     );
+//   });
+// };
 
 const FocusOnError = props => {
   const { isValid, isSubmitting, errors, fieldElements } = props;
@@ -168,10 +168,10 @@ const Form = (props) => {
   const { addProduct, editProduct } = useDiary();
   const auth = useAuth()
   const user_id = auth?.user.id
-  const navigate = useNavigate();
-  const [imageOptions, setImageOptions] = useState(null);
-  const [isFetching, setIsFetching] = useState(false); //画像の読み込み関連
-  const [fetchingErrorMessage, setFetchingErrorMessage] = useState(null);
+  //const navigate = useNavigate();
+  // const [imageOptions, setImageOptions] = useState(null);
+  //const [isFetching, setIsFetching] = useState(false); //画像の読み込み関連
+  //const [fetchingErrorMessage, setFetchingErrorMessage] = useState(null);
   const fieldElements = { title: useRef(), description: useRef() };
   const setFieldEl = name => el => {
     fieldElements[name] = el;
@@ -179,37 +179,37 @@ const Form = (props) => {
 
   const initialImageUrl = product && product.image_url ? product.image_url : null;
 
-  nprogress.configure({ parent: `.progress-bar` });
+  //nprogress.configure({ parent: `.progress-bar` });
 
-  useEffect(() => {
-    //画像関連
-    if (imageOptions) return;
-    setIsFetching(true);
-    nprogress.start();
-    const numberOfImages = initialImageUrl ? NUMBER_OF_IMAGES - 1 : NUMBER_OF_IMAGES;
-    const fetchImagePromise = Array(numberOfImages)
-      .fill()
-      .map((_, index) =>
-        fetch(`https://source.unsplash.com/collection/345710/150x150?sig=${index}`)
-      );
+  // useEffect(() => {
+  //   //画像関連
+  //   if (imageOptions) return;
+  //   setIsFetching(true);
+  //   nprogress.start();
+  //   const numberOfImages = initialImageUrl ? NUMBER_OF_IMAGES - 1 : NUMBER_OF_IMAGES;
+  //   const fetchImagePromise = Array(numberOfImages)
+  //     .fill()
+  //     .map((_, index) =>
+  //       fetch(`https://source.unsplash.com/collection/345710/150x150?sig=${index}`)
+  //     );
 
-    Promise.all(fetchImagePromise)
-      .then(imageRes => {
-        const fetchedUrls = imageRes.map(res => res.url);
-        const allUrls = initialImageUrl ? [initialImageUrl, ...fetchedUrls] : fetchedUrls;
-        nprogress.done();
-        setImageOptions(allUrls);
-        setIsFetching(false);
-      })
-      .catch(() => {
-        console.log(
-          '🧹 Swipping image fetching error under the rug. In production use error tracking system.'
-        );
-        nprogress.done();
-        setIsFetching(false);
-        setFetchingErrorMessage('Unable to retrieve images. Please refresh the page.');
-      });
-  }, [imageOptions, initialImageUrl]);
+  //   Promise.all(fetchImagePromise)
+  //     .then(imageRes => {
+  //       const fetchedUrls = imageRes.map(res => res.url);
+  //       const allUrls = initialImageUrl ? [initialImageUrl, ...fetchedUrls] : fetchedUrls;
+  //       nprogress.done();
+  //       setImageOptions(allUrls);
+  //       setIsFetching(false);
+  //     })
+  //     .catch(() => {
+  //       console.log(
+  //         '🧹 Swipping image fetching error under the rug. In production use error tracking system.'
+  //       );
+  //       nprogress.done();
+  //       setIsFetching(false);
+  //       setFetchingErrorMessage('Unable to retrieve images. Please refresh the page.');
+  //     });
+  // }, [imageOptions, initialImageUrl]);
 
   return (
     <>
@@ -226,10 +226,10 @@ const Form = (props) => {
         validationSchema={ProductSchema}
         validateOnChange={false}
         onSubmit={(values, { setSubmitting }) => {
-          if (isFetching) {
-            setSubmitting(false);
-            return;
-          }
+          // if (isFetching) {
+          //   setSubmitting(false);
+          //   return;
+          // }
 
           const { id, date, title, description, image_url } = values;
           
@@ -306,7 +306,7 @@ const Form = (props) => {
                   isInvalid={descriptionInvalid}
                 />
               </label>
-              <div className="field-group">
+              {/* <div className="field-group">
                 <span className="field-label">Image</span>
                 <span className="progress-bar" />
                 {fetchingErrorMessage && <Error>{fetchingErrorMessage}</Error>}
@@ -322,8 +322,8 @@ const Form = (props) => {
                     />
                   )}
                 </div>
-              </div>
-              <Button type="submit" disabled={isSubmitting || isFetching}>
+              </div> */}
+              <Button type="submit" disabled={isSubmitting}>
                 Submit
               </Button>
             </FormContainer>
