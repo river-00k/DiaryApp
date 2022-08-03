@@ -5,7 +5,7 @@ import { stateToHTML } from 'draft-js-export-html';
 import useCustomEditorStyles from '../hooks/useCustomEditorStyles';
 import Button from './Button';
 import {useDiary} from '../contexts/DiaryContext'
-import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core'
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 
 
 const parseRichText = (content, inlineStyles) => {
@@ -122,16 +122,23 @@ const Item = styled.li`
 `;
 
 const Products = () => {
-  const { products, removeProduct } = useDiary();
-  const [age, setAge] = useState("")
+  const today = new Date()
+  const { products, removeProduct } = useDiary()
+  const [month, setMonth] = useState(today.getMonth() + 1)
+  const [year, setYear] = useState(today.getFullYear())
   const { textColorStyles, getCustomSyleMapInstructions } = useCustomEditorStyles();
   const inlineStyles = getCustomSyleMapInstructions(cssProps => ({ style: cssProps }))(
     textColorStyles
   );
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const monthChange = (event) => {
+    setMonth(event.target.value);
   };
+
+  const yearChange = (event) => {
+    setYear(event.target.value);
+  };
+
 
   const selectMonthly = (products, month, year) =>{
     return(
@@ -142,7 +149,7 @@ const Products = () => {
     )
   }
 
-  const monthlyProducts = selectMonthly(products, 7, 2022)
+  const monthlyProducts = selectMonthly(products, month, year)
 
   //const hasProducts = products && products.length > 0;
   const hasProducts = monthlyProducts && monthlyProducts.length > 0;
@@ -151,23 +158,44 @@ const Products = () => {
     
     <ProductsSection>
       <header className="section-header">
-        <FormControl variant="standard" sx={{ m: 10, minWidth: 1200 }}>
-          <InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
-          <Select
-            labelId="demo-simple-select-standard-label"
-            id="demo-simple-select-standard"
-            value={age}
-            onChange={handleChange}
-            label="Age"
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
+        <div>
+          <FormControl variant="standard" size='100' sx={{m: 1, minWidth: 120}}>
+            <InputLabel id="demo-simple-select-standard-label" sx={{fontSize:15}}>Month</InputLabel>
+            <Select
+              // labelId="demo-simple-select-standard-label"
+              // id="demo-simple-select-standard"
+              value={month}
+              onChange={monthChange}
+              sx={{fontSize:20}}
+            >
+              <MenuItem value={1}>January</MenuItem>
+              <MenuItem value={2}>February</MenuItem>
+              <MenuItem value={3}>March</MenuItem>
+              <MenuItem value={4}>April</MenuItem>
+              <MenuItem value={5}>May</MenuItem>
+              <MenuItem value={6}>June</MenuItem>
+              <MenuItem value={7}>July</MenuItem>
+              <MenuItem value={8}>August</MenuItem>
+              <MenuItem value={9}>September</MenuItem>
+              <MenuItem value={10}>October</MenuItem>
+              <MenuItem value={11}>November</MenuItem>
+              <MenuItem value={12}>December</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl variant="standard" size='100' sx={{m: 1, minWidth: 80}}>
+            <InputLabel id="demo-simple-select-standard-label" sx={{fontSize:15}}>Year</InputLabel>
+            <Select
+              value={year}
+              onChange={yearChange}
+              sx={{fontSize:20}}
+            >
+              <MenuItem value={2021}>2021</MenuItem>
+              <MenuItem value={2022}>2022</MenuItem>
+              
+            </Select>
+          </FormControl>
+
+        </div>
         <div className="controls">
           <Button to="/mypage/diary/product/new">
             <b>+</b> 新しい日記
