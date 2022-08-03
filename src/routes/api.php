@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'api'], function(){
 
+    //テスト用
+    Route::post('updateDiaryTable', 'App\Http\Controllers\Api\DiaryController@update');
+
 
     Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
     Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');

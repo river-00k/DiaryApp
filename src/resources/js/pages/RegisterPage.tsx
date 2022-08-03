@@ -1,7 +1,7 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { Navigate, Outlet, useNavigate, useOutletContext } from 'react-router-dom'
-import { useAuth } from '../auth/AuthContext'
+import { useAuth } from '../contexts/AuthContext'
 import Header from '../components/Header'
 import RegisterForm from '../components/RegisterInputForm'
 

@@ -2,7 +2,7 @@ import { AccordionSummary, Theme } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useAuth } from '../auth/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 import Header from '../components/Header';
 import LoginForm from '../components/LoginForm';
 

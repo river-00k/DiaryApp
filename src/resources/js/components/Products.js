@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { convertFromRaw } from 'draft-js';
 import { stateToHTML } from 'draft-js-export-html';
 import useCustomEditorStyles from '../hooks/useCustomEditorStyles';
 import Button from './Button';
-import { useDiary } from '../pages/DiaryPage';
+import {useDiary} from '../contexts/DiaryContext'
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+
 
 const parseRichText = (content, inlineStyles) => {
+  
   const contentState = content.blocks ? convertFromRaw(content) : content;
 
   const options = {
@@ -119,20 +122,82 @@ const Item = styled.li`
 `;
 
 const Products = () => {
-  const { products, removeProduct } = useDiary();
+  const today = new Date()
+  const { products, removeProduct } = useDiary()
+  const [month, setMonth] = useState(today.getMonth() + 1)
+  const [year, setYear] = useState(today.getFullYear())
   const { textColorStyles, getCustomSyleMapInstructions } = useCustomEditorStyles();
   const inlineStyles = getCustomSyleMapInstructions(cssProps => ({ style: cssProps }))(
     textColorStyles
   );
 
-  const hasProducts = products && products.length > 0;
+  const monthChange = (event) => {
+    setMonth(event.target.value);
+  };
+
+  const yearChange = (event) => {
+    setYear(event.target.value);
+  };
+
+
+  const selectMonthly = (products, month, year) =>{
+    return(
+      products.filter(obj => {
+        let objDate = new Date(obj.date)
+        return objDate.getMonth() + 1 == month && objDate.getFullYear() == year
+      })
+    )
+  }
+
+  const monthlyProducts = selectMonthly(products, month, year)
+
+  //const hasProducts = products && products.length > 0;
+  const hasProducts = monthlyProducts && monthlyProducts.length > 0;
 
   return (
+    
     <ProductsSection>
       <header className="section-header">
-        <h2 className="heading">All Products</h2>
+        <div>
+          <FormControl variant="standard" size='100' sx={{m: 1, minWidth: 120}}>
+            <InputLabel id="demo-simple-select-standard-label" sx={{fontSize:15}}>Month</InputLabel>
+            <Select
+              // labelId="demo-simple-select-standard-label"
+              // id="demo-simple-select-standard"
+              value={month}
+              onChange={monthChange}
+              sx={{fontSize:20}}
+            >
+              <MenuItem value={1}>January</MenuItem>
+              <MenuItem value={2}>February</MenuItem>
+              <MenuItem value={3}>March</MenuItem>
+              <MenuItem value={4}>April</MenuItem>
+              <MenuItem value={5}>May</MenuItem>
+              <MenuItem value={6}>June</MenuItem>
+              <MenuItem value={7}>July</MenuItem>
+              <MenuItem value={8}>August</MenuItem>
+              <MenuItem value={9}>September</MenuItem>
+              <MenuItem value={10}>October</MenuItem>
+              <MenuItem value={11}>November</MenuItem>
+              <MenuItem value={12}>December</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl variant="standard" size='100' sx={{m: 1, minWidth: 80}}>
+            <InputLabel id="demo-simple-select-standard-label" sx={{fontSize:15}}>Year</InputLabel>
+            <Select
+              value={year}
+              onChange={yearChange}
+              sx={{fontSize:20}}
+            >
+              <MenuItem value={2021}>2021</MenuItem>
+              <MenuItem value={2022}>2022</MenuItem>
+              
+            </Select>
+          </FormControl>
+
+        </div>
         <div className="controls">
-          <Button to="/product/new">
+          <Button to="/mypage/diary/product/new">
             <b>+</b> 新しい日記
           </Button>
         </div>
@@ -140,39 +205,43 @@ const Products = () => {
 
       {hasProducts ? (
         <List>
-          {products.map(product => {
-            const { id, title, description, image_url } = product;
+          {monthlyProducts.map(product => {
+            const { id, title, date, image_url } = product;
+            let  { description }  = product;
+      
+            description = JSON.parse(description)
+            
             return (
               <Item key={id}>
-                <div className="image-container">
+                <div>
+                  <h3>{date}</h3>
+                </div>
+                {/* <div className="image-container">
                   <img
                     className="image"
                     src={image_url || 'https://source.unsplash.com/gJylsVMSf-k/150x150'}
                     alt=""
                   />
-                </div>
+                </div> */}
                 <h3 className="title">{title}</h3>
                 {typeof description === 'string' ? (
                   <p className="description">{description}</p>
                 ) : (
                   <div
                     className="description"
-                    // if we didn't trust the html string then we would sanitize
-                    //   here or before saving the data.
-                    //   eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{
                       __html: parseRichText(description, inlineStyles),
                     }}
                   />
                 )}
                 <div className="controls">
-                  <Button className="control" to={`/product/edit/${id}`} buttonStyle="muted">
+                  <Button className="control" to={`/mypage/diary/product/edit/${id}`} buttonStyle="muted" >
                     Edit
                   </Button>
                   <Button
                     className="control"
                     buttonStyle="danger"
-                    onClick={() => removeProduct(product)}
+                    onClick={()=>removeProduct(product)}
                   >
                     Delete
                   </Button>

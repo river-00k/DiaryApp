@@ -1,18 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { useNavigate} from 'react-router-dom';
+//import { useNavigate} from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { EditorState, ContentState, convertFromRaw } from 'draft-js';
-import nprogress from 'nprogress';
+import { EditorState, ContentState, convertFromRaw, convertToRaw } from 'draft-js';
+//mport nprogress from 'nprogress';
 import Button from './Button';
 import RichTextArea from './RichTextArea';
-import { useDiary } from '../pages/DiaryPage';
+import { useDiary } from '../contexts/DiaryContext';
+import { useAuth } from '../contexts/AuthContext';
 
-const NUMBER_OF_IMAGES = 4;
+
+//const NUMBER_OF_IMAGES = 4;
 const IMAGE_CONTAINER_CLASS = 'image-container';
 
 const createEditorStateFromContent = content => {
+
   let contentState;
   if (typeof content === 'string') {
     contentState = ContentState.createFromText(content);
@@ -115,35 +118,35 @@ const ProductSchema = Yup.object().shape({
   ),
 });
 
-const ImageRadioInputs = props => {
-  const { name, urls, value, onChange, onBlur, setFieldValue } = props;
+// const ImageRadioInputs = props => {
+//   const { name, urls, value, onChange, onBlur, setFieldValue } = props;
 
-  useEffect(() => {
-    if (value.length || !urls.length) return;
-    setFieldValue(name, urls[0]);
-  }, [name, setFieldValue, urls, value.length]);
+//   useEffect(() => {
+//     if (value.length || !urls.length) return;
+//     setFieldValue(name, urls[0]);
+//   }, [name, setFieldValue, urls, value.length]);
 
-  return urls.map((url, i) => {
-    const key = `${url}${i}`;
-    const checked = url === value;
-    return (
-      <div key={key} className={`image-radio${checked ? ' is-selected' : ''}`}>
-        <label htmlFor={key}>
-          <input
-            id={key}
-            type="radio"
-            name={name}
-            value={url}
-            checked={url === value}
-            onChange={onChange}
-            onBlur={onBlur}
-          />
-          <img src={url} alt="" />
-        </label>
-      </div>
-    );
-  });
-};
+//   return urls.map((url, i) => {
+//     const key = `${url}${i}`;
+//     const checked = url === value;
+//     return (
+//       <div key={key} className={`image-radio${checked ? ' is-selected' : ''}`}>
+//         <label htmlFor={key}>
+//           <input
+//             id={key}
+//             type="radio"
+//             name={name}
+//             value={url}
+//             checked={url === value}
+//             onChange={onChange}
+//             onBlur={onBlur}
+//           />
+//           <img src={url} alt="" />
+//         </label>
+//       </div>
+//     );
+//   });
+// };
 
 const FocusOnError = props => {
   const { isValid, isSubmitting, errors, fieldElements } = props;
@@ -160,12 +163,15 @@ const FocusOnError = props => {
 };
 
 // pass in id
-const Form = () => {
-  const { addProduct, product, editProduct } = useDiary();
-  const navigate = useNavigate();
-  const [imageOptions, setImageOptions] = useState(null);
-  const [isFetching, setIsFetching] = useState(false);
-  const [fetchingErrorMessage, setFetchingErrorMessage] = useState(null);
+const Form = (props) => {
+  const {product} = props
+  const { addProduct, editProduct } = useDiary();
+  const auth = useAuth()
+  const user_id = auth?.user.id
+  //const navigate = useNavigate();
+  // const [imageOptions, setImageOptions] = useState(null);
+  //const [isFetching, setIsFetching] = useState(false); //画像の読み込み関連
+  //const [fetchingErrorMessage, setFetchingErrorMessage] = useState(null);
   const fieldElements = { title: useRef(), description: useRef() };
   const setFieldEl = name => el => {
     fieldElements[name] = el;
@@ -173,58 +179,66 @@ const Form = () => {
 
   const initialImageUrl = product && product.image_url ? product.image_url : null;
 
-  nprogress.configure({ parent: `.progress-bar` });
+  //nprogress.configure({ parent: `.progress-bar` });
 
-  useEffect(() => {
-    if (imageOptions) return;
-    setIsFetching(true);
-    nprogress.start();
-    const numberOfImages = initialImageUrl ? NUMBER_OF_IMAGES - 1 : NUMBER_OF_IMAGES;
-    const fetchImagePromise = Array(numberOfImages)
-      .fill()
-      .map((_, index) =>
-        fetch(`https://source.unsplash.com/collection/345710/150x150?sig=${index}`)
-      );
+  // useEffect(() => {
+  //   //画像関連
+  //   if (imageOptions) return;
+  //   setIsFetching(true);
+  //   nprogress.start();
+  //   const numberOfImages = initialImageUrl ? NUMBER_OF_IMAGES - 1 : NUMBER_OF_IMAGES;
+  //   const fetchImagePromise = Array(numberOfImages)
+  //     .fill()
+  //     .map((_, index) =>
+  //       fetch(`https://source.unsplash.com/collection/345710/150x150?sig=${index}`)
+  //     );
 
-    Promise.all(fetchImagePromise)
-      .then(imageRes => {
-        const fetchedUrls = imageRes.map(res => res.url);
-        const allUrls = initialImageUrl ? [initialImageUrl, ...fetchedUrls] : fetchedUrls;
-        nprogress.done();
-        setImageOptions(allUrls);
-        setIsFetching(false);
-      })
-      .catch(() => {
-        console.log(
-          '🧹 Swipping image fetching error under the rug. In production use error tracking system.'
-        );
-        nprogress.done();
-        setIsFetching(false);
-        setFetchingErrorMessage('Unable to retrieve images. Please refresh the page.');
-      });
-  }, [imageOptions, initialImageUrl]);
+  //   Promise.all(fetchImagePromise)
+  //     .then(imageRes => {
+  //       const fetchedUrls = imageRes.map(res => res.url);
+  //       const allUrls = initialImageUrl ? [initialImageUrl, ...fetchedUrls] : fetchedUrls;
+  //       nprogress.done();
+  //       setImageOptions(allUrls);
+  //       setIsFetching(false);
+  //     })
+  //     .catch(() => {
+  //       console.log(
+  //         '🧹 Swipping image fetching error under the rug. In production use error tracking system.'
+  //       );
+  //       nprogress.done();
+  //       setIsFetching(false);
+  //       setFetchingErrorMessage('Unable to retrieve images. Please refresh the page.');
+  //     });
+  // }, [imageOptions, initialImageUrl]);
 
   return (
     <>
       <Formik
         initialValues={{
+          id: product ? product.id : -1,
+          date: product ? product.date : '',
           title: product ? product.title : '',
           description: product
-            ? createEditorStateFromContent(product.description)
+            ? createEditorStateFromContent(JSON.parse(product.description))
             : EditorState.createEmpty(),
           image_url: initialImageUrl || '',
         }}
         validationSchema={ProductSchema}
         validateOnChange={false}
         onSubmit={(values, { setSubmitting }) => {
-          if (isFetching) {
-            setSubmitting(false);
-            return;
-          }
+          // if (isFetching) {
+          //   setSubmitting(false);
+          //   return;
+          // }
 
-          const { title, description, image_url } = values;
-          const id = product ? product.id : (+new Date()).toString();
-          const allValues = { id, title, description: description.getCurrentContent(), image_url };
+          const { id, date, title, description, image_url } = values;
+          
+          //DBに格納するためにdescriptionデータを整理
+          let dbDescription = description.getCurrentContent()
+          dbDescription = convertToRaw(dbDescription)
+          dbDescription = JSON.stringify(dbDescription)
+          
+          const allValues = { id, date, user_id, title, description: dbDescription, image_url };
 
           if (product) {
             editProduct(allValues);
@@ -232,7 +246,7 @@ const Form = () => {
             addProduct(allValues);
           }
 
-          navigate("/");
+          //navigate("/mypage/diary/home");
         }}
       >
         {props => {
@@ -252,7 +266,9 @@ const Form = () => {
 
           const titleInvalid = errors.title && touched.title;
           const descriptionInvalid = errors.description && touched.description;
-
+          
+          //表示部分
+          
           return (
             <FormContainer onSubmit={handleSubmit}>
               <FocusOnError
@@ -290,7 +306,7 @@ const Form = () => {
                   isInvalid={descriptionInvalid}
                 />
               </label>
-              <div className="field-group">
+              {/* <div className="field-group">
                 <span className="field-label">Image</span>
                 <span className="progress-bar" />
                 {fetchingErrorMessage && <Error>{fetchingErrorMessage}</Error>}
@@ -306,8 +322,8 @@ const Form = () => {
                     />
                   )}
                 </div>
-              </div>
-              <Button type="submit" disabled={isSubmitting || isFetching}>
+              </div> */}
+              <Button type="submit" disabled={isSubmitting}>
                 Submit
               </Button>
             </FormContainer>
@@ -319,5 +335,3 @@ const Form = () => {
 };
 
 export default Form;
-
-//<Prompt when={dirty && !isSubmitting} message="Are you sure you want to leave?" />

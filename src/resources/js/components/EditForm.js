@@ -1,15 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useDiary } from '../pages/DiaryPage';
+import { useDiary } from '../contexts/DiaryContext';
 import Form from './Form';
 import NotFound from './NotFound';
 
 const EdifForm = () => {
   const { id } = useParams();
-  const { products, editProduct } = useDiary();
-  const product = products.find(({ id: productID }) => productID === id);
+  const { products } = useDiary();
+  const product = products.find(obj => {return obj.id === Number(id)});
 
-  return <>{product ? <Form product={product} editProduct={editProduct} /> : <NotFound />}</>;
+  return <>{product ? <Form product={product}/> : <NotFound />}</>;
 };
 
 export default EdifForm;

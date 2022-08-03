@@ -14,45 +14,70 @@ class DiaryController extends Controller
     {
         $diary = new Diary;
         $diary->user_id = $request->user_id;
-        $diary->date = $request->date;
-        $diary->evaluation = $request->evaluation;
-        $diary->text = $request->text;
+        $diary->date = date("Y-m-d");
+        $diary->title = $request->title;
+        $diary->description = $request->description;
+        $diary->image_url = "";
+        
         $diary->save();
 
+        $diaries = Diary::where('user_id',$request->user_id)
+                        ->orderBy('date', 'desc')
+                        ->get();
+
         //成功したらHTTPステータス200(成功)を返却する
-        return response()->json($diary, 200);
+        return response()->json($diaries, 200);
     }
 
     //Diaryの特定ユーザー一覧表示
     public function read(Request $request)
     {
-        $diary = Diary::where('user_id',$request->user_id)->where('date', $request->date)->get();
-        return $diary;
+        $diaries = Diary::where('user_id',$request->id)
+                        ->orderBy('date', 'desc')
+                        ->get();
+        return response()->json($diaries, 200);
     }
 
-    //Diaryの特定ユーザー一覧表示
-    public function readAll(Request $request)
-    {
-        $diary = Diary::where('user_id',$request->user_id)->get();
-        return $diary;
-    }
 
+    //日記を編集する
     public function update(Request $request)
     {
-        $diary = Diary::where('user_id', $request->user_id)
-                        ->where('date', $request->date)
-                        ->update(['text'=>$request->text]);
-   
-        return response()->json($diary, 200);
+        $diary = Diary::where('id', $request->id)
+                        ->where('user_id', $request->user_id)
+                        ->update([
+                            'title'=>$request->title,
+                            'description'=>$request->description
+                        ]);
+
+        //更新に失敗した場合の処理
+        if($diary != 1){
+            return response()->json("Parameter Error", 400);
+        }
+
+        //成功したら一覧を返却する
+        $diaries = Diary::where('user_id',$request->user_id)
+                        ->orderBy('date', 'desc')
+                        ->get();
+        return response()->json($diaries, 200);
     }
 
-    //Diaryの特定行を削除する
+    //日記を削除する
     public function delete(Request $request)
     {
-        $diary = Diary::where('user_id',$request->user_id)
-                        ->where('date', $request->date)
+        //日記を削除する
+        $diary = Diary::where('id',$request->id)
+                        ->where('user_id', $request->user_id)
                         ->delete();
-        return response()->json($diary, 200);
+
+        if($diary != 1){
+            return response()->json("Parameter Error", 400);
+        }
+
+        //削除成功した時に結果を返却
+        $diaries = Diary::where('user_id',$request->user_id)
+                        ->orderBy('date', 'desc')            
+                        ->get();
+        return response()->json($diaries, 200);
     }
 
 
@@ -62,6 +87,7 @@ class DiaryController extends Controller
         $diaries = Diary::all();
         return response()->json($diaries, 200);
     }
+    
 
 
 }
