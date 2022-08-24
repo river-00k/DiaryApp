@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 //import { useNavigate} from 'react-router-dom';
-import { Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
 import { EditorState, ContentState, convertFromRaw, convertToRaw } from 'draft-js';
 //mport nprogress from 'nprogress';
@@ -47,6 +47,20 @@ const FormContainer = styled.form`
     margin: ${props => props.theme.spacing['3']} 0;
   }
 
+  .evaluation-list {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  
+
   .${IMAGE_CONTAINER_CLASS} {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -80,6 +94,8 @@ const FormContainer = styled.form`
         box-shadow: ${props => props.theme.boxShadow.lg};
       }
     }
+
+
 
     &.is-selected {
       img {
@@ -172,7 +188,7 @@ const Form = (props) => {
   // const [imageOptions, setImageOptions] = useState(null);
   //const [isFetching, setIsFetching] = useState(false); //画像の読み込み関連
   //const [fetchingErrorMessage, setFetchingErrorMessage] = useState(null);
-  const fieldElements = { title: useRef(), description: useRef() };
+  const fieldElements = { title: useRef(), description: useRef(), evaluation: useRef() };
   const setFieldEl = name => el => {
     fieldElements[name] = el;
   };
@@ -216,12 +232,12 @@ const Form = (props) => {
       <Formik
         initialValues={{
           id: product ? product.id : -1,
-          date: product ? product.date : '',
+          date: product ? product.date : new Date(),
           title: product ? product.title : '',
           description: product
             ? createEditorStateFromContent(JSON.parse(product.description))
             : EditorState.createEmpty(),
-          image_url: initialImageUrl || '',
+          image_url: initialImageUrl || ''
         }}
         validationSchema={ProductSchema}
         validateOnChange={false}
@@ -231,15 +247,17 @@ const Form = (props) => {
           //   return;
           // }
 
-          const { id, date, title, description, image_url } = values;
+
+          console.log(values)
+          const { id, date, title, description, image_url, evaluation } = values;
           
           //DBに格納するためにdescriptionデータを整理
           let dbDescription = description.getCurrentContent()
           dbDescription = convertToRaw(dbDescription)
           dbDescription = JSON.stringify(dbDescription)
           
-          const allValues = { id, date, user_id, title, description: dbDescription, image_url };
-
+          const allValues = { id, date, user_id, title, description: dbDescription, image_url, evaluation};
+    
           if (product) {
             editProduct(allValues);
           } else {
@@ -251,7 +269,7 @@ const Form = (props) => {
       >
         {props => {
           const {
-            values: { title, description, image_url },
+            values: { title, description, image_url, evaluation },
             errors,
             touched,
             handleSubmit,
@@ -270,6 +288,7 @@ const Form = (props) => {
           //表示部分
           
           return (
+
             <FormContainer onSubmit={handleSubmit}>
               <FocusOnError
                 isValid={isValid}
@@ -306,6 +325,34 @@ const Form = (props) => {
                   isInvalid={descriptionInvalid}
                 />
               </label>
+              <label htmlFor='evaluation' className="field-group1">
+                <span className='field-label'>
+                  Evaluation
+                </span>
+                <div className='evaluation-list'>
+                  <input id="excelent" type="radio" name="evaluation" value="5"/>
+                  <label htmlFor="excelent">
+                    <img src="/img/excelent.png"/>
+                  </label>
+                  <input id="good" type="radio" name="evaluation" value="4"/>
+                  <label htmlFor="good">
+                    <img src="/img/good.png"/>
+                  </label>
+                  <input id="fine" type="radio" name="evaluation" value="3"/>
+                  <label htmlFor="fine">
+                    <img src="/img/fine.png"/>
+                  </label>
+                  <input id="bad" type="radio" name="evaluation" value="2"/>
+                  <label htmlFor="bad">
+                    <img src="/img/bad.png"/>
+                  </label>
+                  <input id="terrible" type="radio" name="evaluation" value="1"/>
+                  <label htmlFor="terrible">
+                    <img src="/img/terrible.png"/>
+                  </label>
+                  
+                </div>
+                </label>
               {/* <div className="field-group">
                 <span className="field-label">Image</span>
                 <span className="progress-bar" />
@@ -323,10 +370,13 @@ const Form = (props) => {
                   )}
                 </div>
               </div> */}
+              
               <Button type="submit" disabled={isSubmitting}>
                 Submit
               </Button>
             </FormContainer>
+            
+            
           );
         }}
       </Formik>

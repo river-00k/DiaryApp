@@ -122,14 +122,18 @@ const Item = styled.li`
 `;
 
 const Products = () => {
-  const today = new Date()
-  const { products, removeProduct } = useDiary()
-  const [month, setMonth] = useState(today.getMonth() + 1)
-  const [year, setYear] = useState(today.getFullYear())
+  
+  const { product, products, removeProduct } = useDiary()
   const { textColorStyles, getCustomSyleMapInstructions } = useCustomEditorStyles();
   const inlineStyles = getCustomSyleMapInstructions(cssProps => ({ style: cssProps }))(
     textColorStyles
   );
+
+  //日付の取得
+  const today = product? new Date(product.date):new Date()
+  
+  const [year, setYear] = useState(today.getFullYear())
+  const [month, setMonth] = useState(today.getMonth() + 1)
 
   const monthChange = (event) => {
     setMonth(event.target.value);

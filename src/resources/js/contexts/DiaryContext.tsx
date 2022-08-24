@@ -12,6 +12,7 @@ const DiaryContext = createContext<DiaryProps | null>(null)
 
 export const DiaryProvider = ({children}:Props) => {
 
+    const [product, setProduct] = useState<DiaryData | null>(null);
     const [products, setProducts] = useState< Array<DiaryData> >([]);
     const [loading, setLoading] = useState<boolean>(true)
 
@@ -21,19 +22,28 @@ export const DiaryProvider = ({children}:Props) => {
     const navigate = useNavigate()
 
     const addProduct = async(diaryData: DiaryData) => {
-        try{
-            await axios.post('/api/diary/create', diaryData)
-                        .then((res) => {
-                            setProducts(res.data)
-                        }).catch(()=>{
-                            console.log('Faild to adding data')
-                        })
-            
-            navigate("/mypage/diary/home")
-        }catch(error){
-            console.log("Adding Failed")
-            throw error
-        }
+       
+        //新しい日記の追加
+        await axios.post('/api/diary/create', diaryData)
+                    .then((res) => {
+                        setProduct(diaryData)
+                    }).catch(()=>{
+                        setProduct(null)
+                        console.log('Failed to adding data')
+                    })
+        
+        //追加後の日記の読み込み
+        await axios.post('/api/diary/read', user)
+                    .then((res) => {
+                        setProducts(res.data)
+                    })
+                    .catch((()=>{
+                        console.log('Failed to reading data')
+                    }))                        
+        
+        //画面遷移
+        navigate("/mypage/diary/home")
+        
 
     }
     const removeProduct = async(diaryData: DiaryData) => {
@@ -41,30 +51,53 @@ export const DiaryProvider = ({children}:Props) => {
             id: diaryData.id,
             user_id: diaryData.user_id
         }
-        try{
-            await axios.post('/api/diary/delete', props)
-                    .then((res) => {
-                        setProducts(res.data)
-                    }).catch(() => {
-                        console.log('Faild to removing data')
-                    })
-        }catch(error){
-            console.log("Diary Delete Failed")
-            throw error
-        }
+        
+        //日記の削除
+        await axios.post('/api/diary/delete', props)
+                .then((res) => {
+                    setProduct(diaryData)
+                }).catch(() => {
+                    setProduct(null)
+                    console.log('Faild to removing data')
+                })
+        
+         //編集後のDBの読み込み
+         await axios.post('/api/diary/read', user)
+            .then((res) => {
+                setProducts(res.data)
+            })
+            .catch((()=>{
+                console.log('Failed to reading data')
+            }))
+        
     }
     const editProduct = async(diaryData: DiaryData) => {
 
+        //データの編集
         await axios.post('/api/diary/update', diaryData)
                 .then((res) => {
-                    setProducts(res.data)
+                    setProduct(diaryData)
+            
                 }).catch(() => {
+                    setProduct(null)
                     console.log("Failed to update!")
                 })
+        
+        //編集後のDBの読み込み
+        await axios.post('/api/diary/read', user)
+                .then((res) => {
+                    setProducts(res.data)
+                })
+                .catch((()=>{
+                    console.log('Failed to reading data')
+                }))
+
+        //画面遷移
         navigate("/mypage/diary/home")
     }
 
     const value: DiaryProps = {
+        product,
         products,
         addProduct,
         removeProduct,

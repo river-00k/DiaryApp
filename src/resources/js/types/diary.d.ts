@@ -4,11 +4,13 @@ type DiaryData = {
     user_id: number,
     title: string,
     description: JSON,
+    evaluation: number,
     image_url: string
 }
 
 
 type DiaryProps = {
+    product: DiaryData | nul,
     products: Array<DiaryData>,
     addProduct: (displayDiaryData: DiaryData)=>Promise<void>,
     removeProduct: ( displayDiaryData: DiaryData )=>Promise<void>,
