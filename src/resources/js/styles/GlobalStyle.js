@@ -60,7 +60,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.fontFamily.mono}
   }
 
-  input,
   textarea {
     ${baseInputStyles}
 
