@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: 10px;
     min-height: 100%;
+    min-width: 400px;
     font-family: ${(props) => props.theme.fontFamily.sans};
     box-shadow: ${(props) => props.theme.boxShadow.default};
   }

@@ -44,11 +44,12 @@ const ProductsSection = styled.section`
 const List = styled.ul`
   padding: 0;
   list-style-type: none;
+  max-width: 100%;
 `;
 
 const Item = styled.li`
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 150px minmax(20px, 100%);
   grid-template-areas:
     'date title'
     'image description'
@@ -58,6 +59,7 @@ const Item = styled.li`
   padding: ${props => props.theme.spacing['4']};
   margin: ${props => props.theme.spacing['8']} 0;
   border: 1px solid ${props => props.theme.border.light};
+  max-width: 100%;
 
   @media (min-width: 700px) {
     grid-row-gap: 0;
@@ -71,18 +73,23 @@ const Item = styled.li`
 
   h3 {
     margin: 0 0 ${props => props.theme.spacing['2']};
+    overflow: hidden;
+    max-width: 100%;
   }
 
   p {
+    max-width: 100%;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .image-container {
     grid-area: image;
-    justify-self: end;
+    justify-self: start;
   }
 
   .image {
-    display: block;
+    margin:0;
     background-color: ${props => props.theme.muted};
     height: 100px;
     width: 100%;
@@ -90,9 +97,12 @@ const Item = styled.li`
 
   .title {
     grid-area: title;
-    display: flex;
-    align-items: flex-end;
+    display: block;
+    max-widh: 100%;
     font-size: ${props => props.theme.fontSize['2xl']};
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     @media (min-width: 700px) {
       display: block;
@@ -101,6 +111,10 @@ const Item = styled.li`
 
   .description {
     grid-area: description;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .controls {
@@ -108,6 +122,7 @@ const Item = styled.li`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    max-width: 100%;
 
     @media (min-width: 700px) {
       justify-content: flex-end;
