@@ -2,6 +2,8 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import React from 'react'
 import { useAuth } from '../contexts/AuthContext';
 import { slide as Menu } from 'react-burger-menu'
+import { left } from '@popperjs/core';
+import { right } from '@popperjs/core/lib';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     header:{
@@ -9,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         height:"32px",
         backgroundColor:"#3f51b5",
         display:"flex",
-        justifyContent:"space-around",
+        justifyContent:"start",
         alignItems:"center",
         color:"white",
         position:"fixed",
@@ -18,10 +20,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         "& nav":{
             "& ul":{
                 margin:"0",
+                marginLeft:"600px",
                 "& li":{
                     listStyle:"none",
                     display:"inline-block",
-                    marginRight:"30px",
+                    marginLeft:"30px",
                     "& button":{
                         fontSize:"16px",
                         background:"transparent",
@@ -41,7 +44,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     tytle:{
         "& h3":{
-            margin:"0"
+            margin:"0",
+            marginLeft:"400px",
         }
     }
 
@@ -50,10 +54,10 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const styles = {
     bmBurgerButton: {
       position: 'fixed',
-      width: '36px',
-      height: '30px',
-      left: '36px',
-      top: '36px'
+      width: '32px',
+      height: '20px',
+      left: '5px',
+      top: '5px'
     },
     bmBurgerBars: {
       background: '#373a47'
@@ -105,10 +109,15 @@ const MyPageHeader = () => {
     return (<>
 
         <div className={classes.header}>
+            <Menu styles={ styles } >
+            <a id="login" className="menu-item" href="/login">Logout</a>
+            <a id="about" className="menu-item" href="/about">About</a>
+            <a id="contact" className="menu-item" href="/contact">Contact</a>
+            </Menu>
             <div className={classes.tytle}>
                 <h3>サンプルアプリケーション</h3>
-            </div>
-            <nav>
+            </div>           
+           <nav>
                 <ul>
                     <li>
                         <button>HOME</button>
@@ -119,11 +128,6 @@ const MyPageHeader = () => {
                 </ul>
             </nav>
         </div>
-        <Menu styles={ styles } >
-        <a id="login" className="menu-item" href="/login">Logout</a>
-        <a id="about" className="menu-item" href="/about">About</a>
-        <a id="contact" className="menu-item" href="/contact">Contact</a>
-        </Menu>
         </>
     )
 }
