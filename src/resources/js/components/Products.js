@@ -83,6 +83,7 @@ const Item = styled.li`
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .image-container {
     grid-area: image;
     justify-self: start;
@@ -115,6 +116,7 @@ const Item = styled.li`
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
+    
   }
 
   .controls {
