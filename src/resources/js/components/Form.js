@@ -47,6 +47,41 @@ const FormContainer = styled.form`
     margin: ${props => props.theme.spacing['3']} 0;
   }
 
+  .title-field {
+    appearance: none;
+    background: ${(props) => props.theme.contentBg};
+    border: 1px solid ${(props) => props.theme.border.default};
+    border-radius: 5px;
+    color: inherit;
+    display: block;
+    line-height: inherit;
+    width: 100%;
+    padding: ${(props) => props.theme.spacing['2']}
+      ${(props) => props.theme.spacing['3']};
+    
+    &.title-invalid {
+      border-width: 1px;
+      border-color: ${(props) => props.theme.border.danger};
+    }
+
+  }
+
+  .title-invalid {
+    appearance: none;
+    background: ${(props) => props.theme.contentBg};
+    border: 1px solid ${(props) => props.theme.border.default};
+    border-radius: 5px;
+    color: inherit;
+    display: block;
+    line-height: inherit;
+    width: 100%;
+    padding: ${(props) => props.theme.spacing['2']}
+      ${(props) => props.theme.spacing['3']};
+    border-width: 1px;
+    border-color: ${(props) => props.theme.border.danger};
+  }
+    
+
   .evaluation-list {
     display: flex;
     justify-content: space-between;
@@ -237,7 +272,8 @@ const Form = (props) => {
           description: product
             ? createEditorStateFromContent(JSON.parse(product.description))
             : EditorState.createEmpty(),
-          image_url: initialImageUrl || ''
+          image_url: initialImageUrl || '',
+          evaluation: product ? product.evaluation: 5
         }}
         validationSchema={ProductSchema}
         validateOnChange={false}
@@ -258,6 +294,8 @@ const Form = (props) => {
           
           const allValues = { id, date, user_id, title, description: dbDescription, image_url, evaluation};
     
+          console.log(allValues)
+
           if (product) {
             editProduct(allValues);
           } else {
@@ -307,7 +345,7 @@ const Form = (props) => {
                   onBlur={handleBlur}
                   value={title}
                   name="title"
-                  className={titleInvalid ? 'is-invalid' : null}
+                  className={titleInvalid ? 'title-invalid' : 'title-field'}
                 />
               </label>
 
@@ -325,34 +363,34 @@ const Form = (props) => {
                   isInvalid={descriptionInvalid}
                 />
               </label>
-              <label htmlFor='evaluation' className="field-group1">
+              <label htmlFor='evaluation' className="field-group">
                 <span className='field-label'>
                   Evaluation
                 </span>
                 <div className='evaluation-list'>
-                  <input id="excelent" type="radio" name="evaluation" value="5"/>
+                  <input id="excelent" type="radio" name="evaluation" value="5" checked={evaluation === 5} onChange={()=> setFieldValue("evaluation", 5)}/>
                   <label htmlFor="excelent">
                     <img src="/img/excelent.png"/>
                   </label>
-                  <input id="good" type="radio" name="evaluation" value="4"/>
+                  <input id="good" type="radio" name="evaluation" value="4" checked={evaluation === 4} onChange={()=> setFieldValue("evaluation", 4)}/>
                   <label htmlFor="good">
                     <img src="/img/good.png"/>
                   </label>
-                  <input id="fine" type="radio" name="evaluation" value="3"/>
+                  <input id="fine" type="radio" name="evaluation" value="3" checked={evaluation === 3} onChange={()=> setFieldValue("evaluation", 3)}/>
                   <label htmlFor="fine">
                     <img src="/img/fine.png"/>
                   </label>
-                  <input id="bad" type="radio" name="evaluation" value="2"/>
+                  <input id="bad" type="radio" name="evaluation" value="2" checked={evaluation === 2} onChange={()=> setFieldValue("evaluation", 2)}/>
                   <label htmlFor="bad">
                     <img src="/img/bad.png"/>
                   </label>
-                  <input id="terrible" type="radio" name="evaluation" value="1"/>
+                  <input id="terrible" type="radio" name="evaluation" value="1" checked={evaluation === 1} onChange={()=> setFieldValue("evaluation", 1)}/>
                   <label htmlFor="terrible">
                     <img src="/img/terrible.png"/>
                   </label>
                   
                 </div>
-                </label>
+              </label>
               {/* <div className="field-group">
                 <span className="field-label">Image</span>
                 <span className="progress-bar" />

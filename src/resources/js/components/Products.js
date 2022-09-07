@@ -44,55 +44,65 @@ const ProductsSection = styled.section`
 const List = styled.ul`
   padding: 0;
   list-style-type: none;
+  max-width: 100%;
 `;
 
 const Item = styled.li`
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 150px minmax(20px, 100%);
   grid-template-areas:
-    'image title'
-    'image controls'
-    'description description';
+    'date title'
+    'image description'
+    'image controls';
   grid-gap: ${props => props.theme.spacing['4']};
   box-shadow: ${props => props.theme.boxShadow.default};
   padding: ${props => props.theme.spacing['4']};
   margin: ${props => props.theme.spacing['8']} 0;
   border: 1px solid ${props => props.theme.border.light};
+  max-width: 100%;
 
   @media (min-width: 700px) {
     grid-row-gap: 0;
     grid-column-gap: ${props => props.theme.spacing['8']};
 
     grid-template-areas:
-      'image title'
+      'date title'
       'image description'
       'image controls';
   }
 
   h3 {
     margin: 0 0 ${props => props.theme.spacing['2']};
+    overflow: hidden;
+    max-width: 100%;
   }
 
   p {
+    max-width: 100%;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .image-container {
     grid-area: image;
-    justify-self: end;
+    justify-self: start;
   }
 
   .image {
-    display: block;
+    margin:0;
     background-color: ${props => props.theme.muted};
-    width: 150px;
-    height: 150px;
+    height: 100px;
+    width: 100%;
   }
 
   .title {
     grid-area: title;
-    display: flex;
-    align-items: flex-end;
+    display: block;
+    max-widh: 100%;
     font-size: ${props => props.theme.fontSize['2xl']};
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     @media (min-width: 700px) {
       display: block;
@@ -101,6 +111,10 @@ const Item = styled.li`
 
   .description {
     grid-area: description;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .controls {
@@ -108,6 +122,7 @@ const Item = styled.li`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    max-width: 100%;
 
     @media (min-width: 700px) {
       justify-content: flex-end;
@@ -128,6 +143,8 @@ const Products = () => {
   const inlineStyles = getCustomSyleMapInstructions(cssProps => ({ style: cssProps }))(
     textColorStyles
   );
+
+  const evaluationImageList = ["/img/terrible.png", "/img/bad.png", "/img/fine.png", "/img/good.png", "/img/excelent.png"]
 
   //日付の取得
   const today = product? new Date(product.date):new Date()
@@ -210,7 +227,7 @@ const Products = () => {
       {hasProducts ? (
         <List>
           {monthlyProducts.map(product => {
-            const { id, title, date, image_url } = product;
+            const { id, title, date, evaluation } = product;
             let  { description }  = product;
       
             description = JSON.parse(description)
@@ -220,13 +237,13 @@ const Products = () => {
                 <div>
                   <h3>{date}</h3>
                 </div>
-                {/* <div className="image-container">
+                 <div className="image-container">
                   <img
                     className="image"
-                    src={image_url || 'https://source.unsplash.com/gJylsVMSf-k/150x150'}
+                    src = {evaluationImageList[evaluation - 1]}
                     alt=""
                   />
-                </div> */}
+                </div> 
                 <h3 className="title">{title}</h3>
                 {typeof description === 'string' ? (
                   <p className="description">{description}</p>
