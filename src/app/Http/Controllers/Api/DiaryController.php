@@ -18,7 +18,7 @@ class DiaryController extends Controller
         $diary->title = $request->title;
         $diary->description = $request->description;
         $diary->image_url = "";
-        $diary->evaluation = 5;
+        $diary->evaluation = $request->evaluation;
         
         $diary->save();
 
@@ -47,7 +47,8 @@ class DiaryController extends Controller
                         ->where('user_id', $request->user_id)
                         ->update([
                             'title'=>$request->title,
-                            'description'=>$request->description
+                            'description'=>$request->description,
+                            'evaluation'=>$request->evaluation
                         ]);
 
         //更新に失敗した場合の処理
