@@ -91,7 +91,8 @@ const FormContainer = styled.form`
   }
 
   img {
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
 
   
