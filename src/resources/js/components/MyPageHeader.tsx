@@ -1,66 +1,88 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import React from 'react'
 import { useAuth } from '../contexts/AuthContext';
 import { slide as Menu } from 'react-burger-menu'
-import { left } from '@popperjs/core';
-import { right } from '@popperjs/core/lib';
+import styled from 'styled-components';
+import { style } from '@mui/system';
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-    header:{
-        width:"100%",
-        height:"32px",
-        backgroundColor:"#3f51b5",
-        display:"flex",
-        justifyContent:"start",
-        alignItems:"center",
-        color:"white",
-        position:"fixed",
-        top:"0",
-        left:"0",
-        "& nav":{
-            "& ul":{
-                margin:"0",
-                marginLeft:"600px",
-                "& li":{
-                    listStyle:"none",
-                    display:"inline-block",
-                    marginLeft:"30px",
-                    "& button":{
-                        fontSize:"16px",
-                        background:"transparent",
-                        border:"0",
-                        color:"white",
-                        "&:hover":{
-                            color:"green"
-                        }
+
+const HeaderSection = styled.section`
+    
+    .header {
+        background-color: #3F51B5;
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        text-align: left;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height; 100px;
+        & nav {
+            @media (max-width: 580px) {
+                display: none;
+            }
+            display: flex;
+            align-items: center;
+            & ul {
+                margin: 0;
+                & li {
+                    list-style: none;
+                    display: inline-block;
+                    margin-right: 30px;
+                    & a {
+                        font-size: 16px;
+                        text-decoration: none;
+                        color: white;
+                    }
+                    & a:hover {
+                        color: green;
                     }
 
+                    & button {
+                      font-size: 16px;
+                      background: transparent;
+                      border: 0;
+                      color: white;
+                    }
 
+                    & button:hover {
+                      color: green;
+                    }
                 }
             }
         }
-
-        
-    },
-    tytle:{
-        "& h3":{
-            margin:"0",
-            marginLeft:"400px",
-        }
     }
 
-}))
+    .title {
+         display: flex;
+         align-items: center;
+         margin-top: 15px;
+         margin-bottom: 15px;
+         & h3 { 
+             margin: 0;
+             color: white;
+             font-size: 18px;
+         }
+    }
+
+    .menu-item {
+      font-size: 25px;
+      margin: 10px;
+      font-family: 'Nunito', sans-serif;
+    }
+`
+
 
 const styles = {
     bmBurgerButton: {
       position: 'fixed',
-      width: '32px',
+      width: '25px',
       height: '20px',
-      left: '5px',
-      top: '5px'
+      left: '15px',
+      top: '15px',
     },
     bmBurgerBars: {
-      background: '#373a47'
+      background: 'white'
     },
     bmBurgerBarsHover: {
       background: '#a90000'
@@ -78,7 +100,7 @@ const styles = {
     },
     bmMenu: {
       background: '#373a47',
-      padding: '2.5em 1.5em 0',
+      padding: '2.0em 1.0em 0',
       fontSize: '2.0em',
       fontWeight: 'bold'
     },
@@ -100,35 +122,35 @@ const styles = {
 
 const MyPageHeader = () => {
 
-    const classes = useStyles();
-
     const auth = useAuth()
 
     const btnFunc = auth?.logout
 
-    return (<>
+    return (
+        <HeaderSection>
+         
+          <Menu styles={styles}>
+              <a id="contact" className="menu-item" href="/mypage/diary/home">Home</a>
+              <a className="menu-item" onClick={btnFunc} href="#">Logout</a>
+          </Menu>
 
-        <div className={classes.header}>
-            <Menu styles={ styles } >
-            <a id="login" className="menu-item" href="/login">Logout</a>
-            <a id="about" className="menu-item" href="/about">About</a>
-            <a id="contact" className="menu-item" href="/contact">Contact</a>
-            </Menu>
-            <div className={classes.tytle}>
-                <h3>サンプルアプリケーション</h3>
-            </div>           
-           <nav>
-                <ul>
-                    <li>
-                        <button>HOME</button>
-                    </li>
-                    <li>
-                        <button onClick={btnFunc}>ログアウト</button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        </>
+          <div className="header">
+              <div className="title">
+                  <h3>サンプルアプリケーション</h3>
+              </div>           
+            {/* <nav>
+                  <ul>
+                      <li>
+                          <button>HOME</button>
+                      </li>
+                      <li>
+                          <button onClick={btnFunc}>ログアウト</button>
+                      </li>
+                  </ul>
+              </nav> */}
+          </div>
+        </HeaderSection>
+        
     )
 }
 

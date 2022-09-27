@@ -5,7 +5,9 @@ import { stateToHTML } from 'draft-js-export-html';
 import useCustomEditorStyles from '../hooks/useCustomEditorStyles';
 import Button from './Button';
 import {useDiary} from '../contexts/DiaryContext'
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { FormControl, InputLabel, MenuItem, Select, IconButton } from '@mui/material'
+import {BsPencil, BsTrash} from "react-icons/bs"
+import { useNavigate } from 'react-router-dom';
 
 
 const parseRichText = (content, inlineStyles) => {
@@ -23,6 +25,7 @@ const ProductsSection = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
   }
 
   .controls {
@@ -53,13 +56,14 @@ const Item = styled.li`
   grid-template-areas:
     'date title'
     'image description'
-    'image controls';
+    'image description';
   grid-gap: ${props => props.theme.spacing['4']};
   box-shadow: ${props => props.theme.boxShadow.default};
   padding: ${props => props.theme.spacing['4']};
   margin: ${props => props.theme.spacing['8']} 0;
   border: 1px solid ${props => props.theme.border.light};
   max-width: 100%;
+  margin-top: 0;
 
   @media (min-width: 700px) {
     grid-row-gap: 0;
@@ -68,7 +72,7 @@ const Item = styled.li`
     grid-template-areas:
       'date title'
       'image description'
-      'image controls';
+      'image description';
   }
 
   h3 {
@@ -138,10 +142,24 @@ const Item = styled.li`
   }
 `;
 
+const Icon = styled.section`
+  .icon-container { 
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px; 
+  }
+  
+  .icons {
+    padding: 5px;
+    margin-right: 10px;
+  }
+`;
+
 const Products = () => {
   
   const { product, products, removeProduct } = useDiary()
   const { textColorStyles, getCustomSyleMapInstructions } = useCustomEditorStyles();
+  const navigate = useNavigate()
   const inlineStyles = getCustomSyleMapInstructions(cssProps => ({ style: cssProps }))(
     textColorStyles
   );
@@ -233,8 +251,26 @@ const Products = () => {
             let  { description }  = product;
       
             description = JSON.parse(description)
-            
             return (
+              <>
+              <Icon>
+                <div className="icon-container">
+                  <IconButton 
+                    className="icons" 
+                    onClick={() => navigate(`/mypage/diary/product/edit/${id}`)} 
+                    size="large"
+                  >
+                    <BsPencil/>
+                  </IconButton>
+                  <IconButton
+                    className="icons"
+                    onClick={()=>removeProduct(product)}
+                    size="large"
+                  >
+                    <BsTrash/>
+                  </IconButton>  
+                </div>
+              </Icon>
               <Item key={id}>
                 <div>
                   <h3>{date}</h3>
@@ -257,19 +293,8 @@ const Products = () => {
                     }}
                   />
                 )}
-                <div className="controls">
-                  <Button className="control" to={`/mypage/diary/product/edit/${id}`} buttonStyle="muted" >
-                    Edit
-                  </Button>
-                  <Button
-                    className="control"
-                    buttonStyle="danger"
-                    onClick={()=>removeProduct(product)}
-                  >
-                    Delete
-                  </Button>
-                </div>
               </Item>
+              </>
             );
           })}
         </List>

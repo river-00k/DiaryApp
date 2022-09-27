@@ -2,6 +2,67 @@ import { Button, Card, createStyles, makeStyles, TextField, Theme } from '@mater
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRegister } from '../pages/RegisterPage'
+import styled from 'styled-components'
+
+const RegisterInputConteiner = styled.section`
+   
+
+    register-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid #dfdfdf;
+        box-shadow: 0px 0px 15px -5px #777777;
+        & form { 
+            & h3 {
+                text-align: center;
+            }
+        }
+    }
+
+    form-contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 450px;
+        width: 400px;
+    }
+
+    name-input {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    form-input {
+        display: flex;
+        flex-direction: column;
+
+         & input {
+             border: 0.5px solid #c1c1c1;
+             border-radius: 4px;
+             padding: 9px;
+         }
+
+         & p {
+             color: red;
+             font-size: 12px;
+         }
+    }
+
+    required: {
+        & ::before {
+            content: "*";
+            color: red;
+        }
+    }
+
+    button: {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+
+`;
 
 const useSytles = makeStyles((theme:Theme) => createStyles({
     registerContainer:{

@@ -20,6 +20,7 @@ const LoginFormSection = styled.section`
         flex-flow: column;
         @media (max-width: 450px){
             width:90vw;
+            min-width: 320px;
         }
 
         & h2{
