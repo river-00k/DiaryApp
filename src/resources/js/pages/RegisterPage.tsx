@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
 
 const RegisterPageSection = styled.section`
     .register-page-container{
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         display: flex;
         justify-content: center;
