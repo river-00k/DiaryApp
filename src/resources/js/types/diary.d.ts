@@ -10,7 +10,7 @@ type DiaryData = {
 
 
 type DiaryProps = {
-    product: DiaryData | nul,
+    product: DiaryData | null,
     products: Array<DiaryData>,
     addProduct: (displayDiaryData: DiaryData)=>Promise<void>,
     removeProduct: ( displayDiaryData: DiaryData )=>Promise<void>,

@@ -239,7 +239,7 @@ const Products = () => {
         </div>
         <div className="controls">
           <Button to="/mypage/diary/product/new">
-            <b>+</b> 新しい日記
+            <b>+</b> 今日の日記
           </Button>
         </div>
       </header>
