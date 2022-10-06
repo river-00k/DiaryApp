@@ -134,7 +134,7 @@ const Header = () => {
             </Menu>
             <div className="header">
                 <div className="title">
-                    <h3>サンプルアプリケーション</h3>
+                    <h3>コツコツ日記</h3>
                 </div>
                 {/* <nav>
                     <ul>

@@ -33,9 +33,9 @@ const Content = props => {
     <Main>
       <Header>
         <h1 className="heading">
-          日記 <em>Demo</em>
+          日記ページ
         </h1>
-        <p className="sub-heading">日記ページ</p>
+        <p className="sub-heading">日々の記録</p>
       </Header>
 
       {children}
