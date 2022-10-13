@@ -31,6 +31,7 @@ import Form from './components/Form'
 import EditForm from './components/EditForm';
 import Example from './pages/Example';
 import CreateForm from './components/CreateForm';
+import SettingPage from './pages/SettingPage';
 
 
  const App = () => {
@@ -51,6 +52,7 @@ import CreateForm from './components/CreateForm';
                                 <Route path="product/new" element={<CreateForm />} />
                                 <Route path="product/edit/:id" element={<EditForm/>} />
                             </Route>
+                            <Route path="setting" element={<SettingPage/>}/>
                             <Route path="example" element ={< Example/>} />
                         </Route>
                     </Routes>

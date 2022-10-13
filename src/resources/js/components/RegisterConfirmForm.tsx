@@ -28,26 +28,25 @@ const RegisterConfirmConteiner = styled.section`
         flex-direction: column;
         justify-content: space-evenly;
         width: 100%;
-        height: 300px;
+        height: 350px;
 
-        & p {
-            margin-top: 25px;
-            margin-bottom: 15px;
+        p {
+            margin-bottom: 10px;
             text-align: center;
             color: red;
             font-size: 15px;
         }
 
-        &table {
+        table {
             margin: 20px;
             & tr {
                 padding: 30px;
                 & th {
                     font-size: 15px;
+                    padding-bottom: 10px;
                 }
                 & td {
                     font-size: 15px;
-                    padding: 20px;
                 }
             }
 
@@ -60,53 +59,6 @@ const RegisterConfirmConteiner = styled.section`
     }
 `;
 
-const useSytles = makeStyles((theme:Theme) => createStyles({
-    registerContainer:{
-        backgroundColor:"white",
-        padding:"30px",
-        borderRadius:"10px",
-        border:"1px solid #dfdfdf",
-        boxShadow: "0px 0px 15px -5px #777777",
-        "& form":{
-            "& h3":{
-                textAlign:"center"
-            }
-        }
-    },
-    formContents:{
-        display:"flex",
-        flexDirection:"column",
-        justifyContent:"space-evenly",
-        width: "400px",
-        "& p":{
-            marginTop:"25px",
-            marginBottom:"15px",
-            textAlign:"center",
-            color:"red",
-            fontSize:"15px"
-            
-        },
-        "& table":{
-            margin:"20px",
-            "& tr":{
-                padding:"30px",
-                " & th":{
-                    fontSize:"15px"
-                },
-                "& td":{
-                    fontSize:"15px",
-                    padding:"20px"
-                }
-            }
-        }
-    },
-    button:{
-        width:"90%",
-        margin:"15px"
-    }
-    
-}))
-
 const RegisterConfirmForm = () => {
 
     
@@ -114,6 +66,18 @@ const RegisterConfirmForm = () => {
     const {registerInfo, modifyBtnFunc, registerBtnFunc} = useRegister()
 
     const userName = registerInfo.lastName+registerInfo.firstName
+
+    const maskPassword = (password: string): string => {
+        
+        let maskString:string = "";
+        
+        for (let i = 0; i < password.length; i++){
+            maskString = maskString + "⚫︎"
+        }
+
+        return maskString;
+    }
+
 
     const registerData: RegisterData = {
         name: userName,
@@ -139,7 +103,7 @@ const RegisterConfirmForm = () => {
                             </tr>
                             <tr>
                                 <th>パスワード</th>
-                                <td>{registerInfo.password}</td>
+                                <td>{maskPassword(registerInfo.password)}</td>
                             </tr>
                         </table>
                         <p>上記の内容でお間違いないかご確認ください</p>

@@ -82,6 +82,15 @@ class DiaryController extends Controller
         return response()->json($diaries, 200);
     }
 
+    //アカウントに紐付く全ての日記データを削除する
+    public function deleteAll(Request $request){
+        $result = Diary::where('user_id', $request->id)->delete();
+
+        return response()->json($result, 200);
+        
+
+    }
+
 
     //テーブルの全てのデータを表示する(開発確認用)
     public function showTable()

@@ -33,6 +33,17 @@ class RegisterController extends Controller
         return response()->json($user, 200);
     }
 
+    public function withdrawal(Request $request){
+        $result = User::find($request->id)->delete();
+        
+        if($result){
+            return response()->json($result, 200);
+        }else{
+            return response()->json([], 401);
+        }
+
+    }
+
     // /*
     // |--------------------------------------------------------------------------
     // | Register Controller

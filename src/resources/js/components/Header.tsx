@@ -2,6 +2,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core'
 import React from 'react'
 import styled from 'styled-components'
 import { slide as Menu } from 'react-burger-menu';
+import { AiOutlineDesktop, AiOutlineEdit, AiOutlineLogin } from 'react-icons/ai';
 
 const HeaderSection = styled.section`
     
@@ -128,9 +129,10 @@ const Header = () => {
     return (
         <HeaderSection>
             <Menu styles={styles}>
-              <a id="contact" className="menu-item" href="#">Top</a>
-              <a className="menu-item" href="/login">LoginPage</a>
-              <a className="menu-item" href="/register/input">Registration</a>
+              <p>Menu</p>
+              <a id="contact" className="menu-item" href="#"><AiOutlineDesktop/> Top</a>
+              <a className="menu-item" href="/login"><AiOutlineLogin/> Login</a>
+              <a className="menu-item" href="/register/input"><AiOutlineEdit/> Registration</a>
             </Menu>
             <div className="header">
                 <div className="title">

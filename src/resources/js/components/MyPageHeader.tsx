@@ -2,7 +2,7 @@ import React from 'react'
 import { useAuth } from '../contexts/AuthContext';
 import { slide as Menu } from 'react-burger-menu'
 import styled from 'styled-components';
-import { style } from '@mui/system';
+import {AiOutlineHome, AiOutlineLogout, AiOutlineSetting} from 'react-icons/ai'
 
 
 const HeaderSection = styled.section`
@@ -130,24 +130,17 @@ const MyPageHeader = () => {
         <HeaderSection>
          
           <Menu styles={styles}>
-              <a id="contact" className="menu-item" href="/mypage/diary/home">Home</a>
-              <a className="menu-item" onClick={btnFunc} href="#">Logout</a>
+              <p>Menu</p>
+
+              <a id="contact" className="menu-item" href="/mypage/diary/home"><AiOutlineHome/> Home</a>
+              <a className="menu-item" href="/mypage/setting"><AiOutlineSetting/> Setting</a>
+              <a className="menu-item" onClick={btnFunc} href="#"><AiOutlineLogout/> Logout</a>
           </Menu>
 
           <div className="header">
               <div className="title">
                   <h3>コツコツ日記</h3>
               </div>           
-            {/* <nav>
-                  <ul>
-                      <li>
-                          <button>HOME</button>
-                      </li>
-                      <li>
-                          <button onClick={btnFunc}>ログアウト</button>
-                      </li>
-                  </ul>
-              </nav> */}
           </div>
         </HeaderSection>
         
