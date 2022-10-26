@@ -40,4 +40,5 @@ type RegisterErrMsg = {
     login: (loginData: LoginData) => Promise<void>
     register: (registerData: RegisterData) => Promise<void>
     logout: () => Promise<void>
+    withdrawal: (user: User | undefined | null) => Promise<void>
 }

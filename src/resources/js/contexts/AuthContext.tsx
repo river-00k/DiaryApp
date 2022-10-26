@@ -50,6 +50,28 @@ export const AuthProvider = ({children}:Props):ReactElement => {
         }
     }
 
+    //Type Guard
+    const isUser = (user:User | undefined | null): user is User => {
+        return user !== undefined && user !== null;
+    }
+
+    //退会処理
+    const withdrawal = async(user: User | undefined | null) => {
+        if(isUser(user)){
+            try{
+                await axios.post('/api/diary/deleteAll', user)
+                await axios.post('/api/withdrawal', user)
+                navigate("/login")
+            }catch(error){
+                console.log("withdrawal failed")
+                throw error
+            }
+        }
+
+
+
+    }
+
     useEffect(() => {
         axios
             .get('/api/loginCheck')
@@ -66,7 +88,8 @@ export const AuthProvider = ({children}:Props):ReactElement => {
         user,
         login,
         register,
-        logout
+        logout, 
+        withdrawal
     }
 
     return(

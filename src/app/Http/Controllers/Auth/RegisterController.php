@@ -33,6 +33,33 @@ class RegisterController extends Controller
         return response()->json($user, 200);
     }
 
+    public function guestRegister(){
+        //$maxUserID = User::max('id');
+
+        $id = time();
+        $random = random_int(0,9999);
+
+        $user = User::create([
+            'name' => "guest-user".$id.$random,
+            'email' => 'guest-user'.$id.$random.'@sample.jp',
+            'password' => Hash::make('password'),
+            'is_guest' => 1
+        ]);
+        
+        return $user;
+    }
+
+    public function withdrawal(Request $request){
+        $result = User::find($request->id)->delete();
+        
+        if($result){
+            return response()->json($result, 200);
+        }else{
+            return response()->json([], 401);
+        }
+
+    }
+
     // /*
     // |--------------------------------------------------------------------------
     // | Register Controller
