@@ -91,8 +91,8 @@ const Item = styled.li`
   }
 
   table {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
 

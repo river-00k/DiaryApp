@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'api'], function(){
 
     //テスト用
-    Route::post('deleteAll', 'App\Http\Controllers\Api\DiaryController@deleteAll');
+    Route::get('guestRegister', 'App\Http\Controllers\Auth\RegisterController@guestRegister');
+    Route::post('addSampleToGuestAccount', 'App\Http\Controllers\Api\DiaryController@addSampleToGuestAccount');
 
 
     Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
