@@ -113,6 +113,7 @@ const MyPageHeader = () => {
             <a id="login" className="menu-item" href="/login">Logout</a>
             <a id="about" className="menu-item" href="/about">About</a>
             <a id="contact" className="menu-item" href="/contact">Contact</a>
+            <a id="chart" className="menu-item" href="/mypage/diary/chart">Chart</a>
             </Menu>
             <div className={classes.tytle}>
                 <h3>サンプルアプリケーション</h3>

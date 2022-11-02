@@ -30,7 +30,7 @@ import Products from './components/Products';
 import Form from './components/Form'
 import EditForm from './components/EditForm';
 import Example from './pages/Example';
-
+import Chart from './pages/Chart'
 
  const App = () => {
     return (
@@ -47,6 +47,7 @@ import Example from './pages/Example';
                         <Route path="/mypage" element={<ProtectedRoute/>}>
                             <Route path="diary" element={<DiaryPage/>}>
                                 <Route path="home" element={<Products />} />
+                                <Route path="chart" element={<Chart />} />
                                 <Route path="product/new" element={<Form />} />
                                 <Route path="product/edit/:id" element={<EditForm/>} />
                             </Route>
