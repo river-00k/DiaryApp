@@ -8,7 +8,6 @@
 import { DiaryProvider } from '../contexts/DiaryContext';
 
 
-
  const DiaryPage = () => {
 
     const title: string = "日記ページ"

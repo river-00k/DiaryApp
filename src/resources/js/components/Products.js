@@ -10,6 +10,9 @@ import {BsPencil, BsTrash} from "react-icons/bs"
 import { useNavigate } from 'react-router-dom';
 
 
+
+
+
 const parseRichText = (content, inlineStyles) => {
   
   const contentState = content.blocks ? convertFromRaw(content) : content;
@@ -164,6 +167,10 @@ const Products = () => {
     textColorStyles
   );
 
+
+
+
+
   const evaluationImageList = ["/img/terrible.png", "/img/bad.png", "/img/fine.png", "/img/good.png", "/img/excelent.png"]
 
   //日付の取得
@@ -181,6 +188,7 @@ const Products = () => {
   };
 
 
+
   const selectMonthly = (products, month, year) =>{
     return(
       products.filter(obj => {
@@ -196,7 +204,7 @@ const Products = () => {
   const hasProducts = monthlyProducts && monthlyProducts.length > 0;
 
   return (
-    
+   <div> 
     <ProductsSection>
       <header className="section-header">
         <div>
@@ -306,7 +314,7 @@ const Products = () => {
         </div>
       )}
     </ProductsSection>
-  );
+  </div>);
 };
 
 export default Products;

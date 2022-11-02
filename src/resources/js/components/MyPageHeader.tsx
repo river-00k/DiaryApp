@@ -2,7 +2,7 @@ import React from 'react'
 import { useAuth } from '../contexts/AuthContext';
 import { slide as Menu } from 'react-burger-menu'
 import styled from 'styled-components';
-import {AiOutlineHome, AiOutlineLogout, AiOutlineSetting} from 'react-icons/ai'
+import {AiOutlineHome, AiOutlineLogout, AiOutlineSetting,AiFillSignal} from 'react-icons/ai'
 
 
 const HeaderSection = styled.section`
@@ -131,10 +131,11 @@ const MyPageHeader = () => {
          
           <Menu styles={styles}>
               <p>Menu</p>
-
               <a id="contact" className="menu-item" href="/mypage/diary/home"><AiOutlineHome/> Home</a>
               <a className="menu-item" href="/mypage/setting"><AiOutlineSetting/> Setting</a>
+              <a className="menu-item" href="/mypage/diary/chart"><AiFillSignal/> Chart</a>
               <a className="menu-item" onClick={btnFunc} href="#"><AiOutlineLogout/> Logout</a>
+              
           </Menu>
 
           <div className="header">
@@ -143,7 +144,7 @@ const MyPageHeader = () => {
               </div>           
           </div>
         </HeaderSection>
-        
+
     )
 }
 
