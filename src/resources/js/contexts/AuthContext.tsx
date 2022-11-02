@@ -50,6 +50,27 @@ export const AuthProvider = ({children}:Props):ReactElement => {
         }
     }
 
+    //ゲストログイン機能
+    const guestLogin = async() => {
+        try{
+            //データベースにゲストユーザーを登録し、登録されたユーザー情報を返却
+            const response = await axios.get('/api/guestRegister', {})
+            const guestUser: User = response.data
+
+            //作成したゲストユーザーにサンプルデータを登録
+            await axios.post('/api/addSampleToGuestAccount', {'user_id': guestUser.id})
+            console.log("success")
+
+            //ログインの実行
+            const loginData: LoginData = {"email": guestUser.email, "password": "password"}
+            login(loginData)
+
+        }catch(error){
+            console.log('guest login failed.')
+            throw error
+        }
+    }
+
     //Type Guard
     const isUser = (user:User | undefined | null): user is User => {
         return user !== undefined && user !== null;
@@ -89,7 +110,8 @@ export const AuthProvider = ({children}:Props):ReactElement => {
         login,
         register,
         logout, 
-        withdrawal
+        withdrawal,
+        guestLogin
     }
 
     return(

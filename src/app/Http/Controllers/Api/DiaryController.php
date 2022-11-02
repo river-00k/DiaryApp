@@ -96,7 +96,7 @@ class DiaryController extends Controller
         #一つ目の日記を追加
         $diary = new Diary;
         $diary->user_id = $request->user_id;
-        $diary->date = date("Y-m-d");
+        $diary->date = date("Y-m-d", strtotime('-1 day', time()));
         $diary->title = "ようこそ";
         $diary->description = json_encode([
             'blocks'=>[
@@ -126,7 +126,7 @@ class DiaryController extends Controller
         #二つ目の日記を追加
         $diary = new Diary;
         $diary->user_id = $request->user_id;
-        $diary->date = date("Y-m-d");
+        $diary->date = date("Y-m-d", strtotime('-2 day', time()));
         $diary->title = "Hello!";
         $diary->description = json_encode([
             'blocks'=>[
