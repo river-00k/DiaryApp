@@ -1,21 +1,23 @@
 import { AccordionSummary, Theme } from '@material-ui/core';
-import { makeStyles, createStyles } from '@material-ui/styles';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../contexts/AuthContext';
 import Header from '../components/Header';
 import LoginForm from '../components/LoginForm';
+import styled from 'styled-components';
 
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-    loginPageContainer:{
-        width:"100%",
-        height:"100vh",
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center"
+const LoginPageSection = styled.section`
+    .login-page-container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 320px;
     }
-}))
+`;
+
 
 
 const LoginPage = () => {
@@ -23,8 +25,6 @@ const LoginPage = () => {
     const [loginInfo, setLoginInfo] = useState<LoginData>({email:'', password:''})
 
     const [errMessage, setErrMessage] = useState<string> ('')
-
-    const classes = useStyles()
 
     const auth = useAuth()
 
@@ -82,10 +82,12 @@ const LoginPage = () => {
     }
 
     return (
-        <div className={classes.loginPageContainer}>
+        <LoginPageSection>
             <Header/>
-            <LoginForm data={loginInfo} errMsg={errMessage} inputChange={inputChange} btnFunc={onSubmit}/>
-        </div>
+            <div className="login-page-container">
+                <LoginForm data={loginInfo} errMsg={errMessage} inputChange={inputChange} btnFunc={onSubmit}/>
+            </div>
+        </LoginPageSection>
     )
 }
 

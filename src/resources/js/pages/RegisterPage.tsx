@@ -4,6 +4,7 @@ import { Navigate, Outlet, useNavigate, useOutletContext } from 'react-router-do
 import { useAuth } from '../contexts/AuthContext'
 import Header from '../components/Header'
 import RegisterForm from '../components/RegisterInputForm'
+import styled from 'styled-components'
 
 const useStyles = makeStyles((theme:Theme) => createStyles({
   registerPageContainer:{
@@ -14,6 +15,16 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
     height:"100vh",
   }
 }))
+
+const RegisterPageSection = styled.section`
+    .register-page-container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+`;
 
 type ContextType = {
     registerInfo: RegisterInputData,
@@ -140,10 +151,12 @@ const RegisterPage = () => {
   }
 
   return (
-    <div className={classes.registerPageContainer}>
-        <Header/>
-        <Outlet context={{registerInfo, errMsg ,inputChange, modifyBtnFunc, confirmBtnFunc, registerBtnFunc, completeBtnFunc}}/>
-    </div>
+    <RegisterPageSection>
+      <Header/>
+      <div className="register-page-container">
+          <Outlet context={{registerInfo, errMsg ,inputChange, modifyBtnFunc, confirmBtnFunc, registerBtnFunc, completeBtnFunc}}/>
+      </div>
+    </RegisterPageSection>
   )
 }
 export default RegisterPage

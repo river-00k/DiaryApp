@@ -30,7 +30,9 @@ import Products from './components/Products';
 import Form from './components/Form'
 import EditForm from './components/EditForm';
 import Example from './pages/Example';
-import Chart from './pages/Chart'
+import Chart from './pages/Chart';
+import CreateForm from './components/CreateForm';
+import SettingPage from './pages/SettingPage';
 
  const App = () => {
     return (
@@ -48,9 +50,10 @@ import Chart from './pages/Chart'
                             <Route path="diary" element={<DiaryPage/>}>
                                 <Route path="home" element={<Products />} />
                                 <Route path="chart" element={<Chart />} />
-                                <Route path="product/new" element={<Form />} />
+                                <Route path="product/new" element={<CreateForm />} />
                                 <Route path="product/edit/:id" element={<EditForm/>} />
                             </Route>
+                            <Route path="setting" element={<SettingPage/>}/>
                             <Route path="example" element ={< Example/>} />
                         </Route>
                     </Routes>

@@ -27,15 +27,15 @@ const Header = styled.header`
 `;
 
 const Content = props => {
-  const { children } = props;
+  const { children, title, subtitle } = props;
 
   return (
     <Main>
       <Header>
         <h1 className="heading">
-          日記 <em>Demo</em>
+          {title}
         </h1>
-        <p className="sub-heading">日記ページ</p>
+        <p className="sub-heading">{subtitle}</p>
       </Header>
 
       {children}

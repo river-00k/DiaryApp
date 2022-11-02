@@ -8,7 +8,8 @@ import Background from '../layout/Background'
 import { DiaryProvider } from '../contexts/DiaryContext';
 import Graph from '../components/Graph';
 const Chart = () => {
-
+    const title: string = "日記ページ"
+    const　subtitle: string = "評価チャート"
 
     return (
     <>
