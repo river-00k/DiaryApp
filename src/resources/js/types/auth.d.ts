@@ -22,6 +22,7 @@ type User = {
     id: number,
     name: string,
     email: string,
+    is_guest: number,
     email_varified_at: string,
     created_at: string,
     updated_at: string
@@ -41,4 +42,5 @@ type RegisterErrMsg = {
     register: (registerData: RegisterData) => Promise<void>
     logout: () => Promise<void>
     withdrawal: (user: User | undefined | null) => Promise<void>
+    guestLogin: () => Promise<void>
 }

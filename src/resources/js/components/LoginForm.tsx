@@ -1,6 +1,7 @@
 import { Button, TextField, Theme } from '@material-ui/core'
 import React from 'react'
 import styled from 'styled-components'
+import { useAuth } from '../contexts/AuthContext'
 
 const LoginFormSection = styled.section`
     .login-form-container {
@@ -61,6 +62,8 @@ interface LoginFormInterface {
 const LoginForm:React.FC<LoginFormInterface> = (props) => {
 
     const {data, errMsg, inputChange, btnFunc} = props
+    const auth = useAuth()
+
 
     return (
     <LoginFormSection>
@@ -72,6 +75,7 @@ const LoginForm:React.FC<LoginFormInterface> = (props) => {
                     <TextField className="text-field" label="メールアドレス" variant="outlined" name="email" value={data.email} onChange={inputChange}/>
                     <TextField className="text-field" label="パスワード" type="password" variant="outlined" name="password" value={data.password} onChange={inputChange} />
                     <Button className="button" variant='contained' color="primary" onClick={btnFunc}>ログイン</Button>
+                    <Button className="button" variant='contained' color="secondary" onClick={auth?.guestLogin}>ゲストログイン</Button>
                     <p>{errMsg}</p>
                     <a href='/register/input'>ユーザー登録がお済みでない方はこちら</a>
                 </div>
