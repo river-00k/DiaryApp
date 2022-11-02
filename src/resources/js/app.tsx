@@ -49,10 +49,10 @@ import SettingPage from './pages/SettingPage';
                         <Route path="/mypage" element={<ProtectedRoute/>}>
                             <Route path="diary" element={<DiaryPage/>}>
                                 <Route path="home" element={<Products />} />
-                                <Route path="chart" element={<Chart />} />
                                 <Route path="product/new" element={<CreateForm />} />
                                 <Route path="product/edit/:id" element={<EditForm/>} />
                             </Route>
+                            <Route path="chart" element={<Chart />} />
                             <Route path="setting" element={<SettingPage/>}/>
                             <Route path="example" element ={< Example/>} />
                         </Route>

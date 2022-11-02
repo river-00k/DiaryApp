@@ -13,7 +13,14 @@ const Chart = () => {
 
     return (
     <>
-        <Graph/> 
+        <GlobalStyle />
+            <Container>
+                <Content title={title} subtitle={subtitle}>
+                    <DiaryProvider>
+                        <Graph/> 
+                    </DiaryProvider>
+                </Content>
+            </Container>
     </>
      );
 };
