@@ -11,7 +11,7 @@ import { DiaryProvider } from '../contexts/DiaryContext';
  const DiaryPage = () => {
 
     const title: string = "日記ページ"
-    const　subtitle: string = "日々の記録"
+    const subtitle: string = "日々の記録"
 
     return (
         <>  
