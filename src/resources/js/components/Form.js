@@ -89,13 +89,20 @@ const FormContainer = styled.form`
     height: 100px;
     width: 100%;
     margin-bottom: 50px;
+    
 
+    
     [type='radio'] {
-      position: relative;
-      top: -50px
-
+      display: none;
     }
 
+    [type='radio'] + label img{
+      opacity: 0.3;
+    }
+    
+    [type='radio']:checked + label img{
+      opacity: 1.0;
+    }
     
   }
 

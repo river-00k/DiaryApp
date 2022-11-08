@@ -222,7 +222,7 @@ class DiaryController extends Controller
             'entityMap'=>[],
         ]);
         $diary->image_url = "";
-        $diary->evaluation = 2;
+        $diary->evaluation = 4;
         $diary->save();
     }
 

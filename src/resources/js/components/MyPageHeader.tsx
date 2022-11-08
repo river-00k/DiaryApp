@@ -132,8 +132,8 @@ const MyPageHeader = () => {
           <Menu styles={styles}>
               <p>Menu</p>
               <a id="contact" className="menu-item" href="/mypage/diary/home"><AiOutlineHome/> Home</a>
-              <a className="menu-item" href="/mypage/setting"><AiOutlineSetting/> Setting</a>
               <a className="menu-item" href="/mypage/chart"><AiFillSignal/> Chart</a>
+              <a className="menu-item" href="/mypage/setting"><AiOutlineSetting/> Setting</a>
               <a className="menu-item" onClick={btnFunc} href="#"><AiOutlineLogout/> Logout</a>
               
           </Menu>
