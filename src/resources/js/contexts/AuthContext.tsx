@@ -42,7 +42,6 @@ export const AuthProvider = ({children}:Props):ReactElement => {
         try{
             await axios.post('/api/logout', {} )
             setUser(null)
-            console.log("logout success")
             navigate("/login")
         }catch(error){
             console.log("logout failed")
@@ -59,7 +58,6 @@ export const AuthProvider = ({children}:Props):ReactElement => {
 
             //作成したゲストユーザーにサンプルデータを登録
             await axios.post('/api/addSampleToGuestAccount', {'user_id': guestUser.id})
-            console.log("success")
 
             //ログインの実行
             const loginData: LoginData = {"email": guestUser.email, "password": "password"}

@@ -234,7 +234,7 @@ const Form = (props) => {
         
 
 
-          console.log(values)
+        
           const { id, date, title, description, image_url, evaluation } = values;
           
           //DBに格納するためにdescriptionデータを整理
@@ -244,7 +244,6 @@ const Form = (props) => {
           
           const allValues = { id, date, user_id, title, description: dbDescription, image_url, evaluation};
     
-          console.log(allValues)
 
           if (product) {
             editProduct(allValues);
