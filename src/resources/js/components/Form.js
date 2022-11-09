@@ -89,13 +89,20 @@ const FormContainer = styled.form`
     height: 100px;
     width: 100%;
     margin-bottom: 50px;
+    
 
+    
     [type='radio'] {
-      position: relative;
-      top: -50px
-
+      display: none;
     }
 
+    [type='radio'] + label img{
+      opacity: 0.3;
+    }
+    
+    [type='radio']:checked + label img{
+      opacity: 1.0;
+    }
     
   }
 
@@ -227,7 +234,7 @@ const Form = (props) => {
         
 
 
-          console.log(values)
+        
           const { id, date, title, description, image_url, evaluation } = values;
           
           //DBに格納するためにdescriptionデータを整理
@@ -237,7 +244,6 @@ const Form = (props) => {
           
           const allValues = { id, date, user_id, title, description: dbDescription, image_url, evaluation};
     
-          console.log(allValues)
 
           if (product) {
             editProduct(allValues);

@@ -7,6 +7,7 @@ import Button from './Button';
 import {useDiary} from '../contexts/DiaryContext'
 import { FormControl, InputLabel, MenuItem, Select, IconButton } from '@mui/material'
 import {BsPencil, BsTrash} from "react-icons/bs"
+import {IoAddCircle} from "react-icons/io5"
 import { useNavigate } from 'react-router-dom';
 
 
@@ -44,6 +45,23 @@ const ProductsSection = styled.section`
   .heading,
   .message {
     text-align: center;
+  }
+
+
+  .addButton1 {
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  .addButton2 {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+
+    @media (min-width: 401px) {
+      display: none;
+    }
   }
 `;
 
@@ -137,12 +155,6 @@ const Item = styled.li`
       justify-content: flex-end;
     }
   }
-
-  .control {
-    border-radius: ${props => props.theme.radius.full};
-    font-size: ${props => props.theme.fontSize.sm};
-    margin: 0 ${props => props.theme.spacing['1']};
-  }
 `;
 
 const Icon = styled.section`
@@ -166,9 +178,6 @@ const Products = () => {
   const inlineStyles = getCustomSyleMapInstructions(cssProps => ({ style: cssProps }))(
     textColorStyles
   );
-
-
-
 
 
   const evaluationImageList = ["/img/terrible.png", "/img/bad.png", "/img/fine.png", "/img/good.png", "/img/excelent.png"]
@@ -245,10 +254,18 @@ const Products = () => {
           </FormControl>
 
         </div>
-        <div className="controls">
+        <div className="addButton1">
           <Button to="/mypage/diary/product/new">
             <b>+</b> 今日の日記
           </Button>
+        </div>
+
+        <div className='addButton2'>
+          <IconButton
+            onClick={() => navigate('/mypage/diary/product/new')}
+          >
+            <IoAddCircle color="#14919B" size="80px"/>
+          </IconButton>
         </div>
       </header>
 

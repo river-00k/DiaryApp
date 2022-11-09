@@ -58,7 +58,6 @@ export const DiaryProvider = ({children}:Props) => {
                     setProduct(diaryData)
                 }).catch(() => {
                     setProduct(null)
-                    console.log('Faild to removing data')
                 })
         
          //編集後のDBの読み込み
@@ -110,7 +109,6 @@ export const DiaryProvider = ({children}:Props) => {
             axios.post('/api/diary/read', user)
                 .then((res)=>{
                     setProducts(res.data)
-                    console.log(new Date(res.data[0].date))
                     setLoading(false)
                 }).catch(()=>{
                     console.log("faild to get diary table")
