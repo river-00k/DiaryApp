@@ -17,6 +17,7 @@ const HeaderSection = styled.section`
         left: 0;
         width: 100%;
         height; 100px;
+        z-index:100;
         & nav {
             @media (max-width: 580px) {
                 display: none;
@@ -66,8 +67,8 @@ const HeaderSection = styled.section`
     }
 
     .menu-item {
-      font-size: 25px;
-      margin: 10px;
+      font-size: 20px;
+      margin-top: 20px;
       font-family: 'Nunito', sans-serif;
     }
 `
@@ -96,7 +97,10 @@ const styles = {
     },
     bmMenuWrap: {
       position: 'fixed',
-      height: '100%'
+      top: '50px',
+      left: '0px',
+      height: '100%',
+      
     },
     bmMenu: {
       background: '#373a47',
@@ -115,6 +119,9 @@ const styles = {
       display: 'block'
     },
     bmOverlay: {
+      position: 'fixed',
+      top: '50px',
+      left: '0px',
       background: 'rgba(0, 0, 0, 0.3)'
     }
   }
@@ -131,10 +138,10 @@ const MyPageHeader = () => {
          
           <Menu styles={styles}>
               <p>Menu</p>
-              <a id="contact" className="menu-item" href="/mypage/diary/home"><AiOutlineHome/> Home</a>
-              <a className="menu-item" href="/mypage/chart"><AiFillSignal/> Chart</a>
-              <a className="menu-item" href="/mypage/setting"><AiOutlineSetting/> Setting</a>
-              <a className="menu-item" onClick={btnFunc} href="#"><AiOutlineLogout/> Logout</a>
+              <a id="contact" className="menu-item" href="/mypage/diary/home"><AiOutlineHome/> ホーム</a>
+              <a className="menu-item" href="/mypage/chart"><AiFillSignal/> チャート</a>
+              <a className="menu-item" href="/mypage/setting"><AiOutlineSetting/> 設定</a>
+              <a className="menu-item" onClick={btnFunc} href="#"><AiOutlineLogout/> ログアウト</a>
               
           </Menu>
 

@@ -65,8 +65,8 @@ const HeaderSection = styled.section`
     }
 
     .menu-item {
-      font-size: 25px;
-      margin: 10px;
+      font-size: 20px;
+      margin-top: 20px;
       font-family: 'Nunito', sans-serif;
     }
 
@@ -130,9 +130,9 @@ const Header = () => {
         <HeaderSection>
             <Menu styles={styles}>
               <p>Menu</p>
-              <a id="contact" className="menu-item" href="#"><AiOutlineDesktop/> Top</a>
-              <a className="menu-item" href="/login"><AiOutlineLogin/> Login</a>
-              <a className="menu-item" href="/register/input"><AiOutlineEdit/> Registration</a>
+              {/* <a id="contact" className="menu-item" href="#"><AiOutlineDesktop/> Top</a> */}
+              <a className="menu-item" href="/login"><AiOutlineLogin/> ログイン</a>
+              <a className="menu-item" href="/register/input"><AiOutlineEdit/> 新規登録</a>
             </Menu>
             <div className="header">
                 <div className="title">

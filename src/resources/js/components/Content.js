@@ -5,7 +5,7 @@ const Main = styled.main`
   background-color: ${props => props.theme.contentBg};
   box-shadow: ${props => props.theme.boxShadow.default};
   padding: ${props => props.theme.spacing['5']};
-  margin-top: 50px;
+  
   margin-bottom: 30px;
   transition: background-color 200ms ease;
   

@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import React from 'react'
 import styled from 'styled-components'
 import { useAuth } from "../contexts/AuthContext";
+import {IoBody, IoMailOutline} from "react-icons/io5";
 
 
 const SettingSection = styled.section`
@@ -124,11 +125,11 @@ const Setting: React.FC = () => {
                   <table>
                     <tbody>
                         <tr>
-                            <td>氏名</td>
+                            <td><IoBody/></td>
                             <td>{user?.name}</td>
                         </tr>
                         <tr>
-                            <td>メールアドレス</td>
+                            <td><IoMailOutline/></td>
                             <td>{user?.email}</td>
                         </tr>
                       </tbody>

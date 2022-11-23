@@ -187,6 +187,15 @@ const Products = () => {
   
   const [year, setYear] = useState(today.getFullYear())
   const [month, setMonth] = useState(today.getMonth() + 1)
+  const yearList = [
+    {
+      "id":2021,
+      "value":"2021年"}, 
+    {
+      "id":2022,
+      "value":"2022年"}
+  ]
+  const monthList = ['1月', '2月','3月', '4月', '5月', '6月','7月', '8月', '9月', '10月', '11月','12月']
 
   const monthChange = (event) => {
     setMonth(event.target.value);
@@ -212,34 +221,13 @@ const Products = () => {
   //const hasProducts = products && products.length > 0;
   const hasProducts = monthlyProducts && monthlyProducts.length > 0;
 
+  
+
   return (
    <div> 
     <ProductsSection>
       <header className="section-header">
         <div>
-          <FormControl variant="standard" size='100' sx={{m: 1, minWidth: 120}}>
-            <InputLabel id="demo-simple-select-standard-label" sx={{fontSize:15}}>Month</InputLabel>
-            <Select
-              // labelId="demo-simple-select-standard-label"
-              // id="demo-simple-select-standard"
-              value={month}
-              onChange={monthChange}
-              sx={{fontSize:20}}
-            >
-              <MenuItem value={1}>January</MenuItem>
-              <MenuItem value={2}>February</MenuItem>
-              <MenuItem value={3}>March</MenuItem>
-              <MenuItem value={4}>April</MenuItem>
-              <MenuItem value={5}>May</MenuItem>
-              <MenuItem value={6}>June</MenuItem>
-              <MenuItem value={7}>July</MenuItem>
-              <MenuItem value={8}>August</MenuItem>
-              <MenuItem value={9}>September</MenuItem>
-              <MenuItem value={10}>October</MenuItem>
-              <MenuItem value={11}>November</MenuItem>
-              <MenuItem value={12}>December</MenuItem>
-            </Select>
-          </FormControl>
           <FormControl variant="standard" size='100' sx={{m: 1, minWidth: 80}}>
             <InputLabel id="demo-simple-select-standard-label" sx={{fontSize:15}}>Year</InputLabel>
             <Select
@@ -247,12 +235,26 @@ const Products = () => {
               onChange={yearChange}
               sx={{fontSize:20}}
             >
-              <MenuItem value={2021}>2021</MenuItem>
-              <MenuItem value={2022}>2022</MenuItem>
-              
+
+              {yearList.map((item) => {
+                return <MenuItem value={item.id}>{item.value}</MenuItem>
+              })}
+
             </Select>
           </FormControl>
+          <FormControl variant="standard" size='100' sx={{m: 1, minWidth: 80}}>
+            <InputLabel id="demo-simple-select-standard-label" sx={{fontSize:15}}>Month</InputLabel>
+            <Select
+              value={month}
+              onChange={monthChange}
+              sx={{fontSize:20}}
+            >
 
+              {monthList.map((value, index) => {
+                return <MenuItem value={index+1}>{value}</MenuItem>
+              })}
+            </Select>
+          </FormControl>
         </div>
         <div className="addButton1">
           <Button to="/mypage/diary/product/new">
