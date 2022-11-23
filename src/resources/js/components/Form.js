@@ -180,8 +180,8 @@ const Error = styled.span`
 `;
 
 const ProductSchema = Yup.object().shape({
-  title: Yup.string().required('* required'),
-  description: Yup.mixed().test('is-empty', '* required', value =>
+  title: Yup.string().required('* 必須'),
+  description: Yup.mixed().test('is-empty', '* 必須', value =>
     value.getCurrentContent().hasText()
   ),
 });
@@ -284,7 +284,7 @@ const Form = (props) => {
               />
               <label htmlFor="title" className="field-group">
                 <span className="field-label">
-                  Title{titleInvalid ? <Error>{errors.title}</Error> : null}
+                  タイトル{titleInvalid ? <Error>{errors.title}</Error> : null}
                 </span>
                 <input
                   ref={setFieldEl('title')}
@@ -299,7 +299,7 @@ const Form = (props) => {
 
               <label htmlFor="description" className="field-group">
                 <span className="field-label">
-                  Description{descriptionInvalid ? <Error>{errors.description}</Error> : null}
+                  本文{descriptionInvalid ? <Error>{errors.description}</Error> : null}
                 </span>
                 <RichTextArea
                   name="description"
@@ -313,7 +313,7 @@ const Form = (props) => {
               </label>
               <label htmlFor='evaluation' className="field-group">
                 <span className='field-label'>
-                  Evaluation
+              
                 </span>
                 <div className='evaluation-list'>
                   <input id="excelent" type="radio" name="evaluation" value="5" checked={evaluation === 5} onChange={()=> setFieldValue("evaluation", 5)}/>
@@ -341,7 +341,7 @@ const Form = (props) => {
               </label>
               
               <Button type="submit" disabled={isSubmitting}>
-                Submit
+                登録
               </Button>
             </FormContainer>
             
