@@ -16,16 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'api'], function(){
 
-    //テスト用
-    Route::get('guestRegister', 'App\Http\Controllers\Auth\RegisterController@guestRegister');
-    Route::post('addSampleToGuestAccount', 'App\Http\Controllers\Api\DiaryController@addSampleToGuestAccount');
-
-
+    //ログイン前API各種
     Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
     Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
     Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout');
     Route::get('loginCheck', 'App\Http\Controllers\Auth\LoginController@loginCheck');
     Route::post('requestCheck', 'App\Http\Controllers\Auth\LoginController@requestCheck');
+    Route::get('guestRegister', 'App\Http\Controllers\Auth\RegisterController@guestRegister');
+    Route::post('addSampleToGuestAccount', 'App\Http\Controllers\Api\DiaryController@addSampleToGuestAccount');
     
 
     //認証後でないと操作を許可しない

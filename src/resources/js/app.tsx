@@ -40,6 +40,7 @@ import SettingPage from './pages/SettingPage';
             <BrowserRouter>
                 <AuthProvider>
                     <Routes>
+                        <Route path="/" element={<LoginPage/>} />
                         <Route path="/login" element ={< LoginPage/>} />
                         <Route path="/register" element ={< RegisterPage/>} >
                             <Route path="input" element={<RegisterInputForm/>}/>
