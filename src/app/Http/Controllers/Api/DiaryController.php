@@ -186,7 +186,7 @@ class DiaryController extends Controller
             [
                 'key'=> '6eojn',
                 'text'=>
-                '左上メニュー > Chart',
+                '左上メニュー > チャート',
                 'type'=> 'unstyled',
                 'depth'=> 0,
                 'inlineStyleRanges'=> [],

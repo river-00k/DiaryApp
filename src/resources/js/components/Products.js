@@ -237,7 +237,7 @@ const Products = () => {
             >
 
               {yearList.map((item) => {
-                return <MenuItem value={item.id}>{item.value}</MenuItem>
+                return <MenuItem key={item.value} value={item.id}>{item.value}</MenuItem>
               })}
 
             </Select>
@@ -251,7 +251,7 @@ const Products = () => {
             >
 
               {monthList.map((value, index) => {
-                return <MenuItem value={index+1}>{value}</MenuItem>
+                return <MenuItem key={index} value={index+1}>{value}</MenuItem>
               })}
             </Select>
           </FormControl>
@@ -273,13 +273,13 @@ const Products = () => {
 
       {hasProducts ? (
         <List>
-          {monthlyProducts.map(product => {
+          {monthlyProducts.map((product,index) => {
             const { id, title, date, evaluation } = product;
             let  { description }  = product;
       
             description = JSON.parse(description)
             return (
-              <>
+              <div key={index}>
               <Icon>
                 <div className="icon-container">
                   <IconButton 
@@ -321,7 +321,7 @@ const Products = () => {
                   />
                 )}
               </Item>
-              </>
+              </div>
             );
           })}
         </List>
