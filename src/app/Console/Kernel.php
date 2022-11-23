@@ -33,7 +33,7 @@ class Kernel extends ConsoleKernel
                 Diary::where('user_id', $user->id)->delete();
             }
             
-        });
+        })->daily();
     }
 
     /**
