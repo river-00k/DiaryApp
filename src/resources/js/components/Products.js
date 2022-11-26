@@ -73,7 +73,7 @@ const List = styled.ul`
 
 const Item = styled.li`
   display: grid;
-  grid-template-columns: 150px minmax(20px, 100%);
+  grid-template-columns: 100px minmax(20px, 100%);
   grid-template-areas:
     'date title'
     'image description'
@@ -117,7 +117,7 @@ const Item = styled.li`
   .image {
     margin:0;
     background-color: ${props => props.theme.muted};
-    height: 100px;
+    height: 100%;
     width: 100%;
   }
 
