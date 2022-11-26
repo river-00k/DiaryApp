@@ -86,7 +86,7 @@ const FormContainer = styled.form`
   .evaluation-list {
     display: flex;
     justify-content: space-between;
-    height: 100px;
+  
     width: 100%;
     margin-bottom: 50px;
     
@@ -104,10 +104,12 @@ const FormContainer = styled.form`
       opacity: 1.0;
     }
     
+    
+
   }
 
   img {
-    width: 100%;
+    width: 70%;
     height: auto;
   }
 
@@ -118,59 +120,6 @@ const FormContainer = styled.form`
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: ${props => props.theme.spacing['2']};
     justify-content: center;
-  }
-
-  .progress-bar {
-    min-height: ${props => props.theme.spacing['2']};
-    display: block;
-  }
-
-  .image-radio {
-    position: relative;
-
-    [type='radio'] {
-      position: absolute;
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      cursor: pointer;
-      box-shadow: ${props => props.theme.boxShadow.default};
-      border-radius: 5px;
-
-      &:hover {
-        box-shadow: ${props => props.theme.boxShadow.lg};
-      }
-    }
-
-
-
-    &.is-selected {
-      img {
-        box-shadow: none;
-      }
-
-      &::after {
-        content: '✓';
-        color: white;
-        background-color: ${props => props.theme.background.success};
-        border-radius: ${props => props.theme.radius.full};
-        width: 10px;
-        height: 10px;
-        padding: ${props => props.theme.spacing['3']};
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: none;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-      }
-    }
   }
 `;
 
