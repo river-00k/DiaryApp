@@ -190,10 +190,13 @@ const Products = () => {
   const yearList = [
     {
       "id":2021,
-      "value":"2021年"}, 
+      "value":"2020年"}, 
     {
       "id":2022,
-      "value":"2022年"}
+      "value":"2022年"},
+      {
+        "id":2023,
+        "value":"2023年"}
   ]
   const monthList = ['1月', '2月','3月', '4月', '5月', '6月','7月', '8月', '9月', '10月', '11月','12月']
 
@@ -328,7 +331,7 @@ const Products = () => {
       ) : (
         <div className="message">
           <p>
-            No Product, Yet! <small>Add new a new product!</small>
+            日記がありません <small>新しい日記を追加してください</small>
           </p>
         </div>
       )}
